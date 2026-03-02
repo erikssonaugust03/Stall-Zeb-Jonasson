@@ -1,0 +1,57 @@
+backend:
+  name: github
+  repo: erikssonaugust03/Stall-Zeb-Jonasson
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "startkommentarer"
+    label: "Startkommentarer"
+    folder: "_startkommentarer"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Datum", name: "datum", widget: "date", format: "YYYY-MM-DD" }
+      - { label: "Lopp (t.ex. V64 · Romme)", name: "lopp", widget: "string" }
+      - label: "Hästar"
+        name: "hastar"
+        widget: "list"
+        fields:
+          - { label: "Hästnamn", name: "namn", widget: "string" }
+          - { label: "Lopp (t.ex. V64-2)", name: "start", widget: "string" }
+          - { label: "Kommentar", name: "kommentar", widget: "text" }
+
+  - name: "hastar_till_salu"
+    label: "Hästar till salu"
+    folder: "_hastar-till-salu"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Hästnamn", name: "namn", widget: "string" }
+      - { label: "Ålder & kön (t.ex. 2 år · Hingst)", name: "alder_kon", widget: "string" }
+      - { label: "Far", name: "far", widget: "string" }
+      - { label: "Mor", name: "mor", widget: "string" }
+      - { label: "Antal andelar", name: "antal_andelar", widget: "string" }
+      - { label: "Typ (Andel / Hel häst)", name: "typ", widget: "select", options: ["Andel", "Hel häst"] }
+      - { label: "Pris (kr)", name: "pris", widget: "string" }
+      - { label: "Beskrivning", name: "beskrivning", widget: "text" }
+      - { label: "Bild", name: "bild", widget: "image", required: false }
+
+  - name: "hastar"
+    label: "Hästar i stallet"
+    folder: "_hastar"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Namn", name: "namn", widget: "string" }
+      - { label: "Ålder", name: "alder", widget: "string" }
+      - { label: "Kön", name: "kon", widget: "select", options: ["Valack", "Sto", "Hingst"] }
+      - { label: "Far", name: "far", widget: "string" }
+      - { label: "Mor", name: "mor", widget: "string" }
+      - { label: "Ägare", name: "agare", widget: "string" }
+      - { label: "Uppfödare", name: "uppfodare", widget: "string" }
+      - { label: "Skötare", name: "skotare", widget: "string" }
+      - { label: "Travsport-länk", name: "travsport", widget: "string" }
+      - { label: "Bild", name: "bild", widget: "image", required: false }
