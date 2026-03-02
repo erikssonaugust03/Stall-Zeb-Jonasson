@@ -402,7 +402,7 @@ async function loadKommentarer() {
 ---/);
       if (!match) return null;
       const fm = match[1];
-      const get = key => { const m = fm.match(new RegExp(key + ':\s*(.+)')); return m ? m[1].trim() : ''; };
+      const get = key => { const m = fm.match(new RegExp(key + ': *(.+)')); return m ? m[1].trim() : ''; };
       const datum = get('datum');
       const lopp = get('lopp');
 
