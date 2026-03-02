@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stall Zeb Jonasson</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Logo">Stall <span>Zeb</span> Jonasson</a>
+  <ul class="nav-links">
+    <li><a href="personal.html">Personal</a></li>
+    <li><a href="#var-gard">Vår Gård</a></li>
+    <li class="nav-dropdown">
+      <a href="hastar.html">Hästar <span class="nav-drop-arrow">▾</span></a>
+      <ul class="nav-submenu">
+        <li><a href="hastar.html">Våra Hästar</a></li>
+        <li><a href="startkommentarer.html">Startkommentarer</a></li>
+        <li><a href="hastar-till-salu.html">Hästar till salu</a></li>
+      </ul>
+    </li>
+    <li><a href="om-tranaren.html">Om Tränaren</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meny">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="personal.html">Personal</a>
+  <a href="#var-gard">Vår Gård</a>
+  <div class="mobile-expand">
+    <span class="mobile-expand-main" onclick="toggleMobileExpand()">
+      Hästar
+      <span class="mobile-expand-arrow" id="hastarArrow">▾</span>
+    </span>
+  </div>
+  <div class="mobile-sub" id="hastarSub">
+    <a href="hastar.html">Våra Hästar</a>
+    <a href="startkommentarer.html">Startkommentarer</a>
+    <a href="hastar-till-salu.html">Hästar till salu</a>
+  </div>
+  <a href="om-tranaren.html">Om Tränaren</a>
+  <a href="kontakt.html">Kontakt</a>
+</div>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+
+  <!-- Decorative horse SVG -->
+  <div class="horse-silhouette">
+    <img src="hero.png" alt="Travhäst i lopp" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">Professionell Travtränare</div>
+    <h1 class="hero-title">Stall<br><em>Zeb</em><br>Jonasson</h1>
+    <p class="hero-tagline">Passion, precision och omvårdnad för varje häst. Vi tränar vinnare – med hjärtat på rätt plats.</p>
+    <a href="#var-gard" class="hero-cta">Utforska stallet</a>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scrolla</span>
+  </div>
+</section>
+
+<!-- VÅR GÅRD -->
+<section id="var-gard">
+  <div class="gard-grid">
+    <div class="gard-text">
+      <div class="section-label">Vår Gård</div>
+      <h2 class="section-title">En plats byggd<br>för<em style="font-family:'Cormorant Garamond',serif;font-style:italic;"> mästare</em></h2>
+      <p class="gard-body">
+        Vår gård är hjärtat i Stall Zeb Jonasson. Belägen mitt i det svenska landskapet erbjuder vi en miljö där hästar trivs och presterar. Med moderna faciliteter, välskötta paddockar och ett engagerat team ger vi varje häst de bästa förutsättningarna.
+      </p>
+      <p class="gard-body" style="margin-top:1rem;">
+        Varje detalj på gården är genomtänkt – från stallets konstruktion till träningsbanan – allt för att maximera hästens välmående och potential.
+      </p>
+
+      <div class="gard-stats">
+        <div class="stat">
+          <div class="stat-number">30</div>
+          <div class="stat-label">Boxplatser</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">2025</div>
+          <div class="stat-label">Grundat</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">Rakbana</div>
+          <div class="stat-label">Träningsbana</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">Sandbana</div>
+          <div class="stat-label">Träningsbana</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">Rundbana</div>
+          <div class="stat-label">Träningsbana</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gard-visual">
+      <div class="gard-card gard-card-main">
+        <img src="gard.png" alt="Stall Zeb Jonasson" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+      </div>
+
+      <div class="gard-card gard-card-accent">
+        <div class="gard-accent-num">2025</div>
+        <div class="gard-accent-txt">Grundat</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HÄSTAR -->
+<section id="hastar">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="hastar-header">
+      <div>
+        <div class="section-label">Stallet</div>
+        <a href="hastar.html" class="section-title hastar-link">Våra Hästar <span class="hastar-link-arrow">→</span></a>
+        <a href="startkommentarer.html" style="display:inline-block;margin-top:0.6rem;font-size:0.75rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;opacity:0.8;transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.8">Startkommentarer →</a>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:1.5rem;">
+        <p style="max-width:320px;font-size:0.9rem;font-weight:300;color:var(--white-dim);line-height:1.7;letter-spacing:0.04em;text-align:right;">
+          Varje häst i stallet behandlas som en individ med egna behov, styrkor och mål.
+        </p>
+        <a href="hastar.html" class="hastar-cta">Se alla 15 hästar →</a>
+      </div>
+    </div>
+
+    <div class="hastar-preview">
+      <div class="hastar-preview-line"><span class="hp-name">Ajson</span><span class="hp-sep">·</span><span class="hp-meta">5 år · Valack</span><span class="hp-pp">587 900 kr</span></div>
+      <div class="hastar-preview-line"><span class="hp-name">Impertinent</span><span class="hp-sep">·</span><span class="hp-meta">3 år · Sto</span><span class="hp-pp">33 400 kr</span></div>
+      <div class="hastar-preview-line"><span class="hp-name">Rusa Tooma</span><span class="hp-sep">·</span><span class="hp-meta">5 år · Valack</span><span class="hp-pp">72 700 kr</span></div>
+      <div class="hastar-preview-line hastar-preview-more"><a href="hastar.html">+ 12 hästar till i stallet</a></div>
+    </div>
+
+    <div class="hastar-grid" style="display:none">
+      <!-- Horse cards -->
+    </div>
+  </div>
+</section>
+
+
+<!-- OM TRÄNAREN -->
+<section id="om-oss">
+  <div class="om-inner">
+    <div class="om-portrait">
+      <div class="om-portrait-frame">
+        <img src="zeb.png" alt="Zeb Jonasson" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+      </div>
+      <div class="om-corner om-corner-tl"></div>
+      <div class="om-corner om-corner-br"></div>
+    </div>
+
+    <div class="om-text">
+      <div class="section-label">Tränaren</div>
+      <h2 class="section-title">Zeb<br>Jonasson</h2>
+
+      <p class="om-body">
+        Zeb Jonasson har ägnat hela sitt liv åt travsporten. Uppvuxen med hästar utvecklade han tidigt en intuitiv förståelse för dessa fantastiska djur – en känsla som idag utgör grunden för hans träningsfilosofi.
+      </p>
+      <p class="om-body" style="margin-top:1rem;">
+        Med licensierad tränarbehörighet sedan 2009 har Zeb byggt upp ett stall med fokus på långsiktig hästutveckling, individuell anpassning och ett nära samarbete med hästägare. Han tror på tålamod, noggrannhet och den genuina relationen mellan människa och häst.
+      </p>
+
+      <div class="om-quote">
+        <p>"Varje häst berättar sin historia – det gäller bara att lyssna noga nog."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt">
+  <div class="kontakt-inner">
+    <div>
+      <div class="section-label">Kom i kontakt</div>
+      <h2 class="section-title">Kontakta<br>Oss</h2>
+
+      <div class="kontakt-info">
+        <div class="kontakt-item">
+          <div class="kontakt-item-label">Telefon</div>
+          <div class="kontakt-item-value">072 520 81 23</div>
+        </div>
+        <div class="kontakt-item">
+          <div class="kontakt-item-label">E-post</div>
+          <div class="kontakt-item-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b3c9d6d1f3c0c7d2dfdfc9d6d19dc0d6">[email&#160;protected]</a></div>
+        </div>
+        <div class="kontakt-item">
+          <div class="kontakt-item-label">Adress</div>
+          <div class="kontakt-item-value">Odensala Söderby 163</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="kontakt-form">
+      <form action="https://formspree.io/f/xpqjeagl" method="POST">
+      <div class="form-field">
+        <label>Namn</label>
+        <input type="text" name="namn" placeholder="Ditt namn" required>
+      </div>
+      <div class="form-field">
+        <label>E-post</label>
+        <input type="email" name="email" placeholder="din@email.se" required>
+      </div>
+      <div class="form-field">
+        <label>Ämne</label>
+        <input type="text" name="amne" placeholder="Vad gäller det?">
+      </div>
+      <div class="form-field">
+        <label>Meddelande</label>
+        <textarea rows="5" name="meddelande" placeholder="Skriv ditt meddelande här..." required></textarea>
+      </div>
+      <button type="submit" class="form-submit">Skicka meddelande</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Stall Zeb Jonasson</div>
+  <
+</footer>
+<script>
+
+function toggleMobileExpand() {
+  document.getElementById('hastarSub').classList.toggle('open');
+  document.getElementById('hastarArrow').classList.toggle('open');
+}
+
+function toggleMenu() {
+  var btn = document.getElementById('hamburger');
+  var menu = document.getElementById('mobileMenu');
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+}
+document.querySelectorAll('#mobileMenu a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('mobileMenu').classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>

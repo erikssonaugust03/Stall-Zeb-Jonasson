@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal – Stall Zeb Jonasson</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0c;
+    --navy: #0d1b2e;
+    --navy-mid: #162848;
+    --navy-light: #1e3a5f;
+    --white: #f4f2ee;
+    --white-dim: rgba(244,242,238,0.6);
+    --white-faint: rgba(244,242,238,0.08);
+    --accent: #c8d8e8;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.6rem 4rem;
+    background: rgba(10,10,12,0.96);
+    border-bottom: 1px solid rgba(244,242,238,0.06);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: var(--white);
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .nav-logo img { height: 36px; width: 36px; object-fit: contain; }
+
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover, .nav-links a.active { color: var(--white); }
+
+  /* PAGE HEADER */
+  .page-header {
+    padding: 14rem 4rem 6rem;
+    background: linear-gradient(to bottom, var(--navy) 0%, var(--black) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent calc(100%/12 - 1px),
+      rgba(244,242,238,0.02) calc(100%/12 - 1px),
+      rgba(244,242,238,0.02) calc(100%/12)
+    );
+  }
+
+  .page-header-inner {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .page-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+  }
+
+  .page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-weight: 300;
+    line-height: 0.95;
+    color: var(--white);
+  }
+
+  .page-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  /* PERSONAL SECTION */
+  .personal-section {
+    padding: 6rem 4rem 10rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .personal-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: rgba(244,242,238,0.05);
+  }
+
+  .personal-item {
+    background: var(--black);
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+    transition: background 0.3s;
+    min-height: 100px;
+  }
+
+  .personal-item:hover { background: var(--navy); }
+
+  .personal-index {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(200,216,232,0.3);
+    flex-shrink: 0;
+    min-width: 2rem;
+  }
+
+  .personal-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--white);
+    letter-spacing: 0.01em;
+    min-width: 220px;
+    flex-shrink: 0;
+  }
+
+  .personal-meta {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    flex: 1;
+    align-items: center;
+  }
+
+  .personal-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .personal-row-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+  }
+
+  .personal-row-value {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--white);
+    letter-spacing: 0.05em;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    padding: 3rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(244,242,238,0.06);
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+  }
+
+  .footer-copy {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: rgba(244,242,238,0.3);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .personal-item {
+    opacity: 0;
+    animation: fadeUp 0.5s 0.1s forwards;
+  }
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    nav { padding: 1.4rem 2rem; }
+    .page-header { padding: 12rem 2rem 4rem; }
+    .personal-section { padding: 3rem 2rem 6rem; }
+    footer { padding: 2rem; flex-direction: column; gap: 1rem; text-align: center; }
+  }
+
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .personal-item { flex-wrap: wrap; gap: 1rem; }
+    .personal-meta { flex-direction: column; gap: 0.8rem; align-items: flex-start; }
+  }
+
+  /* HAMBURGER */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    transition: all 0.3s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .nav-mobile-menu {
+    display: none;
+    position: fixed;
+    top: 73px;
+    left: 0; right: 0;
+    background: rgba(10,10,12,0.98);
+    border-bottom: 1px solid rgba(244,242,238,0.08);
+    z-index: 99;
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+  .nav-mobile-menu.open { display: flex; }
+  .nav-mobile-menu a {
+    padding: 1rem 2rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(244,242,238,0.05);
+    transition: color 0.2s, background 0.2s;
+  }
+  .nav-mobile-menu a:last-child { border-bottom: none; }
+  .nav-mobile-menu a:hover, .nav-mobile-menu a.active { color: var(--accent); background: var(--white-faint); }
+
+  @media (max-width: 800px) {
+    .nav-links { display: none !important; }
+    .nav-hamburger { display: flex !important; }
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-logo { font-size: 1rem; }
+    .nav-logo img { height: 28px; width: 28px; }
+  }
+
+
+  .nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--white); }
+  .nav-dropdown { position: relative; }
+  .nav-drop-arrow { font-size: 0.6rem; margin-left: 0.2rem; display: inline-block; }
+  .nav-submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 1rem;
+    list-style: none;
+    min-width: 180px;
+    z-index: 200;
+  }
+  .nav-submenu::before {
+    content: '';
+    position: absolute;
+    top: 1rem; left: 0; right: 0; bottom: 0;
+    background: rgba(10,10,12,0.98);
+    border: 1px solid rgba(244,242,238,0.1);
+    z-index: -1;
+  }
+  .nav-dropdown:hover .nav-submenu { display: block; }
+  .nav-submenu li a {
+    display: block;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(244,242,238,0.05);
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .nav-submenu li:last-child a { border-bottom: none; }
+  .nav-submenu li a:hover { color: var(--accent); background: var(--navy-mid); }
+
+
+  .mobile-expand { border-bottom: 1px solid rgba(244,242,238,0.05); }
+  .mobile-expand-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(244,242,238,0.6);
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  .mobile-expand-main:hover { color: #c8d8e8; }
+  .mobile-expand-arrow {
+    transition: transform 0.3s;
+    font-size: 0.7rem;
+  }
+  .mobile-expand-arrow.open { transform: rotate(180deg); }
+  .mobile-sub {
+    display: none;
+    flex-direction: column;
+    background: rgba(244,242,238,0.03);
+  }
+  .mobile-sub.open { display: flex; }
+  .mobile-sub a {
+    padding: 0.9rem 2rem 0.9rem 3.5rem !important;
+    font-size: 0.78rem !important;
+    letter-spacing: 0.18em !important;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Logo">Stall <span>Zeb</span> Jonasson</a>
+  <ul class="nav-links">
+    <li><a href="personal.html" class="active">Personal</a></li>
+    <li><a href="index.html#var-gard">Vår Gård</a></li>
+    <li class="nav-dropdown">
+      <a href="hastar.html">Hästar <span class="nav-drop-arrow">▾</span></a>
+      <ul class="nav-submenu">
+        <li><a href="hastar.html">Våra Hästar</a></li>
+        <li><a href="startkommentarer.html">Startkommentarer</a></li>
+        <li><a href="hastar-till-salu.html">Hästar till salu</a></li>
+      </ul>
+    </li>
+    <li><a href="om-tranaren.html">Om Tränaren</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meny">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="personal.html" class="active">Personal</a>
+  <a href="index.html#var-gard">Vår Gård</a>
+  <div class="mobile-expand">
+    <span class="mobile-expand-main" onclick="toggleMobileExpand()">
+      Hästar
+      <span class="mobile-expand-arrow" id="hastarArrow">▾</span>
+    </span>
+  </div>
+  <div class="mobile-sub" id="hastarSub">
+    <a href="hastar.html">Våra Hästar</a>
+    <a href="startkommentarer.html">Startkommentarer</a>
+    <a href="hastar-till-salu.html">Hästar till salu</a>
+  </div>
+  <a href="om-tranaren.html">Om Tränaren</a>
+  <a href="kontakt.html">Kontakt</a>
+</div>
+
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-eyebrow">Stall Zeb Jonasson</div>
+    <h1 class="page-title">Vår<br><em>Personal</em></h1>
+  </div>
+</div>
+
+<!-- PERSONAL -->
+<div class="personal-section">
+  <div class="personal-grid">
+
+    <div class="personal-item">
+      <div class="personal-index">01</div>
+      <div class="personal-name">Moa Thörngren</div>
+      <div class="personal-meta">
+        <div class="personal-row">
+          <span class="personal-row-label">Roll</span>
+          <span class="personal-row-value">Försteman</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Stall Zeb Jonasson</div>
+  <div class="footer-copy">© 2025 Stall Zeb Jonasson. Alla rättigheter förbehållna.</div>
+</footer>
+
+<script>
+function toggleMenu() {
+  var btn = document.getElementById('hamburger');
+  var menu = document.getElementById('mobileMenu');
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+}
+function toggleMobileExpand() {
+  document.getElementById('hastarSub').classList.toggle('open');
+  document.getElementById('hastarArrow').classList.toggle('open');
+}
+document.querySelectorAll('#mobileMenu a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('mobileMenu').classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
