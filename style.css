@@ -796,6 +796,10 @@
     font-weight: 300;
     color: var(--white);
   }
+  .kontakt-item-value a {
+    color: var(--white);
+    text-decoration: none;
+  }
 
   .kontakt-form {
     display: flex;
