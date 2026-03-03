@@ -1,13 +1,24 @@
 {
   "starter": [
     {
-      "datum": "2026-03-03",
-      "lopp": "V86 · Solvalla",
+      "datum": "2026-03-05",
+      "lopp": "V65 Romme",
       "hastar": [
         {
           "namn": "Rusa Tooma",
           "start": "V86-2",
           "kommentar": "Känns pigg och fräsch i träningen. Bara han är pigg så kommer han leverera en bra insats."
+        }
+      ]
+    },
+    {
+      "datum": "2026-03-10",
+      "lopp": "V64 Bollnäs",
+      "hastar": [
+        {
+          "namn": "Ajson",
+          "start": "V64-3",
+          "kommentar": "Han tränar bra. Utgångsläget hade kunnat varit bättre. Han går som vanligt, men vanlig vagn, barfota runt om och rycktussar."
         }
       ]
     }
