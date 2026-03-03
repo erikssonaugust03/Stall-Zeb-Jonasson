@@ -28,6 +28,29 @@ collections:
                   - { label: "Lopp (t.ex. V64-2)", name: "start", widget: "string" }
                   - { label: "Kommentar", name: "kommentar", widget: "text" }
 
+  - name: "hastar_i_stallet"
+    label: "Hästar i stallet"
+    files:
+      - name: "hastar"
+        label: "Hästar i stallet"
+        file: "data/hastar.json"
+        fields:
+          - label: "Hästar"
+            name: "hastar"
+            widget: "list"
+            fields:
+              - { label: "Namn", name: "namn", widget: "string" }
+              - { label: "Slug (url-namn, t.ex. rusa-tooma)", name: "slug", widget: "string", hint: "Små bokstäver, bindestreck istället för mellanslag" }
+              - { label: "Ålder (t.ex. 3 år)", name: "alder", widget: "string" }
+              - { label: "Kön", name: "kon", widget: "select", options: ["Valack", "Sto", "Hingst"] }
+              - { label: "Far", name: "far", widget: "string" }
+              - { label: "Mor", name: "mor", widget: "string" }
+              - { label: "Ägare", name: "agare", widget: "string", required: false }
+              - { label: "Uppfödare", name: "uppfodare", widget: "string", required: false }
+              - { label: "Skötare", name: "skotare", widget: "string", required: false }
+              - { label: "Travsport-länk", name: "travsport", widget: "string", required: false }
+              - { label: "Bild", name: "bild", widget: "image", required: false }
+
   - name: "hastar_till_salu"
     label: "Hästar till salu"
     files:
@@ -47,4 +70,4 @@ collections:
               - { label: "Typ", name: "typ", widget: "select", options: ["Andel", "Hel häst"] }
               - { label: "Pris (kr)", name: "pris", widget: "string" }
               - { label: "Beskrivning", name: "beskrivning", widget: "text" }
-              - { label: "Bild", name: "bild", widget: "image", required: false, hint: "Ladda upp en bild på hästen" }
+              - { label: "Bild", name: "bild", widget: "image", required: false }
