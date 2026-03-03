@@ -40,10 +40,11 @@ collections:
             widget: "list"
             fields:
               - { label: "Hästnamn", name: "namn", widget: "string" }
-              - { label: "Ålder & kön", name: "alder_kon", widget: "string" }
+              - { label: "Ålder & kön (t.ex. 2 år · Hingst)", name: "alder_kon", widget: "string" }
               - { label: "Far", name: "far", widget: "string" }
               - { label: "Mor", name: "mor", widget: "string" }
               - { label: "Antal andelar", name: "antal_andelar", widget: "string" }
               - { label: "Typ", name: "typ", widget: "select", options: ["Andel", "Hel häst"] }
               - { label: "Pris (kr)", name: "pris", widget: "string" }
               - { label: "Beskrivning", name: "beskrivning", widget: "text" }
+              - { label: "Bild", name: "bild", widget: "image", required: false, hint: "Ladda upp en bild på hästen" }
