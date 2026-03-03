@@ -367,84 +367,30 @@
 </footer>
 
 <script>
-// Hämta startkommentarer från GitHub
-const GITHUB_USER = 'erikssonaugust03';
-const GITHUB_REPO = 'Stall-Zeb-Jonasson';
-const FOLDER = '_startkommentarer';
+const JSON_URL = 'https://raw.githubusercontent.com/erikssonaugust03/Stall-Zeb-Jonasson/main/data/startkommentarer.json';
 
 async function loadKommentarer() {
   const list = document.getElementById('weeksList');
-
   try {
-    const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${FOLDER}`);
-    if (!res.ok) throw new Error('Kunde inte hämta filer');
-    const files = await res.json();
+    const res = await fetch(JSON_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error('404');
+    const data = await res.json();
+    const starter = data.starter || [];
 
-    // Hämta alla markdown-filer
-    const mdFiles = files.filter(f => f.name.endsWith('.md'));
-    if (mdFiles.length === 0) {
-      list.innerHTML = '<p style="padding:3rem 0;color:var(--white-dim);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;">Inga kommande starter just nu.</p>';
-      return;
-    }
+    const today = new Date(); today.setHours(0,0,0,0);
 
-    // Hämta innehållet i varje fil
-    const contents = await Promise.all(mdFiles.map(f =>
-      fetch(f.download_url).then(r => r.text())
-    ));
-
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-
-    // Parsa frontmatter
-    const entries = contents.map(text => {
-      const match = text.match(/^---
-([\s\S]*?)
----/);
-      if (!match) return null;
-      const fm = match[1];
-      const get = key => { const m = fm.match(new RegExp(key + ': *(.+)')); return m ? m[1].trim() : ''; };
-      const datum = get('datum');
-      const lopp = get('lopp');
-
-      // Parsa hästar-listan
-      const hastarMatch = text.match(/hastar:
-([\s\S]*?)(?=
-\w|
----|\s*$)/);
-      const hastar = [];
-      if (hastarMatch) {
-        const rows = hastarMatch[1].match(/- namn: .+[\s\S]*?(?=- namn:|$)/g) || [];
-        rows.forEach(row => {
-          const namn = (row.match(/namn: (.+)/) || [])[1] || '';
-          const start = (row.match(/start: (.+)/) || [])[1] || '';
-          const kommentar = (row.match(/kommentar: (.+)/) || [])[1] || '';
-          if (namn) hastar.push({ namn: namn.trim(), start: start.trim(), kommentar: kommentar.trim() });
-        });
-      }
-
-      return { datum, lopp, hastar };
-    }).filter(Boolean);
-
-    // Sortera nyast först
-    entries.sort((a, b) => new Date(b.datum) - new Date(a.datum));
-
-    // Filtrera bort gamla (dagen efter)
-    const kommande = entries.filter(e => {
-      const d = new Date(e.datum);
-      d.setDate(d.getDate() + 1);
-      return today < d;
-    });
+    const kommande = starter
+      .filter(e => { const d = new Date(e.datum); d.setDate(d.getDate()+1); return today < d; })
+      .sort((a,b) => new Date(b.datum) - new Date(a.datum));
 
     if (kommande.length === 0) {
       list.innerHTML = '<p style="padding:3rem 0;color:var(--white-dim);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;">Inga kommande starter just nu.</p>';
       return;
     }
 
-    // Rendera
     list.innerHTML = kommande.map((e, i) => {
       const datumFormatted = new Date(e.datum).toLocaleDateString('sv-SE', { day: 'numeric', month: 'long', year: 'numeric' });
-      return `
-      <div class="week-block${i === 0 ? ' open' : ''}" data-race-date="${e.datum}">
+      return `<div class="week-block${i === 0 ? ' open' : ''}" data-race-date="${e.datum}">
         <div class="week-header">
           <div class="week-date">${datumFormatted}</div>
           <div class="week-title">${e.lopp}</div>
@@ -452,8 +398,7 @@ async function loadKommentarer() {
           <div class="week-arrow">›</div>
         </div>
         <div class="week-body">
-          ${e.hastar.map(h => `
-          <div class="comment-row">
+          ${e.hastar.map(h => `<div class="comment-row">
             <div class="comment-horse">${h.namn}<br><span style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);">${h.start}</span></div>
             <div class="comment-text">${h.kommentar}</div>
           </div>`).join('')}
@@ -461,19 +406,16 @@ async function loadKommentarer() {
       </div>`;
     }).join('');
 
-  } catch (err) {
+  } catch(err) {
     list.innerHTML = '<p style="padding:3rem 0;color:var(--white-dim);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;">Kunde inte ladda kommentarer just nu.</p>';
   }
 }
 
 loadKommentarer();
 
-// Toggle week open/close
 document.addEventListener('click', function(e) {
   const header = e.target.closest('.week-header');
-  if (header) {
-    header.closest('.week-block').classList.toggle('open');
-  }
+  if (header) header.closest('.week-block').classList.toggle('open');
 });
 </script>
 
