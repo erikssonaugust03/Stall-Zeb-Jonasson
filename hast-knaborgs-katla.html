@@ -487,5 +487,52 @@ document.querySelectorAll('#mobileMenu a').forEach(function(a) {
   });
 });
 </script>
+<script>
+const SLUG = 'knaborgs-katla';
+const HASTAR_JSON = 'https://raw.githubusercontent.com/erikssonaugust03/Stall-Zeb-Jonasson/main/data/hastar.json';
+
+async function loadHast() {
+  try {
+    const res = await fetch(HASTAR_JSON + '?t=' + Date.now());
+    const data = await res.json();
+    const h = (data.hastar || []).find(x => x.slug === SLUG);
+    if (!h) return;
+
+    // Update hero
+    const parts = h.namn.split(' ');
+    const last = parts.pop();
+    const first = parts.join(' ');
+    document.querySelector('.horse-hero-name').innerHTML = first ? first + ' <em>' + last + '</em>' : '<em>' + last + '</em>';
+    document.querySelector('.horse-hero-sub').textContent = h.alder + ' · ' + h.kon;
+
+    // Update info rows
+    const vals = document.querySelectorAll('.info-value');
+    if (vals[0]) vals[0].textContent = h.namn;
+    if (vals[1]) vals[1].textContent = h.alder + ' · ' + h.kon;
+    if (vals[2]) vals[2].textContent = h.far;
+    if (vals[3]) vals[3].textContent = h.mor;
+    if (vals[4]) vals[4].textContent = h.agare || '–';
+    if (vals[5]) vals[5].textContent = h.uppfodare || '–';
+    if (vals[6]) vals[6].textContent = h.skotare || '–';
+    if (vals[7]) vals[7].textContent = 'Zeb Jonasson';
+
+    // Update travsport link
+    const link = document.querySelector('.travsport-link');
+    if (link && h.travsport) link.href = h.travsport;
+
+    // Update image
+    if (h.bild) {
+      const img = document.querySelector('.horse-hero-image img');
+      if (img) img.src = h.bild;
+    }
+
+    // Update page title
+    document.title = h.namn + ' – Stall Zeb Jonasson';
+
+  } catch(e) { console.log('Could not load horse data', e); }
+}
+
+loadHast();
+</script>
 </body>
 </html>
