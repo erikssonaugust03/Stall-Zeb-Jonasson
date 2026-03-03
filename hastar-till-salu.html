@@ -432,56 +432,81 @@
 </div>
 
 <!-- LISTINGS -->
-<div class="listings-section">
-
-  <!-- AL'S CHEWBACCA -->
-  <div class="listing-card">
-    <div class="listing-image">
-      <img src="rusa-tooma.png" alt="Al's Chewbacca">
-      <div class="listing-badge">Andel till salu</div>
-    </div>
-    <div class="listing-content">
-      <div class="listing-top">
-        <div class="listing-name">Al's <em>Chewbacca</em></div>
-        <div class="listing-subtitle">2 år · Hingst</div>
-
-        <div class="listing-meta">
-          <div class="listing-meta-item">
-            <div class="listing-meta-label">Far</div>
-            <div class="listing-meta-value">Brillantissime</div>
-          </div>
-          <div class="listing-meta-item">
-            <div class="listing-meta-label">Mor</div>
-            <div class="listing-meta-value">Up In The Trees</div>
-          </div>
-          <div class="listing-meta-item">
-            <div class="listing-meta-label">Antal andelar</div>
-            <div class="listing-meta-value">20 andelar</div>
-          </div>
-          <div class="listing-meta-item">
-            <div class="listing-meta-label">Typ</div>
-            <div class="listing-meta-value">Andel</div>
-          </div>
-        </div>
-
-        <p class="listing-desc">"En spännande tvååring efter Brillantissime som har tagit träningen på ett bra sätt. Känns spännande och han känns spännande. Hör av dig för mer information."</p>
-      </div>
-
-      <div class="listing-bottom">
-        <div class="listing-price">10 000 kr <span>/ andel</span></div>
-        <a href="kontakt.html" class="listing-cta">
-          Kontakta oss →
-        </a>
-      </div>
-    </div>
-  </div>
-
+<div class="listings-section" id="listingsContainer">
+  <p id="loadingMsg" style="padding:3rem 0;color:var(--white-dim);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;">Laddar...</p>
 </div>
 
 <footer>
   <div>Stall Zeb Jonasson</div>
   <div>© 2025</div>
 </footer>
+
+<script>
+const JSON_URL_SALU = 'https://raw.githubusercontent.com/erikssonaugust03/Stall-Zeb-Jonasson/main/data/hastar-till-salu.json';
+
+async function loadHastarTillSalu() {
+  const container = document.getElementById('listingsContainer');
+  try {
+    const res = await fetch(JSON_URL_SALU + '?t=' + Date.now());
+    if (!res.ok) throw new Error('404');
+    const data = await res.json();
+    const hastar = data.hastar || [];
+
+    if (hastar.length === 0) {
+      container.innerHTML = '<p style="padding:3rem 0;color:var(--white-dim);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;">Inga hästar till salu just nu.</p>';
+      return;
+    }
+
+    container.innerHTML = hastar.map(h => {
+      const nameParts = h.namn.split(' ');
+      const lastName = nameParts.pop();
+      const firstName = nameParts.join(' ');
+      const badgeText = h.typ === 'Hel häst' ? 'Hel häst till salu' : 'Andel till salu';
+      const priceLabel = h.typ === 'Hel häst' ? '' : '/ andel';
+      return `<div class="listing-card">
+        <div class="listing-image">
+          <img src="rusa-tooma.png" alt="${h.namn}">
+          <div class="listing-badge">${badgeText}</div>
+        </div>
+        <div class="listing-content">
+          <div class="listing-top">
+            <div class="listing-name">${firstName} <em>${lastName}</em></div>
+            <div class="listing-subtitle">${h.alder_kon}</div>
+            <div class="listing-meta">
+              <div class="listing-meta-item">
+                <div class="listing-meta-label">Far</div>
+                <div class="listing-meta-value">${h.far}</div>
+              </div>
+              <div class="listing-meta-item">
+                <div class="listing-meta-label">Mor</div>
+                <div class="listing-meta-value">${h.mor}</div>
+              </div>
+              <div class="listing-meta-item">
+                <div class="listing-meta-label">Antal andelar</div>
+                <div class="listing-meta-value">${h.antal_andelar}</div>
+              </div>
+              <div class="listing-meta-item">
+                <div class="listing-meta-label">Typ</div>
+                <div class="listing-meta-value">${h.typ}</div>
+              </div>
+            </div>
+            <p class="listing-desc">"${h.beskrivning}"</p>
+          </div>
+          <div class="listing-bottom">
+            <div class="listing-price">${h.pris} kr <span>${priceLabel}</span></div>
+            <a href="kontakt.html" class="listing-cta">Kontakta oss →</a>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+
+  } catch(err) {
+    container.innerHTML = '<p style="padding:3rem 0;color:var(--white-dim);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;">Inga hästar till salu just nu.</p>';
+  }
+}
+
+loadHastarTillSalu();
+</script>
 
 <script>
 function toggleMenu() {
