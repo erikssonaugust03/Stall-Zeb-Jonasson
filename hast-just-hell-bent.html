@@ -400,7 +400,7 @@
     <div class="horse-hero-sub">2 år · Sto</div>
   </div>
   <div class="horse-hero-image">
-    <img src="" onerror="this.style.display='none'" alt="Just Hell Bent">
+    <img src="" style="display:none;" alt="Just Hell Bent">
   </div>
 </div>
 
@@ -521,9 +521,14 @@ async function loadHast() {
     if (link && h.travsport) link.href = h.travsport;
 
     // Update image
-    if (h.bild) {
-      const img = document.querySelector('.horse-hero-image img');
-      if (img) img.src = h.bild;
+    const img = document.querySelector('.horse-hero-image img');
+    if (img) {
+      if (h.bild) {
+        img.src = h.bild;
+        img.style.display = 'block';
+      } else {
+        img.style.display = 'none';
+      }
     }
 
     // Update page title
