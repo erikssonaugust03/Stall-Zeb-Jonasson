@@ -9,6 +9,17 @@
       "typ": "Andel",
       "pris": "10 000",
       "beskrivning": "En spännande tvååring efter Brillantissime som har tagit träningen på ett bra sätt. Känns spännande och han känns spännande. Hör av dig för mer information."
+    },
+    {
+      "antal_andelar": "20",
+      "typ": "Andel",
+      "pris": "7 500",
+      "mor": "Determined",
+      "alder_kon": "2 år & Hingst",
+      "namn": "Just Hell Bent",
+      "far": "Maharajah",
+      "beskrivning": "Spännande tvååring efter Maharajah som känns tidig i utvecklingen och som vi tror ska kunna ta bra kliv denna säsong. Vid mer info så är ni välkomna att höra av er.",
+      "bild": "/images/rusa-tooma-mål-1.jpg"
     }
   ]
 }
