@@ -465,7 +465,7 @@ async function loadHastarTillSalu() {
       const priceLabel = h.typ === 'Hel häst' ? '' : '/ andel';
       return `<div class="listing-card">
         <div class="listing-image">
-          <img src="rusa-tooma.png" alt="${h.namn}">
+          <img src="${h.bild || 'rusa-tooma.png'}" alt="${h.namn}">
           <div class="listing-badge">${badgeText}</div>
         </div>
         <div class="listing-content">
