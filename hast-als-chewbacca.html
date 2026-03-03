@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Al's Chewbacca – Stall Zeb Jonasson</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0c;
+      --navy: #0d1b2e;
+      --navy-mid: #162848;
+      --navy-light: #1e3a5f;
+      --white: #f4f2ee;
+      --white-dim: rgba(244,242,238,0.6);
+      --white-faint: rgba(244,242,238,0.08);
+      --accent: #c8d8e8;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.4rem 4rem;
+      background: rgba(10,10,12,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(244,242,238,0.06);
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .nav-logo img { height: 36px; width: 36px; object-fit: contain; }
+    .nav-logo span { color: var(--accent); }
+    .nav-logo img { height: 36px; width: 36px; object-fit: contain; }
+
+    .nav-links {
+      display: flex;
+      gap: 3rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .nav-dropdown { position: relative; }
+    .nav-drop-arrow { font-size: 0.6rem; margin-left: 0.2rem; }
+    .nav-submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 1rem;
+      list-style: none;
+      min-width: 180px;
+      z-index: 200;
+    }
+    .nav-submenu::before {
+      content: '';
+      position: absolute;
+      top: 1rem; left: 0; right: 0; bottom: 0;
+      background: rgba(10,10,12,0.98);
+      border: 1px solid rgba(244,242,238,0.1);
+      z-index: -1;
+    }
+    .nav-dropdown:hover .nav-submenu { display: block; }
+    .nav-submenu li a {
+      display: block;
+      padding: 0.9rem 1.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(244,242,238,0.05);
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .nav-submenu li:last-child a { border-bottom: none; }
+    .nav-submenu li a:hover { color: var(--accent); background: var(--navy-mid); }
+
+    /* HAMBURGER */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: all 0.3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .nav-mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0; right: 0;
+      background: rgba(10,10,12,0.98);
+      border-bottom: 1px solid rgba(244,242,238,0.08);
+      z-index: 99;
+      flex-direction: column;
+      padding: 0.5rem 0;
+    }
+    .nav-mobile-menu.open { display: flex; }
+    .nav-mobile-menu a {
+      display: block;
+      padding: 1rem 2rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(244,242,238,0.05);
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-mobile-menu a:last-child { border-bottom: none; }
+    .nav-mobile-menu a:hover { color: var(--accent); background: var(--white-faint); }
+    .mobile-expand { border-bottom: 1px solid rgba(244,242,238,0.05); }
+    .mobile-expand-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 1rem 2rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+    .mobile-expand-arrow { transition: transform 0.3s; font-size: 0.7rem; }
+    .mobile-expand-arrow.open { transform: rotate(180deg); }
+    .mobile-sub { display: none; flex-direction: column; background: rgba(244,242,238,0.03); }
+    .mobile-sub.open { display: flex; }
+    .mobile-sub a { padding: 0.9rem 2rem 0.9rem 3.5rem !important; font-size: 0.78rem !important; }
+
+    @media (max-width: 800px) {
+      .nav-links { display: none !important; }
+      .nav-hamburger { display: flex !important; }
+      nav { padding: 1.2rem 1.5rem !important; }
+    }
+
+    /* HERO */
+    .horse-hero {
+      margin-top: 73px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 480px;
+      background: linear-gradient(to right, var(--navy) 0%, var(--black) 100%);
+    }
+    .horse-hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 4rem;
+    }
+    .horse-hero-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+    }
+    .horse-hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.5rem;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: 0.04em;
+    }
+    .horse-hero-name em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .horse-hero-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      margin-top: 1rem;
+    }
+    .horse-hero-image {
+      position: relative;
+      overflow: hidden;
+    }
+    .horse-hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .horse-hero-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--navy) 0%, transparent 30%);
+      z-index: 1;
+    }
+
+    /* BACK LINK */
+    .back-bar {
+      padding: 1.2rem 4rem;
+      border-bottom: 1px solid rgba(244,242,238,0.06);
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--accent); }
+    .back-link svg { width: 14px; height: 14px; }
+
+    /* INFO SECTION */
+    .horse-info {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 5rem 4rem 8rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+    }
+
+    .info-block h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(244,242,238,0.1);
+    }
+    .info-block h2 em { font-style: italic; color: var(--accent); }
+
+    .info-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(244,242,238,0.06);
+    }
+    .info-row:last-child { border-bottom: none; }
+    .info-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      opacity: 0.8;
+    }
+    .info-value {
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      color: var(--white);
+    }
+
+    /* TRAVSPORT LINK */
+    .travsport-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-top: 2.5rem;
+      padding: 1rem 2rem;
+      border: 1px solid rgba(244,242,238,0.2);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .travsport-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(200,216,232,0.05);
+    }
+    .travsport-link svg { width: 14px; height: 14px; }
+
+    /* FOOTER */
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 4rem;
+      border-top: 1px solid rgba(244,242,238,0.06);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(244,242,238,0.25);
+    }
+
+    @media (max-width: 800px) {
+      .horse-hero { grid-template-columns: 1fr; }
+      .horse-hero-text { padding: 3rem 1.5rem 2rem; }
+      .horse-hero-image { height: 280px; }
+      .horse-hero-name { font-size: 2.8rem; }
+      .back-bar { padding: 1rem 1.5rem; }
+      .horse-info { grid-template-columns: 1fr; gap: 3rem; padding: 3rem 1.5rem 5rem; }
+      footer { flex-direction: column; gap: 0.5rem; padding: 1.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Logo">Stall <span>Zeb</span> Jonasson</a>
+  <ul class="nav-links">
+    <li><a href="personal.html">Personal</a></li>
+    <li><a href="index.html#var-gard">Vår Gård</a></li>
+    <li class="nav-dropdown">
+      <a href="hastar.html" class="active">Hästar <span class="nav-drop-arrow">▾</span></a>
+      <ul class="nav-submenu">
+        <li><a href="hastar.html">Våra Hästar</a></li>
+        <li><a href="startkommentarer.html">Startkommentarer</a></li>
+        <li><a href="hastar-till-salu.html">Hästar till salu</a></li>
+      </ul>
+    </li>
+    <li><a href="om-tranaren.html">Om Tränaren</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meny">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="personal.html">Personal</a>
+  <a href="index.html#var-gard">Vår Gård</a>
+  <div class="mobile-expand">
+    <span class="mobile-expand-main" onclick="toggleMobileExpand()">
+      Hästar
+      <span class="mobile-expand-arrow" id="hastarArrow">▾</span>
+    </span>
+  </div>
+  <div class="mobile-sub" id="hastarSub">
+    <a href="hastar.html">Våra Hästar</a>
+    <a href="startkommentarer.html">Startkommentarer</a>
+    <a href="hastar-till-salu.html">Hästar till salu</a>
+  </div>
+  <a href="om-tranaren.html">Om Tränaren</a>
+  <a href="kontakt.html">Kontakt</a>
+</div>
+
+<!-- HERO -->
+<div class="horse-hero">
+  <div class="horse-hero-text">
+    <div class="horse-hero-eyebrow">Stall Zeb Jonasson</div>
+    <h1 class="horse-hero-name">Al's <em>Chewbacca</em></h1>
+    <div class="horse-hero-sub">2 år · Hingst</div>
+  </div>
+  <div class="horse-hero-image">
+    <img src="rusa-tooma.png" alt="Al's Chewbacca">
+  </div>
+</div>
+
+<!-- BACK -->
+<div class="back-bar">
+  <a href="hastar.html" class="back-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    Tillbaka till alla hästar
+  </a>
+</div>
+
+<!-- INFO -->
+<div class="horse-info">
+
+  <div class="info-block">
+    <h2>Om <em>hästen</em></h2>
+
+    <div class="info-row">
+      <span class="info-label">Namn</span>
+      <span class="info-value">Al's Chewbacca</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Ålder & kön</span>
+      <span class="info-value">2 år · Hingst</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Far</span>
+      <span class="info-value">Brillantissime</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Mor</span>
+      <span class="info-value">Up In The Trees</span>
+    </div>
+
+    <a href="https://sportapp.travsport.se/sportinfo/horse/ts804075/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all" target="_blank" class="travsport-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+      Se på Svensk Travsport
+    </a>
+  </div>
+
+  <div class="info-block">
+    <h2>Stall & <em>ägare</em></h2>
+
+    <div class="info-row">
+      <span class="info-label">Ägare</span>
+      <span class="info-value">Jonasson Zeb & A Svanholm Fast. AB</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Uppfödare</span>
+      <span class="info-value" style="color:var(--white-dim);font-style:italic;">–</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Skötare</span>
+      <span class="info-value" style="color:var(--white-dim);font-style:italic;">–</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Tränare</span>
+      <span class="info-value">Zeb Jonasson</span>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div>Stall Zeb Jonasson</div>
+  <div>© 2025</div>
+</footer>
+
+<script>
+function toggleMenu() {
+  var btn = document.getElementById('hamburger');
+  var menu = document.getElementById('mobileMenu');
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+}
+function toggleMobileExpand() {
+  document.getElementById('hastarSub').classList.toggle('open');
+  document.getElementById('hastarArrow').classList.toggle('open');
+}
+document.querySelectorAll('#mobileMenu a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('mobileMenu').classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
