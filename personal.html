@@ -391,6 +391,34 @@
     letter-spacing: 0.18em !important;
   }
 
+
+  .footer-social {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  .footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(244,242,238,0.15);
+    border-radius: 50%;
+    color: var(--white-dim);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+  }
+  .footer-social a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(200,216,232,0.08);
+  }
+  .footer-social svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
 </style>
 </head>
 <body>
