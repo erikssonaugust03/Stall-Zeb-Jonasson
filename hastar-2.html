@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hästar – Stall Zeb Jonasson</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0c;
+    --navy: #0d1b2e;
+    --navy-mid: #162848;
+    --navy-light: #1e3a5f;
+    --white: #f4f2ee;
+    --white-dim: rgba(244,242,238,0.6);
+    --white-faint: rgba(244,242,238,0.08);
+    --accent: #c8d8e8;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.6rem 4rem;
+    background: rgba(10,10,12,0.96);
+    border-bottom: 1px solid rgba(244,242,238,0.06);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: var(--white);
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .nav-logo img { height: 36px; width: 36px; object-fit: contain; }
+
+  .nav-logo span { color: var(--accent); }
+
+  .nav-back {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-back:hover { color: var(--accent); }
+
+  .nav-back svg { width: 16px; height: 16px; }
+
+  /* PAGE HEADER */
+  .page-header {
+    padding: 14rem 4rem 6rem;
+    background: linear-gradient(to bottom, var(--navy) 0%, var(--black) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent calc(100%/12 - 1px),
+      rgba(244,242,238,0.02) calc(100%/12 - 1px),
+      rgba(244,242,238,0.02) calc(100%/12)
+    );
+  }
+
+  .page-header-inner {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .page-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+  }
+
+  .page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-weight: 300;
+    line-height: 0.95;
+    color: var(--white);
+  }
+
+  .page-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .horse-count {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8rem;
+    font-weight: 300;
+    color: rgba(200,216,232,0.08);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  /* FILTER BAR */
+  .filter-bar {
+    background: var(--navy);
+    border-top: 1px solid rgba(244,242,238,0.06);
+    border-bottom: 1px solid rgba(244,242,238,0.06);
+    padding: 1.2rem 4rem;
+  }
+
+  .filter-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .filter-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+  }
+
+  .filter-btn {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem 1rem;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+  }
+
+  .filter-btn:hover, .filter-btn.active {
+    color: var(--white);
+    border-color: rgba(244,242,238,0.2);
+  }
+
+  .filter-btn.active {
+    background: var(--white-faint);
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* HORSES GRID */
+  .horses-section {
+    padding: 5rem 4rem 8rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .horses-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: rgba(244,242,238,0.05);
+  }
+
+  /* HORSE ITEM */
+  .horse-item {
+    background: var(--black);
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    min-height: 100px;
+  }
+
+  .horse-item:hover {
+    background: var(--navy);
+  }
+
+  .horse-item:hover .horse-item-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .horse-item-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+
+  .horse-item-index {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(200,216,232,0.3);
+    flex-shrink: 0;
+    min-width: 2rem;
+  }
+
+  .horse-item-badge {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid rgba(244,242,238,0.15);
+    color: var(--white-dim);
+  }
+
+  .horse-item-badge.active {
+    border-color: rgba(200,216,232,0.4);
+    color: var(--accent);
+  }
+
+  .horse-item-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--white);
+    letter-spacing: 0.01em;
+    min-width: 220px;
+    flex-shrink: 0;
+  }
+
+  .horse-item-meta {
+    display: grid;
+    grid-template-columns: 80px 100px 1fr 1fr;
+    gap: 0 2rem;
+    flex: 1;
+    align-items: center;
+  }
+
+  .horse-item-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .horse-item-row-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+  }
+
+  .horse-item-row-value {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--white);
+    letter-spacing: 0.05em;
+  }
+
+  .horse-item-pedigree {
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    font-style: italic;
+    margin-top: 0.2rem;
+  }
+
+  .horse-item-arrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: all 0.3s;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .horse-item-stats {
+    display: flex;
+    gap: 1.5rem;
+    padding-top: 0.8rem;
+  }
+
+  .mini-stat { }
+
+  .mini-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .mini-stat-lbl {
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+    margin-top: 0.2rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    padding: 3rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(244,242,238,0.06);
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+  }
+
+  .footer-copy {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: rgba(244,242,238,0.3);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .horse-item {
+    opacity: 0;
+    animation: fadeUp 0.5s forwards;
+  }
+
+  .horse-item:nth-child(1)  { animation-delay: 0.05s; }
+  .horse-item:nth-child(2)  { animation-delay: 0.10s; }
+  .horse-item:nth-child(3)  { animation-delay: 0.15s; }
+  .horse-item:nth-child(4)  { animation-delay: 0.20s; }
+  .horse-item:nth-child(5)  { animation-delay: 0.25s; }
+  .horse-item:nth-child(6)  { animation-delay: 0.30s; }
+  .horse-item:nth-child(7)  { animation-delay: 0.35s; }
+  .horse-item:nth-child(8)  { animation-delay: 0.40s; }
+  .horse-item:nth-child(9)  { animation-delay: 0.45s; }
+  .horse-item:nth-child(10) { animation-delay: 0.50s; }
+  .horse-item:nth-child(11) { animation-delay: 0.55s; }
+  .horse-item:nth-child(12) { animation-delay: 0.60s; }
+  .horse-item:nth-child(13) { animation-delay: 0.65s; }
+  .horse-item:nth-child(14) { animation-delay: 0.70s; }
+  .horse-item:nth-child(15) { animation-delay: 0.75s; }
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    nav { padding: 1.4rem 2rem; }
+    .page-header { padding: 12rem 2rem 4rem; }
+    .filter-bar { padding: 1rem 2rem; }
+    .horses-section { padding: 3rem 2rem 6rem; }
+    .horses-grid { flex-direction: column; }
+    .horse-count { display: none; }
+    footer { padding: 2rem; flex-direction: column; gap: 1rem; text-align: center; }
+  }
+
+  @media (max-width: 580px) {
+    .horse-item { flex-wrap: wrap; gap: 1rem; }
+    .filter-inner { flex-wrap: wrap; gap: 0.5rem; }
+    .horse-item-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 1rem 1.5rem;
+      width: 100%;
+    }
+  }
+
+  /* HAMBURGER */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    transition: all 0.3s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .nav-mobile-menu {
+    display: none;
+    position: fixed;
+    top: 73px;
+    left: 0; right: 0;
+    background: rgba(10,10,12,0.98);
+    border-bottom: 1px solid rgba(244,242,238,0.08);
+    z-index: 99;
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+  .nav-mobile-menu.open { display: flex; }
+  .nav-mobile-menu a {
+    padding: 1rem 2rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(244,242,238,0.05);
+    transition: color 0.2s, background 0.2s;
+  }
+  .nav-mobile-menu a:last-child { border-bottom: none; }
+  .nav-mobile-menu a:hover, .nav-mobile-menu a.active { color: var(--accent); background: var(--white-faint); }
+
+  @media (max-width: 800px) {
+    .nav-links { display: none !important; }
+    .nav-hamburger { display: flex !important; }
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-logo { font-size: 1rem; }
+    .nav-logo img { height: 28px; width: 28px; }
+  }
+
+
+  .nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--white); }
+  .nav-dropdown { position: relative; }
+  .nav-drop-arrow { font-size: 0.6rem; margin-left: 0.2rem; display: inline-block; }
+  .nav-submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 1rem;
+    list-style: none;
+    min-width: 180px;
+    z-index: 200;
+  }
+  .nav-submenu::before {
+    content: '';
+    position: absolute;
+    top: 1rem; left: 0; right: 0; bottom: 0;
+    background: rgba(10,10,12,0.98);
+    border: 1px solid rgba(244,242,238,0.1);
+    z-index: -1;
+  }
+  .nav-dropdown:hover .nav-submenu { display: block; }
+  .nav-submenu li a {
+    display: block;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(244,242,238,0.05);
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .nav-submenu li:last-child a { border-bottom: none; }
+  .nav-submenu li a:hover { color: var(--accent); background: var(--navy-mid); }
+
+
+  .mobile-expand { border-bottom: 1px solid rgba(244,242,238,0.05); }
+  .mobile-expand-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(244,242,238,0.6);
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  .mobile-expand-main:hover { color: #c8d8e8; }
+  .mobile-expand-arrow {
+    transition: transform 0.3s;
+    font-size: 0.7rem;
+  }
+  .mobile-expand-arrow.open { transform: rotate(180deg); }
+  .mobile-sub {
+    display: none;
+    flex-direction: column;
+    background: rgba(244,242,238,0.03);
+  }
+  .mobile-sub.open { display: flex; }
+  .mobile-sub a {
+    padding: 0.9rem 2rem 0.9rem 3.5rem !important;
+    font-size: 0.78rem !important;
+    letter-spacing: 0.18em !important;
+  }
+
+
+  .footer-social {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  .footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(244,242,238,0.15);
+    border-radius: 50%;
+    color: var(--white-dim);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+  }
+  .footer-social a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(200,216,232,0.08);
+  }
+  .footer-social svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Logo">Stall <span>Zeb</span> Jonasson</a>
+  <ul class="nav-links">
+    <li><a href="personal.html">Personal</a></li>
+    <li><a href="index.html#var-gard">Vår Gård</a></li>
+    <li class="nav-dropdown">
+      <a href="hastar.html" class="active">Hästar <span class="nav-drop-arrow">▾</span></a>
+      <ul class="nav-submenu">
+        <li><a href="hastar.html">Våra Hästar</a></li>
+        <li><a href="startkommentarer.html">Startkommentarer</a></li>
+        <li><a href="hastar-till-salu.html">Hästar till salu</a></li>
+      </ul>
+    </li>
+    <li><a href="om-tranaren.html">Om Tränaren</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meny">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="personal.html">Personal</a>
+  <a href="index.html#var-gard">Vår Gård</a>
+  <div class="mobile-expand">
+    <span class="mobile-expand-main" onclick="toggleMobileExpand()">
+      Hästar
+      <span class="mobile-expand-arrow" id="hastarArrow">▾</span>
+    </span>
+  </div>
+  <div class="mobile-sub" id="hastarSub">
+    <a href="hastar.html">Våra Hästar</a>
+    <a href="startkommentarer.html">Startkommentarer</a>
+    <a href="hastar-till-salu.html">Hästar till salu</a>
+  </div>
+  <a href="om-tranaren.html">Om Tränaren</a>
+  <a href="kontakt.html">Kontakt</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div>
+      <div class="page-eyebrow">Stall Zeb Jonasson</div>
+      <h1 class="page-title">Våra<br><em>Hästar</em></h1>
+    <a href="startkommentarer.html" style="display:inline-block;margin-top:1.5rem;font-size:0.75rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;opacity:0.8;transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.8">Startkommentarer →</a>
+    </div>
+    <div class="horse-count">15</div>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <span class="filter-label">Visa:</span>
+    <button class="filter-btn active" onclick="filterHorses('alla')">Alla</button>
+    <button class="filter-btn" onclick="filterHorses('sto')">Ston</button>
+    <button class="filter-btn" onclick="filterHorses('hingst')">Hingstar</button>
+    <button class="filter-btn" onclick="filterHorses('valack')">Valacker</button>
+  </div>
+</div>
+
+<!-- HORSES GRID -->
+<div class="horses-section">
+  <div class="horses-grid" id="horsesGrid">
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Stall Zeb Jonasson</div>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/profile.php?id=61587063060922&locale=sv_SE" target="_blank" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.885v2.27h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/stallzebjonasson/" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+  </div>
+  <div class="footer-copy">© 2026 Stall Zeb Jonasson. Alla rättigheter förbehållna. · <a href="integritetspolicy.html" style="color:var(--white-dim);text-decoration:none;">Integritetspolicy</a></div>
+</footer>
+
+<script>
+const HASTAR_JSON = 'https://raw.githubusercontent.com/erikssonaugust03/Stall-Zeb-Jonasson/main/data/hastar.json';
+let allHastar = [];
+let activeFilter = 'alla';
+
+async function loadHastar() {
+  const grid = document.getElementById('horsesGrid');
+  try {
+    const res = await fetch(HASTAR_JSON + '?t=' + Date.now());
+    if (!res.ok) throw new Error('404');
+    const data = await res.json();
+    allHastar = data.hastar || [];
+    renderHastar();
+  } catch(e) {
+    grid.innerHTML = '<p style="color:var(--white-dim);padding:2rem 0;">Kunde inte ladda hästar.</p>';
+  }
+}
+
+function renderHastar() {
+  const grid = document.getElementById('horsesGrid');
+  const filtered = activeFilter === 'alla' ? allHastar : allHastar.filter(h => h.kon.toLowerCase() === activeFilter);
+  grid.innerHTML = filtered.map((h, i) => {
+    const num = String(i + 1).padStart(2, '0');
+    return `<a class="horse-item" data-kon="${h.kon.toLowerCase()}" href="hast-${h.slug}.html">
+      <div class="horse-item-top"><span class="horse-item-index">${num}</span></div>
+      <div class="horse-item-name">${h.namn}</div>
+      <div class="horse-item-meta">
+        <div class="horse-item-row"><span class="horse-item-row-label">Ålder</span><span class="horse-item-row-value">${h.alder}</span></div>
+        <div class="horse-item-row"><span class="horse-item-row-label">Kön</span><span class="horse-item-row-value">${h.kon}</span></div>
+        <div class="horse-item-row"><span class="horse-item-row-label">Far</span><span class="horse-item-row-value horse-item-pedigree">${h.far}</span></div>
+        <div class="horse-item-row"><span class="horse-item-row-label">Mor</span><span class="horse-item-row-value horse-item-pedigree">${h.mor}</span></div>
+      </div>
+      <span class="horse-item-arrow">Sportinfo →</span>
+    </a>`;
+  }).join('');
+}
+
+function filterHorses(kon) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  activeFilter = kon;
+  renderHastar();
+}
+
+loadHastar();
+</script>
+
+
+
+
+<script>
+function toggleMenu() {
+  var btn = document.getElementById('hamburger');
+  var menu = document.getElementById('mobileMenu');
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+}
+function toggleMobileExpand() {
+  document.getElementById('hastarSub').classList.toggle('open');
+  document.getElementById('hastarArrow').classList.toggle('open');
+}
+document.querySelectorAll('#mobileMenu a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('mobileMenu').classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
