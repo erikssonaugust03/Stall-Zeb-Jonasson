@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integritetspolicy – Stall Zeb Jonasson</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .policy-section {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 8rem 2rem 6rem;
+    color: var(--white);
+  }
+  .policy-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+  .policy-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 3rem;
+    color: var(--white);
+  }
+  .policy-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .policy-updated {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(244,242,238,0.08);
+  }
+  .policy-block {
+    margin-bottom: 3rem;
+  }
+  .policy-block h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .policy-block p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--white-dim);
+  }
+  .policy-block a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Logo">Stall <span>Zeb</span> Jonasson</a>
+  <ul class="nav-links">
+    <li><a href="personal.html">Personal</a></li>
+    <li><a href="index.html#var-gard">Vår Gård</a></li>
+    <li class="nav-dropdown">
+      <a href="hastar.html">Hästar <span class="nav-drop-arrow">▾</span></a>
+      <ul class="nav-submenu">
+        <li><a href="hastar.html">Våra Hästar</a></li>
+        <li><a href="startkommentarer.html">Startkommentarer</a></li>
+        <li><a href="hastar-till-salu.html">Hästar till salu</a></li>
+      </ul>
+    </li>
+    <li><a href="om-tranaren.html">Om Tränaren</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meny">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div id="mobileMenu" class="nav-mobile-menu">
+  <li class="nav-dropdown">
+  </li>
+  <a href="personal.html">Personal</a>
+  <a href="index.html#var-gard">Vår Gård</a>
+  <div class="mobile-expand">
+    <span class="mobile-expand-main" onclick="toggleMobileExpand()">
+      Hästar <span class="mobile-expand-arrow" id="hastarArrow">▾</span>
+    </span>
+    <div class="mobile-sub" id="hastarSub">
+      <a href="hastar.html">Våra Hästar</a>
+      <a href="startkommentarer.html">Startkommentarer</a>
+      <a href="hastar-till-salu.html">Hästar till salu</a>
+    </div>
+  </div>
+  <a href="om-tranaren.html">Om Tränaren</a>
+  <a href="kontakt.html">Kontakt</a>
+</div>
+
+<div class="policy-section">
+  <div class="policy-eyebrow">Stall Zeb Jonasson · Juridiskt</div>
+  <h1 class="policy-title">Integritets-<br><em>policy</em></h1>
+  <div class="policy-updated">Senast uppdaterad: mars 2026</div>
+
+  <div class="policy-block">
+    <h2>Personuppgiftsansvarig</h2>
+    <p>Stall Zeb Jonasson är ansvarig för behandlingen av dina personuppgifter. Kontakta oss på <a href="mailto:zeb@stallzeb.se">zeb@stallzeb.se</a> eller 072 520 81 23 vid frågor om hur vi hanterar dina uppgifter.</p>
+  </div>
+
+  <div class="policy-block">
+    <h2>Vilka uppgifter samlar vi in?</h2>
+    <p>Vi samlar endast in de uppgifter du frivilligt lämnar via vårt kontaktformulär — vanligtvis namn, e-postadress och ditt meddelande. Vi samlar inte in några uppgifter automatiskt och använder inga spårningscookies.</p>
+  </div>
+
+  <div class="policy-block">
+    <h2>Varför samlar vi in uppgifterna?</h2>
+    <p>Dina uppgifter används uteslutande för att besvara din förfrågan. Vi använder dem inte för marknadsföring eller delar dem med tredje part, förutom Formspree som hanterar formuläröverföringen (se deras integritetspolicy på formspree.io).</p>
+  </div>
+
+  <div class="policy-block">
+    <h2>Hur länge sparas uppgifterna?</h2>
+    <p>Dina uppgifter sparas så länge det är nödvändigt för att hantera din förfrågan, normalt sett inte längre än 12 månader.</p>
+  </div>
+
+  <div class="policy-block">
+    <h2>Dina rättigheter</h2>
+    <p>Enligt GDPR har du rätt att begära tillgång till, rättelse av eller radering av dina personuppgifter. Du har också rätt att invända mot behandlingen. Kontakta oss på <a href="mailto:zeb@stallzeb.se">zeb@stallzeb.se</a> för att utöva dina rättigheter.</p>
+  </div>
+
+  <div class="policy-block">
+    <h2>Cookies</h2>
+    <p>Denna webbplats använder inga spårningscookies eller analysverktyg. Inga personuppgifter samlas in automatiskt vid besök på sidan.</p>
+  </div>
+
+  <div class="policy-block">
+    <h2>Tredjepartstjänster</h2>
+    <p>Hemsidan använder Formspree för kontaktformuläret och Netlify för hosting. Båda tjänsterna följer GDPR. Mer information finns på respektive tjänsts webbplats.</p>
+  </div>
+
+  <div class="policy-block">
+    <h2>Kontakt</h2>
+    <p>Vid frågor om vår hantering av personuppgifter, kontakta oss på <a href="mailto:zeb@stallzeb.se">zeb@stallzeb.se</a> eller ring 072 520 81 23.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Stall Zeb Jonasson</div>
+  <div class="footer-copy">© 2026 Stall Zeb Jonasson. Alla rättigheter förbehållna. · <a href="integritetspolicy.html" style="color:var(--white-dim);text-decoration:none;">Integritetspolicy</a></div>
+</footer>
+
+<script>
+function toggleMenu() {
+  var btn = document.getElementById('hamburger');
+  var menu = document.getElementById('mobileMenu');
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+}
+function toggleMobileExpand() {
+  document.getElementById('hastarSub').classList.toggle('open');
+  document.getElementById('hastarArrow').classList.toggle('open');
+}
+document.querySelectorAll('#mobileMenu a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('mobileMenu').classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
