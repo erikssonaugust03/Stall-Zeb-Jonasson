@@ -252,7 +252,7 @@ async function loadNyheterPreview() {
   try {
     const res = await fetch(NYHETER_JSON_IDX + '?t=' + Date.now());
     const data = await res.json();
-    const nyheter = (data.nyheter || []).sort((a,b) => new Date(b.datum) - new Date(a.datum)).slice(0, 3);
+    const nyheter = (data.nyheter || []).sort((a,b) => { const da = new Date(a.datum + 'T' + (a.tid || '00:00')); const db = new Date(b.datum + 'T' + (b.tid || '00:00')); return db - da; }).slice(0, 3);
     if (nyheter.length === 0) { preview.innerHTML = '<p style="color:var(--white-dim);padding:2rem;font-size:0.85rem;">Inga nyheter ännu.</p>'; return; }
     preview.innerHTML = nyheter.map(n => {
       const datum = new Date(n.datum).toLocaleDateString('sv-SE', { day: 'numeric', month: 'long', year: 'numeric' });
