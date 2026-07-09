@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hästar till salu – Stall Zeb Jonasson</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0c;
+      --navy: #0d1b2e;
+      --navy-mid: #162848;
+      --navy-light: #1e3a5f;
+      --white: #f4f2ee;
+      --white-dim: rgba(244,242,238,0.6);
+      --white-faint: rgba(244,242,238,0.08);
+      --accent: #c8d8e8;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.4rem 4rem;
+      background: rgba(10,10,12,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(244,242,238,0.06);
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .nav-logo img { height: 36px; width: 36px; object-fit: contain; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 3rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .nav-dropdown { position: relative; }
+    .nav-drop-arrow { font-size: 0.6rem; margin-left: 0.2rem; }
+    .nav-submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 1rem;
+      list-style: none;
+      min-width: 200px;
+      z-index: 200;
+    }
+    .nav-submenu::before {
+      content: '';
+      position: absolute;
+      top: 1rem; left: 0; right: 0; bottom: 0;
+      background: rgba(10,10,12,0.98);
+      border: 1px solid rgba(244,242,238,0.1);
+      z-index: -1;
+    }
+    .nav-dropdown:hover .nav-submenu { display: block; }
+    .nav-submenu li a {
+      display: block;
+      padding: 0.9rem 1.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(244,242,238,0.05);
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .nav-submenu li:last-child a { border-bottom: none; }
+    .nav-submenu li a:hover { color: var(--accent); background: var(--navy-mid); }
+
+    /* HAMBURGER */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: all 0.3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px; left: 0; right: 0;
+      background: rgba(10,10,12,0.98);
+      border-bottom: 1px solid rgba(244,242,238,0.08);
+      z-index: 99;
+      flex-direction: column;
+      padding: 0.5rem 0;
+    }
+    .nav-mobile-menu.open { display: flex; }
+    .nav-mobile-menu a {
+      display: block;
+      padding: 1rem 2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(244,242,238,0.05);
+      transition: color 0.2s;
+    }
+    .nav-mobile-menu a:last-child { border-bottom: none; }
+    .nav-mobile-menu a:hover { color: var(--accent); }
+    .mobile-expand { border-bottom: 1px solid rgba(244,242,238,0.05); }
+    .mobile-expand-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      cursor: pointer;
+    }
+    .mobile-expand-arrow { transition: transform 0.3s; font-size: 0.7rem; }
+    .mobile-expand-arrow.open { transform: rotate(180deg); }
+    .mobile-sub { display: none; flex-direction: column; background: rgba(244,242,238,0.03); }
+    .mobile-sub.open { display: flex; }
+    .mobile-sub a { padding: 0.9rem 2rem 0.9rem 3.5rem !important; font-size: 0.78rem !important; }
+
+    @media (max-width: 800px) {
+      .nav-links { display: none !important; }
+      .nav-hamburger { display: flex !important; }
+      nav { padding: 1.2rem 1.5rem !important; }
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 12rem 4rem 5rem;
+      background: linear-gradient(to bottom, var(--navy) 0%, var(--black) 100%);
+      position: relative;
+    }
+    .page-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg, transparent, transparent calc(100%/12 - 1px),
+        rgba(244,242,238,0.02) calc(100%/12 - 1px),
+        rgba(244,242,238,0.02) calc(100%/12)
+      );
+    }
+    .page-header-inner {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .page-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.5rem;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: 0.03em;
+    }
+    .page-title em { font-style: italic; color: var(--accent); }
+
+    /* LISTINGS */
+    .listings-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 4rem 8rem;
+    }
+
+    .listing-card {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      border: 1px solid rgba(244,242,238,0.08);
+      margin-bottom: 3rem;
+      transition: border-color 0.3s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .listing-card:hover { border-color: rgba(244,242,238,0.2); }
+
+    .listing-image {
+      position: relative;
+      overflow: hidden;
+      min-height: 320px;
+      align-self: stretch;
+    }
+    .listing-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.6s;
+    }
+    .listing-card:hover .listing-image img { transform: scale(1.03); }
+    .listing-badge {
+      position: absolute;
+      top: 1.2rem;
+      left: 1.2rem;
+      padding: 0.4rem 0.9rem;
+      background: var(--accent);
+      color: var(--navy);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .listing-content {
+      padding: 2.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: rgba(13,27,46,0.4);
+    }
+
+    .listing-top {}
+    .listing-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 300;
+      letter-spacing: 0.03em;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .listing-name em { font-style: italic; color: var(--accent); }
+    .listing-subtitle {
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      margin-bottom: 1.8rem;
+    }
+
+    .listing-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 2rem;
+      margin-bottom: 1.8rem;
+    }
+    .listing-meta-item {}
+    .listing-meta-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      opacity: 0.7;
+      margin-bottom: 0.2rem;
+    }
+    .listing-meta-value {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--white);
+    }
+
+    .listing-desc {
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--white-dim);
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+
+    .listing-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(244,242,238,0.08);
+    }
+    .listing-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--white);
+    }
+    .listing-price span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-left: 0.5rem;
+    }
+    .listing-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.8rem 1.8rem;
+      border: 1px solid rgba(244,242,238,0.2);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .listing-cta:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* FOOTER */
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 4rem;
+      border-top: 1px solid rgba(244,242,238,0.06);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(244,242,238,0.25);
+    }
+
+    @media (max-width: 900px) {
+      .listing-card { grid-template-columns: 1fr; }
+      .listing-image { height: 260px; }
+      .listing-content { padding: 2rem; }
+      .page-title { font-size: 3rem; }
+      .page-header { padding: 10rem 1.5rem 3rem; }
+      .listings-section { padding: 3rem 1.5rem 5rem; }
+      footer { flex-direction: column; gap: 0.5rem; padding: 1.5rem; text-align: center; }
+      .listing-bottom { flex-direction: column; gap: 1rem; align-items: flex-start; }
+      .listing-cta { padding: 0.6rem 1.2rem; font-size: 0.72rem; align-self: flex-start; }
+      .listing-price { font-size: 1.5rem; }
+    }
+  
+  .footer-social {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  .footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(244,242,238,0.15);
+    border-radius: 50%;
+    color: var(--white-dim);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+  }
+  .footer-social a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(200,216,232,0.08);
+  }
+  .footer-social svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Logo">Stall <span>Zeb</span> Jonasson</a>
+  <ul class="nav-links">
+    <li><a href="personal.html">Personal</a></li>
+    <li><a href="index.html#var-gard">Vår Gård</a></li>
+    <li class="nav-dropdown">
+      <a href="hastar.html" class="active">Hästar <span class="nav-drop-arrow">▾</span></a>
+      <ul class="nav-submenu">
+        <li><a href="hastar.html">Våra Hästar</a></li>
+        <li><a href="startkommentarer.html">Startkommentarer</a></li>
+        <li><a href="hastar-till-salu.html" class="active">Hästar till salu</a></li>
+      </ul>
+    </li>
+    <li><a href="om-tranaren.html">Om Tränaren</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meny">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="personal.html">Personal</a>
+  <a href="index.html#var-gard">Vår Gård</a>
+  <div class="mobile-expand">
+    <span class="mobile-expand-main" onclick="toggleMobileExpand()">
+      Hästar
+      <span class="mobile-expand-arrow" id="hastarArrow">▾</span>
+    </span>
+  </div>
+  <div class="mobile-sub" id="hastarSub">
+    <a href="hastar.html">Våra Hästar</a>
+    <a href="startkommentarer.html">Startkommentarer</a>
+    <a href="hastar-till-salu.html" class="active">Hästar till salu</a>
+  </div>
+  <a href="om-tranaren.html">Om Tränaren</a>
+  <a href="kontakt.html">Kontakt</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div>
+      <div class="page-eyebrow">Stall Zeb Jonasson</div>
+      <h1 class="page-title">Hästar till<br><em>Salu</em></h1>
+    </div>
+  </div>
+</div>
+
+<!-- LISTINGS -->
+<div class="listings-section" id="listingsContainer">
+  <p id="loadingMsg" style="padding:3rem 0;color:var(--white-dim);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;">Laddar...</p>
+</div>
+
+<footer>
+  <div class="footer-logo">Stall Zeb Jonasson</div>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/profile.php?id=61587063060922&locale=sv_SE" target="_blank" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.885v2.27h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/stallzebjonasson/" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+  </div>
+  <div class="footer-copy">© 2026 Stall Zeb Jonasson. Alla rättigheter förbehållna. · <a href="integritetspolicy.html" style="color:var(--white-dim);text-decoration:none;">Integritetspolicy</a></div>
+</footer>
+
+<script>
+const JSON_URL_SALU = 'https://raw.githubusercontent.com/erikssonaugust03/Stall-Zeb-Jonasson/main/data/hastar-till-salu.json';
+
+async function loadHastarTillSalu() {
+  const container = document.getElementById('listingsContainer');
+  try {
+    const res = await fetch(JSON_URL_SALU + '?t=' + Date.now());
+    if (!res.ok) throw new Error('404');
+    const data = await res.json();
+    const hastar = data.hastar || [];
+
+    if (hastar.length === 0) {
+      container.innerHTML = '<p style="padding:3rem 0;color:var(--white-dim);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;">Inga hästar till salu just nu.</p>';
+      return;
+    }
+
+    container.innerHTML = hastar.map(h => {
+      const nameParts = h.namn.split(' ');
+      const lastName = nameParts.pop();
+      const firstName = nameParts.join(' ');
+      const badgeText = h.typ === 'Hel häst' ? 'Hel häst till salu' : 'Andel till salu';
+      const priceLabel = h.typ === 'Hel häst' ? '' : '/ andel';
+      return `<div class="listing-card">
+        <div class="listing-image">
+          <img src="${h.bild || 'rusa-tooma.png'}" alt="${h.namn}">
+          <div class="listing-badge">${badgeText}</div>
+        </div>
+        <div class="listing-content">
+          <div class="listing-top">
+            <div class="listing-name">${firstName} <em>${lastName}</em></div>
+            <div class="listing-subtitle">${h.alder_kon}</div>
+            <div class="listing-meta">
+              <div class="listing-meta-item">
+                <div class="listing-meta-label">Far</div>
+                <div class="listing-meta-value">${h.far}</div>
+              </div>
+              <div class="listing-meta-item">
+                <div class="listing-meta-label">Mor</div>
+                <div class="listing-meta-value">${h.mor}</div>
+              </div>
+              <div class="listing-meta-item">
+                <div class="listing-meta-label">Antal andelar</div>
+                <div class="listing-meta-value">${h.antal_andelar}</div>
+              </div>
+              <div class="listing-meta-item">
+                <div class="listing-meta-label">Typ</div>
+                <div class="listing-meta-value">${h.typ}</div>
+              </div>
+            </div>
+            <p class="listing-desc">"${h.beskrivning}"</p>
+          </div>
+          <div class="listing-bottom">
+            <div class="listing-price">${h.pris} kr <span>${priceLabel}</span></div>
+            <a href="kontakt.html" class="listing-cta">Kontakta oss →</a>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+
+  } catch(err) {
+    container.innerHTML = '<p style="padding:3rem 0;color:var(--white-dim);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;">Inga hästar till salu just nu.</p>';
+  }
+}
+
+loadHastarTillSalu();
+</script>
+
+<script>
+function toggleMenu() {
+  var btn = document.getElementById('hamburger');
+  var menu = document.getElementById('mobileMenu');
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+}
+function toggleMobileExpand() {
+  document.getElementById('hastarSub').classList.toggle('open');
+  document.getElementById('hastarArrow').classList.toggle('open');
+}
+document.querySelectorAll('#mobileMenu a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('mobileMenu').classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
