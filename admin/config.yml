@@ -80,3 +80,20 @@ collections:
                 widget: "list"
                 required: false
                 field: { label: "Bild", name: "bild", widget: "image" }
+
+  - name: "nyheter"
+    label: "Nyheter"
+    files:
+      - name: "nyheter"
+        label: "Nyheter"
+        file: "data/nyheter.json"
+        fields:
+          - label: "Nyheter"
+            name: "nyheter"
+            widget: "list"
+            fields:
+              - { label: "Datum", name: "datum", widget: "date", format: "YYYY-MM-DD" }
+              - { label: "Titel", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+              - { label: "Bild", name: "bild", widget: "image", required: false }
+              - { label: "YouTube-länk", name: "youtube", widget: "string", required: false, hint: "Klistra in YouTube-länken här, t.ex. https://www.youtube.com/watch?v=..." }
