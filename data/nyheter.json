@@ -1,25 +1,3 @@
 {
-  "nyheter": [
-    {
-      "datum": "2026-07-09",
-      "titel": "Välkommen till Stall Zeb Jonasson",
-      "text": "Vi är glada att kunna presentera vår nya hemsida! Här kommer vi löpande uppdatera med nyheter från stallet.",
-      "bild": "",
-      "youtube": "",
-      "tid": "09:00"
-    },
-    {
-      "datum": "2026-07-09",
-      "titel": "Snabbjobb på Valla",
-      "text": "Idag har vi varit in och luftat våra fina tvååringar på Solvalla.",
-      "youtube": "https://youtu.be/qWXvh2VeoaM?si=cKrinmaTwUqNwZ0R",
-      "tid": "15:30"
-    },
-    {
-      "datum": "2026-07-09",
-      "tid": "17:30",
-      "titel": "Test",
-      "text": "Koll av nyheter"
-    }
-  ]
+  "nyheter": []
 }
