@@ -25,6 +25,7 @@
     </li>
     <li><a href="om-tranaren.html">Om Tränaren</a></li>
     <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="nyheter.html">Nyheter</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meny">
     <span></span><span></span><span></span>
@@ -46,6 +47,7 @@
   </div>
   <a href="om-tranaren.html">Om Tränaren</a>
   <a href="kontakt.html">Kontakt</a>
+  <a href="nyheter.html">Nyheter</a>
 </div>
 
 
@@ -206,6 +208,25 @@
 
 
 <!-- FOOTER -->
+
+<!-- NYHETER -->
+<section style="background:var(--black);padding:6rem 4rem;border-top:1px solid rgba(244,242,238,0.06);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;">
+      <div>
+        <div class="section-label">Senaste nytt</div>
+        <a href="nyheter.html" style="text-decoration:none;">
+          <h2 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem);color:var(--white);transition:color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--white)'">Nyheter från<br><em style="font-family:'Cormorant Garamond',serif;font-style:italic;">Stallet</em></h2>
+        </a>
+      </div>
+      <a href="nyheter.html" style="font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;white-space:nowrap;">Alla nyheter →</a>
+    </div>
+    <div id="nyheterPreview" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(244,242,238,0.05);">
+      <p style="color:var(--white-dim);font-size:0.85rem;padding:2rem;">Laddar...</p>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-logo">Stall Zeb Jonasson</div>
   <div class="footer-social">
@@ -219,6 +240,35 @@
   <div class="footer-copy">© 2026 Stall Zeb Jonasson. Alla rättigheter förbehållna. · <a href="integritetspolicy.html" style="color:var(--white-dim);text-decoration:none;">Integritetspolicy</a></div>
 </footer>
 <script>
+
+
+// Nyheter preview on index
+const NYHETER_JSON_IDX = 'https://raw.githubusercontent.com/erikssonaugust03/Stall-Zeb-Jonasson/main/data/nyheter.json';
+const IMG_BASE_IDX = 'https://raw.githubusercontent.com/erikssonaugust03/Stall-Zeb-Jonasson/main';
+
+async function loadNyheterPreview() {
+  const preview = document.getElementById('nyheterPreview');
+  if (!preview) return;
+  try {
+    const res = await fetch(NYHETER_JSON_IDX + '?t=' + Date.now());
+    const data = await res.json();
+    const nyheter = (data.nyheter || []).sort((a,b) => new Date(b.datum) - new Date(a.datum)).slice(0, 3);
+    if (nyheter.length === 0) { preview.innerHTML = '<p style="color:var(--white-dim);padding:2rem;font-size:0.85rem;">Inga nyheter ännu.</p>'; return; }
+    preview.innerHTML = nyheter.map(n => {
+      const datum = new Date(n.datum).toLocaleDateString('sv-SE', { day: 'numeric', month: 'long', year: 'numeric' });
+      const img = n.bild ? (n.bild.startsWith('http') ? n.bild : IMG_BASE_IDX + n.bild) : '';
+      return `<div style="background:var(--black);padding:2.5rem 2rem;">
+        <div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:0.8rem;">${datum}</div>
+        ${img ? `<img src="${img}" style="width:100%;height:160px;object-fit:cover;margin-bottom:1rem;">` : ''}
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:var(--white);margin-bottom:0.8rem;">${n.titel}</div>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-weight:300;color:var(--white-dim);line-height:1.7;">${n.text.substring(0, 120)}${n.text.length > 120 ? '...' : ''}</p>
+      </div>`;
+    }).join('');
+  } catch(e) {
+    preview.innerHTML = '';
+  }
+}
+loadNyheterPreview();
 
 function toggleMobileExpand() {
   document.getElementById('hastarSub').classList.toggle('open');
