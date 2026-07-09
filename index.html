@@ -61,7 +61,6 @@
 
   <div class="hero-content" style="display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:4rem;">
     <img src="logo-zeb.png" alt="Stall Zeb Jonasson" style="width:clamp(280px,45vw,600px);height:auto;display:block;margin-bottom:2rem;">
-    <a href="var-gard.html" class="hero-cta">Utforska stallet</a>
   </div>
 
   <div class="hero-scroll">
@@ -70,8 +69,21 @@
   </div>
 </section>
 
+
+<!-- PERSONAL -->
+<section id="personal" style="background:var(--black);padding:6rem 4rem;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(244,242,238,0.06);padding-bottom:4rem;">
+    <div>
+      <div class="section-label">Teamet</div>
+      <h2 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem);">Vår<br><em style="font-family:'Cormorant Garamond',serif;font-style:italic;">Personal</em></h2>
+      <p style="margin-top:1.5rem;max-width:480px;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;line-height:1.8;color:var(--white-dim);">Bakom varje häst finns ett engagerat team som arbetar hårt varje dag för att ge hästarna de bästa förutsättningarna.</p>
+    </div>
+    <a href="personal.html" style="font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;border:1px solid rgba(200,216,232,0.3);padding:1rem 2rem;transition:all 0.3s;white-space:nowrap;" onmouseover="this.style.borderColor='var(--accent)';this.style.background='rgba(200,216,232,0.05)'" onmouseout="this.style.borderColor='rgba(200,216,232,0.3)';this.style.background='transparent'">Möt teamet →</a>
+  </div>
+</section>
+
 <!-- VÅR GÅRD -->
-<section id="var-gard">
+<section id="var-gard" style="background:var(--black);">
   <div class="gard-grid">
     <div class="gard-text">
       <div class="section-label">Vår Gård</div>
@@ -180,53 +192,7 @@
   </div>
 </section>
 
-<!-- KONTAKT -->
-<section id="kontakt">
-  <div class="kontakt-inner">
-    <div>
-      <div class="section-label">Kom i kontakt</div>
-      <h2 class="section-title">Kontakta<br>Oss</h2>
 
-      <div class="kontakt-info">
-        <div class="kontakt-item">
-          <div class="kontakt-item-label">Telefon</div>
-          <div class="kontakt-item-value">072 520 81 23</div>
-        </div>
-        <div class="kontakt-item">
-          <div class="kontakt-item-label">E-post</div>
-          <div class="kontakt-item-value"><a href="mailto:zeb.jonasson@live.se" style="color:var(--white);text-decoration:none;">zeb.jonasson@live.se</a></div>
-        </div>
-        <div class="kontakt-item">
-          <div class="kontakt-item-label">Adress</div>
-          <div class="kontakt-item-value">Odensala Söderby 163</div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="kontakt-form">
-      <form action="https://formspree.io/f/xpqjeagl" method="POST">
-      <div class="form-field">
-        <label>Namn</label>
-        <input type="text" name="namn" placeholder="Ditt namn" required>
-      </div>
-      <div class="form-field">
-        <label>E-post</label>
-        <input type="email" name="email" placeholder="din@email.se" required>
-      </div>
-      <div class="form-field">
-        <label>Ämne</label>
-        <input type="text" name="amne" placeholder="Vad gäller det?">
-      </div>
-      <div class="form-field">
-        <label>Meddelande</label>
-        <textarea rows="5" name="meddelande" placeholder="Skriv ditt meddelande här..." required></textarea>
-      </div>
-      <button type="submit" class="form-submit">Skicka meddelande</button>
-      </form>
-    </div>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer>

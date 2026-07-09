@@ -292,7 +292,7 @@
 
   /* ── VÅR GÅRD ── */
   #var-gard {
-    background: var(--navy);
+    background: var(--black);
     padding: 10rem 4rem;
   }
 
@@ -543,7 +543,7 @@
 
   /* ── RESULTAT ── */
   #resultat {
-    background: var(--navy);
+    background: var(--black);
     padding: 10rem 4rem;
   }
 
@@ -757,7 +757,7 @@
 
   /* ── KONTAKT ── */
   #kontakt {
-    background: var(--navy);
+    background: var(--black);
     padding: 10rem 4rem;
   }
 
@@ -955,18 +955,32 @@
   @media (max-width: 600px) {
     .nav-links { display: none; }
     .hastar-grid { grid-template-columns: 1fr; }
-    .hero-content { padding: 0 1.5rem 3rem; }
-    .hero { align-items: center; }
+    .hero { align-items: flex-end; min-height: 100vh; }
+    .hero-content {
+      padding: 0 1.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-content img {
+      width: clamp(200px, 70vw, 340px) !important;
+      height: auto !important;
+    }
     .horse-silhouette {
       right: 0;
+      top: 0;
       width: 100%;
-      height: 55%;
-      bottom: 0;
-      opacity: 0.35;
+      height: 65%;
+      opacity: 0.6;
     }
     .horse-silhouette img {
-      mask-image: linear-gradient(to left, rgba(0,0,0,0.9) 30%, transparent 100%);
-      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.9) 30%, transparent 100%);
+      object-position: center 60% !important;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, transparent 100%);
     }
   }
 
