@@ -975,13 +975,14 @@
       right: 0;
       top: 0;
       width: 100%;
-      height: 60%;
-      opacity: 0.85;
+      height: 58%;
+      opacity: 0.9;
     }
     .horse-silhouette img {
-      object-position: center 60% !important;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, transparent 100%);
-      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, transparent 100%);
+      object-fit: cover;
+      object-position: 40% 60% !important;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 55%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 55%, transparent 100%);
     }
   }
 
