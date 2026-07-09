@@ -49,7 +49,12 @@ collections:
               - { label: "Uppfödare", name: "uppfodare", widget: "string", required: false }
               - { label: "Skötare", name: "skotare", widget: "string", required: false }
               - { label: "Travsport-länk", name: "travsport", widget: "string", required: false }
-              - { label: "Bild", name: "bild", widget: "image", required: false }
+              - { label: "Huvudbild", name: "bild", widget: "image", required: false }
+              - label: "Fler bilder"
+                name: "bilder"
+                widget: "list"
+                required: false
+                field: { label: "Bild", name: "bild", widget: "image" }
 
   - name: "hastar_till_salu"
     label: "Hästar till salu"
@@ -70,4 +75,9 @@ collections:
               - { label: "Typ", name: "typ", widget: "select", options: ["Andel", "Hel häst"] }
               - { label: "Pris (kr)", name: "pris", widget: "string" }
               - { label: "Beskrivning", name: "beskrivning", widget: "text" }
-              - { label: "Bild", name: "bild", widget: "image", required: false }
+              - { label: "Huvudbild", name: "bild", widget: "image", required: false }
+              - label: "Fler bilder"
+                name: "bilder"
+                widget: "list"
+                required: false
+                field: { label: "Bild", name: "bild", widget: "image" }
