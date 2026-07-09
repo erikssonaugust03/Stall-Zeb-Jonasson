@@ -93,6 +93,7 @@ collections:
             widget: "list"
             fields:
               - { label: "Datum", name: "datum", widget: "date", format: "YYYY-MM-DD" }
+              - { label: "Tid (t.ex. 14:30)", name: "tid", widget: "string", required: false, hint: "Ange tid i format HH:MM" }
               - { label: "Titel", name: "titel", widget: "string" }
               - { label: "Text", name: "text", widget: "text" }
               - { label: "Bild", name: "bild", widget: "image", required: false }
