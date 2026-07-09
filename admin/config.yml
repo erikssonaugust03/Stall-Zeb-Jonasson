@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: erikssonaugust03/Stall-Zeb-Jonasson
+  name: git-gateway
   branch: main
 
 media_folder: "images"
