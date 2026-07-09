@@ -1014,6 +1014,12 @@
     #personal {
       padding: 4rem 1.5rem !important;
     }
+    #nyheterPreview {
+      grid-template-columns: 1fr !important;
+    }
+    .nyheter-section-wrapper {
+      padding: 4rem 1.5rem !important;
+    }
   }
 
   /* HAMBURGER */
