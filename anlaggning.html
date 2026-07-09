@@ -3,16 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nyheter – Stall Zeb Jonasson</title>
+<title>Vår Gård – Stall Zeb Jonasson</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .nyheter-header {
+  .gard-page-hero {
+    min-height: 70vh;
+    background: linear-gradient(to bottom, var(--navy) 0%, var(--black) 100%);
+    display: flex;
+    align-items: flex-end;
     padding: 12rem 4rem 5rem;
-    background: var(--black);
     position: relative;
+    overflow: hidden;
   }
-  .nyheter-header::before {
+  .gard-page-hero::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -24,12 +28,17 @@
       rgba(244,242,238,0.02) calc(100%/12)
     );
   }
-  .nyheter-header-inner {
+  .gard-page-hero-inner {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: end;
   }
-  .nyheter-eyebrow {
+  .gard-page-eyebrow {
     font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.3em;
@@ -37,70 +46,86 @@
     color: var(--accent);
     margin-bottom: 1.2rem;
   }
-  .nyheter-title {
+  .gard-page-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(3.5rem, 7vw, 6rem);
     font-weight: 300;
     line-height: 0.95;
     color: var(--white);
   }
-  .nyheter-title em {
+  .gard-page-title em {
     font-style: italic;
     color: var(--accent);
   }
-  .nyheter-section {
-    max-width: 860px;
+  .gard-page-image {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+  }
+  .gard-page-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .gard-page-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--navy) 0%, transparent 40%);
+  }
+
+  .gard-content {
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 5rem 4rem 8rem;
+    padding: 6rem 4rem 8rem;
   }
-  .nyhet-card {
-    border-bottom: 1px solid rgba(244,242,238,0.08);
-    padding-bottom: 4rem;
-    margin-bottom: 4rem;
+  .gard-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+    margin-bottom: 5rem;
   }
-  .nyhet-card:last-child {
-    border-bottom: none;
-  }
-  .nyhet-datum {
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
-  }
-  .nyhet-titel {
+  .gard-content p {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    font-weight: 300;
-    color: var(--white);
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-  }
-  .nyhet-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 300;
     line-height: 1.8;
     color: var(--white-dim);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
-  .nyhet-bild {
+  .gard-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(244,242,238,0.05);
+    margin-top: 5rem;
+  }
+  .gard-stat-item {
+    background: var(--black);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  .gard-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .gard-stat-lbl {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+  }
+  .gard-image-full {
     width: 100%;
-    max-height: 500px;
+    height: 500px;
     object-fit: cover;
-    margin-bottom: 2rem;
-  }
-  .nyhet-video {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    margin-bottom: 2rem;
-  }
-  .nyhet-video iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    object-position: center;
+    margin-bottom: 5rem;
   }
 
   .footer-social {
@@ -132,8 +157,13 @@
   }
 
   @media (max-width: 900px) {
-    .nyheter-header { padding: 10rem 2rem 4rem; }
-    .nyheter-section { padding: 3rem 2rem 6rem; }
+    .gard-page-hero { padding: 10rem 2rem 4rem; }
+    .gard-page-hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .gard-page-image { height: 260px; }
+    .gard-content { padding: 4rem 2rem 6rem; }
+    .gard-content-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .gard-stats-grid { grid-template-columns: 1fr 1fr; }
+    .gard-image-full { height: 280px; }
   }
 </style>
 </head>
@@ -142,7 +172,7 @@
 <nav>
   <a href="index.html" class="nav-logo"><img src="logo.png" alt="Logo">Stall <span>Zeb</span> Jonasson</a>
   <ul class="nav-links">
-    <li><a href="nyheter.html" class="active">Nyheter</a></li>
+    <li><a href="nyheter.html">Nyheter</a></li>
     <li><a href="startkommentarer.html">Startkommentarer</a></li>
     <li class="nav-dropdown">
       <a href="hastar.html">Hästar <span class="nav-drop-arrow">▾</span></a>
@@ -151,7 +181,7 @@
         <li><a href="hastar-till-salu.html">Hästar till salu</a></li>
       </ul>
     </li>
-    <li><a href="anlaggning.html">Anläggning</a></li>
+    <li><a href="anlaggning.html" class="active">Anläggning</a></li>
     <li><a href="om-tranaren.html">Om Tränaren</a></li>
     <li><a href="personal.html">Personal</a></li>
     <li><a href="kontakt.html">Kontakt</a></li>
@@ -160,7 +190,7 @@
     <li><a href="om-tranaren.html">Om Tränaren</a></li>
     <li><a href="kontakt.html">Kontakt</a></li>
     <li><a href="startkommentarer.html">Startkommentarer</a></li>
-    <li><a href="nyheter.html" class="active">Nyheter</a></li>
+    <li><a href="nyheter.html">Nyheter</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meny">
     <span></span><span></span><span></span>
@@ -168,7 +198,7 @@
 </nav>
 
 <div id="mobileMenu" class="nav-mobile-menu">
-  <a href="nyheter.html" class="active">Nyheter</a>
+  <a href="nyheter.html">Nyheter</a>
   <a href="startkommentarer.html">Startkommentarer</a>
   <div class="mobile-expand">
     <span class="mobile-expand-main" onclick="toggleMobileExpand()">
@@ -179,21 +209,63 @@
       <a href="hastar-till-salu.html">Hästar till salu</a>
     </div>
   </div>
-  <a href="anlaggning.html">Anläggning</a>
+  <a href="anlaggning.html" class="active">Anläggning</a>
   <a href="om-tranaren.html">Om Tränaren</a>
   <a href="personal.html">Personal</a>
   <a href="kontakt.html">Kontakt</a>
 </div>
 
-<div class="nyheter-header">
-  <div class="nyheter-header-inner">
-    <div class="nyheter-eyebrow">Stall Zeb Jonasson</div>
-    <h1 class="nyheter-title">Nyheter från<br><em>Stallet</em></h1>
+<div class="gard-page-hero">
+  <div class="gard-page-hero-inner">
+    <div>
+      <div class="gard-page-eyebrow">Stall Zeb Jonasson</div>
+      <h1 class="gard-page-title">Vår<br><em>Gård</em></h1>
+    </div>
+    <div class="gard-page-image">
+      <img src="gard.png" alt="Vår Gård">
+    </div>
   </div>
 </div>
 
-<div class="nyheter-section" id="nyheterList">
-  <p style="color:var(--white-dim);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;">Laddar nyheter...</p>
+<div class="gard-content">
+  <img src="gard.png" alt="Stall Zeb Jonasson" class="gard-image-full">
+
+  <div class="gard-content-grid">
+    <div>
+      <p>Vår gård är hjärtat i Stall Zeb Jonasson. Belägen mitt i det svenska landskapet erbjuder vi en miljö där hästar trivs och presterar. Med moderna faciliteter, välskötta paddockar och ett engagerat team ger vi varje häst de bästa förutsättningarna.</p>
+      <p>Varje detalj på gården är genomtänkt – från stallets konstruktion till träningsbanan – allt för att maximera hästens välmående och potential.</p>
+    </div>
+    <div>
+      <p>Adressen till stallet är Odensala Söderby 163. Välkommen att höra av dig om du vill veta mer om vår verksamhet eller besöka oss.</p>
+    </div>
+  </div>
+
+  <div class="gard-stats-grid">
+    <div class="gard-stat-item">
+      <div class="gard-stat-num">30</div>
+      <div class="gard-stat-lbl">Boxplatser</div>
+    </div>
+    <div class="gard-stat-item">
+      <div class="gard-stat-num">2025</div>
+      <div class="gard-stat-lbl">Grundat</div>
+    </div>
+    <div class="gard-stat-item">
+      <div class="gard-stat-num">Rakbana</div>
+      <div class="gard-stat-lbl">Träningsbana</div>
+    </div>
+    <div class="gard-stat-item">
+      <div class="gard-stat-num">Sandbana</div>
+      <div class="gard-stat-lbl">Träningsbana</div>
+    </div>
+    <div class="gard-stat-item">
+      <div class="gard-stat-num">Rundbana</div>
+      <div class="gard-stat-lbl">Träningsbana</div>
+    </div>
+    <div class="gard-stat-item">
+      <div class="gard-stat-num">15</div>
+      <div class="gard-stat-lbl">Hästar</div>
+    </div>
+  </div>
 </div>
 
 <footer>
@@ -210,49 +282,6 @@
 </footer>
 
 <script>
-const NYHETER_JSON = 'https://raw.githubusercontent.com/erikssonaugust03/Stall-Zeb-Jonasson/main/data/nyheter.json';
-const IMG_BASE = 'https://raw.githubusercontent.com/erikssonaugust03/Stall-Zeb-Jonasson/main';
-
-function getYouTubeId(url) {
-  if (!url) return null;
-  const match = url.match(/(?:v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
-  return match ? match[1] : null;
-}
-
-async function loadNyheter() {
-  const list = document.getElementById('nyheterList');
-  try {
-    const res = await fetch(NYHETER_JSON + '?t=' + Date.now());
-    if (!res.ok) throw new Error('404');
-    const data = await res.json();
-    const nyheter = (data.nyheter || []).sort((a, b) => { const da = new Date(a.datum + 'T' + (a.tid || '00:00')); const db = new Date(b.datum + 'T' + (b.tid || '00:00')); return db - da; });
-
-    if (nyheter.length === 0) {
-      list.innerHTML = '<p style="color:var(--white-dim);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;">Inga nyheter just nu.</p>';
-      return;
-    }
-
-    list.innerHTML = nyheter.map(n => {
-      const datum = new Date(n.datum).toLocaleDateString('sv-SE', { day: 'numeric', month: 'long', year: 'numeric' });
-      const img = (n.bild && n.bild.trim()) ? (n.bild.startsWith('http') ? n.bild : IMG_BASE + n.bild) : '';
-      const ytId = getYouTubeId(n.youtube);
-
-      return `<div class="nyhet-card">
-        <div class="nyhet-datum">${datum}</div>
-        <h2 class="nyhet-titel">${n.titel}</h2>
-        ${img ? `<img src="${img}" class="nyhet-bild" alt="${n.titel}">` : ''}
-        ${ytId ? `<div class="nyhet-video"><iframe src="https://www.youtube.com/embed/${ytId}" frameborder="0" allowfullscreen></iframe></div>` : ''}
-        <p class="nyhet-text">${n.text}</p>
-      </div>`;
-    }).join('');
-
-  } catch(e) {
-    list.innerHTML = '<p style="color:var(--white-dim);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;">Kunde inte ladda nyheter just nu.</p>';
-  }
-}
-
-loadNyheter();
-
 function toggleMenu() {
   var btn = document.getElementById('hamburger');
   var menu = document.getElementById('mobileMenu');
