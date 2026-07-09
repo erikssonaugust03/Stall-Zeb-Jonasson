@@ -461,9 +461,12 @@
 </div>
 
 <!-- LISTINGS -->
-<div class="listings-section" id="listingsContainer">
-  <p id="loadingMsg" style="padding:3rem 0;color:var(--white-dim);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;">Laddar...</p>
+<div id="listView">
+  <div class="listings-section" id="listingsContainer">
+    <p style="padding:3rem 0;color:var(--white-dim);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;">Laddar...</p>
+  </div>
 </div>
+<div id="detailView" style="display:none;background:var(--black);min-height:100vh;"></div>
 
 <footer>
   <div class="footer-logo">Stall Zeb Jonasson</div>
@@ -480,6 +483,9 @@
 
 <script>
 const JSON_URL_SALU = 'https://raw.githubusercontent.com/erikssonaugust03/Stall-Zeb-Jonasson/main/data/hastar-till-salu.json';
+let allHastar = [];
+let currentHast = null;
+let currentImgIndex = 0;
 
 async function loadHastarTillSalu() {
   const container = document.getElementById('listingsContainer');
@@ -487,59 +493,115 @@ async function loadHastarTillSalu() {
     const res = await fetch(JSON_URL_SALU + '?t=' + Date.now());
     if (!res.ok) throw new Error('404');
     const data = await res.json();
-    const hastar = data.hastar || [];
+    allHastar = data.hastar || [];
 
-    if (hastar.length === 0) {
+    if (allHastar.length === 0) {
       container.innerHTML = '<p style="padding:3rem 0;color:var(--white-dim);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;">Inga hästar till salu just nu.</p>';
       return;
     }
 
-    container.innerHTML = hastar.map(h => {
-      const nameParts = h.namn.split(' ');
-      const lastName = nameParts.pop();
-      const firstName = nameParts.join(' ');
-      const badgeText = h.typ === 'Hel häst' ? 'Hel häst till salu' : 'Andel till salu';
-      const priceLabel = h.typ === 'Hel häst' ? '' : '/ andel';
-      return `<div class="listing-card">
-        <div class="listing-image">
-          <img src="${h.bild || 'rusa-tooma.png'}" alt="${h.namn}">
-          <div class="listing-badge">${badgeText}</div>
-        </div>
-        <div class="listing-content">
-          <div class="listing-top">
-            <div class="listing-name">${firstName} <em>${lastName}</em></div>
-            <div class="listing-subtitle">${h.alder_kon}</div>
-            <div class="listing-meta">
-              <div class="listing-meta-item">
-                <div class="listing-meta-label">Far</div>
-                <div class="listing-meta-value">${h.far}</div>
-              </div>
-              <div class="listing-meta-item">
-                <div class="listing-meta-label">Mor</div>
-                <div class="listing-meta-value">${h.mor}</div>
-              </div>
-              <div class="listing-meta-item">
-                <div class="listing-meta-label">Antal andelar</div>
-                <div class="listing-meta-value">${h.antal_andelar}</div>
-              </div>
-              <div class="listing-meta-item">
-                <div class="listing-meta-label">Typ</div>
-                <div class="listing-meta-value">${h.typ}</div>
-              </div>
-            </div>
-            <p class="listing-desc">"${h.beskrivning}"</p>
+    renderCards();
+  } catch(err) {
+    document.getElementById('listingsContainer').innerHTML = '<p style="padding:3rem 0;color:var(--white-dim);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;">Inga hästar till salu just nu.</p>';
+  }
+}
+
+function renderCards() {
+  const container = document.getElementById('listingsContainer');
+  container.innerHTML = allHastar.map((h, i) => {
+    const badgeText = h.typ === 'Hel häst' ? 'Hel häst till salu' : 'Andel till salu';
+    const priceLabel = h.typ === 'Hel häst' ? '' : '/ andel';
+    const nameParts = h.namn.split(' ');
+    const lastName = nameParts.pop();
+    const firstName = nameParts.join(' ');
+    const img = h.bild || '';
+    return `<div class="listing-card" onclick="openDetail(${i})" style="cursor:pointer;">
+      <div class="listing-image">
+        ${img ? `<img src="${img}" alt="${h.namn}" style="object-fit:contain;">` : '<div style="width:100%;height:100%;background:var(--navy);"></div>'}
+        <div class="listing-badge">${badgeText}</div>
+      </div>
+      <div class="listing-content">
+        <div class="listing-top">
+          <div class="listing-name">${firstName} <em>${lastName}</em></div>
+          <div class="listing-subtitle">${h.alder_kon}</div>
+          <div class="listing-meta">
+            <div class="listing-meta-item"><div class="listing-meta-label">Far</div><div class="listing-meta-value">${h.far}</div></div>
+            <div class="listing-meta-item"><div class="listing-meta-label">Mor</div><div class="listing-meta-value">${h.mor}</div></div>
+            <div class="listing-meta-item"><div class="listing-meta-label">Antal andelar</div><div class="listing-meta-value">${h.antal_andelar}</div></div>
+            <div class="listing-meta-item"><div class="listing-meta-label">Typ</div><div class="listing-meta-value">${h.typ}</div></div>
           </div>
-          <div class="listing-bottom">
-            <div class="listing-price">${h.pris} kr <span>${priceLabel}</span></div>
+          <p class="listing-desc">"${h.beskrivning}"</p>
+        </div>
+        <div class="listing-bottom">
+          <div class="listing-price">${h.pris} kr <span>${priceLabel}</span></div>
+          <span class="listing-cta">Visa mer →</span>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function openDetail(i) {
+  currentHast = allHastar[i];
+  currentImgIndex = 0;
+  const h = currentHast;
+  const images = [h.bild, ...(h.bilder || [])].filter(Boolean);
+  const priceLabel = h.typ === 'Hel häst' ? '' : '/ andel';
+
+  document.getElementById('detailView').innerHTML = `
+    <div style="max-width:1100px;margin:0 auto;padding:8rem 2rem 5rem;">
+      <button onclick="closeDetail()" style="background:none;border:none;color:var(--accent);font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;margin-bottom:3rem;display:flex;align-items:center;gap:0.5rem;">← Tillbaka</button>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
+        <div>
+          <div id="mainImage" style="width:100%;aspect-ratio:4/3;overflow:hidden;background:var(--navy);margin-bottom:1rem;">
+            ${images.length ? `<img src="${images[0]}" style="width:100%;height:100%;object-fit:contain;">` : '<div style="width:100%;height:100%;"></div>'}
+          </div>
+          ${images.length > 1 ? `
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+            ${images.map((img, idx) => `
+            <div onclick="setImage(${idx})" style="width:80px;height:60px;overflow:hidden;cursor:pointer;border:2px solid ${idx===0?'var(--accent)':'rgba(244,242,238,0.15)'};transition:border-color 0.2s;" id="thumb-${idx}">
+              <img src="${img}" style="width:100%;height:100%;object-fit:contain;">
+            </div>`).join('')}
+          </div>` : ''}
+        </div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;">${h.typ} till salu</div>
+          <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:300;line-height:1.1;margin-bottom:0.5rem;">${h.namn}</h1>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--white-dim);margin-bottom:2rem;">${h.alder_kon}</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem;">
+            <div><div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--white-dim);margin-bottom:0.3rem;">Far</div><div style="font-size:0.9rem;color:var(--accent);font-style:italic;">${h.far}</div></div>
+            <div><div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--white-dim);margin-bottom:0.3rem;">Mor</div><div style="font-size:0.9rem;color:var(--accent);font-style:italic;">${h.mor}</div></div>
+            <div><div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--white-dim);margin-bottom:0.3rem;">Antal andelar</div><div style="font-size:0.9rem;color:var(--white);">${h.antal_andelar}</div></div>
+            <div><div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--white-dim);margin-bottom:0.3rem;">Typ</div><div style="font-size:0.9rem;color:var(--white);">${h.typ}</div></div>
+          </div>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;line-height:1.8;color:var(--white-dim);margin-bottom:2.5rem;">"${h.beskrivning}"</p>
+          <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;">${h.pris} kr <span style="font-size:1rem;color:var(--white-dim);">${priceLabel}</span></div>
             <a href="kontakt.html" class="listing-cta">Kontakta oss →</a>
           </div>
         </div>
-      </div>`;
-    }).join('');
+      </div>
+    </div>`;
 
-  } catch(err) {
-    container.innerHTML = '<p style="padding:3rem 0;color:var(--white-dim);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;">Inga hästar till salu just nu.</p>';
-  }
+  document.getElementById('listView').style.display = 'none';
+  document.getElementById('detailView').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
+function setImage(idx) {
+  const h = currentHast;
+  const images = [h.bild, ...(h.bilder || [])].filter(Boolean);
+  currentImgIndex = idx;
+  document.getElementById('mainImage').innerHTML = `<img src="${images[idx]}" style="width:100%;height:100%;object-fit:contain;">`;
+  document.querySelectorAll('[id^="thumb-"]').forEach((t, i) => {
+    t.style.borderColor = i === idx ? 'var(--accent)' : 'rgba(244,242,238,0.15)';
+  });
+}
+
+function closeDetail() {
+  document.getElementById('listView').style.display = 'block';
+  document.getElementById('detailView').style.display = 'none';
+  window.scrollTo(0, 0);
 }
 
 loadHastarTillSalu();
