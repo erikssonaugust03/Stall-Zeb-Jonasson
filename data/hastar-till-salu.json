@@ -3,6 +3,9 @@
     {
       "antal_andelar": "20",
       "typ": "Andel",
+      "bilder": [
+        "/images/just-hell-bent-huvud.jpeg"
+      ],
       "pris": "7 500",
       "mor": "Determined",
       "alder_kon": "2 år & Hingst",
