@@ -149,12 +149,12 @@
   .horse-silhouette {
     position: absolute;
     right: 0;
-    bottom: 0;
+    top: 0;
     width: 55%;
     max-width: 750px;
-    height: 95%;
+    height: 100%;
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
   }
 
   .horse-silhouette img {
