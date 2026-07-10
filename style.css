@@ -1176,9 +1176,11 @@
     .horse-silhouette {
       width: 55%;
     }
-    .hero-content img {
+    .hero-content img,
+    .hero-content img[src] {
       width: 32vw !important;
       height: auto !important;
+      max-width: none !important;
     }
     .hero-content {
       padding: 0 4vw 8rem 5vw !important;
@@ -1197,5 +1199,17 @@
     .nav-logo img {
       height: 44px;
       width: 44px;
+    }
+    .page-header-inner,
+    .gard-content,
+    .horses-section,
+    .nyheter-section {
+      max-width: 1600px;
+    }
+    .section-inner,
+    .kontakt-inner,
+    .gard-grid,
+    .hastar-preview {
+      max-width: 1600px;
     }
   }
