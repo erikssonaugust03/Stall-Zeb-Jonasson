@@ -1177,6 +1177,10 @@
       width: 55%;
     }
     .hero-content img {
-      width: clamp(300px, 28vw, 650px) !important;
+      width: clamp(400px, 22vw, 750px) !important;
+      height: auto !important;
+    }
+    .hero-content {
+      padding: 0 4vw 10rem 5vw !important;
     }
   }
