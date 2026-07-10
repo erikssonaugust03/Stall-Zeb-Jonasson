@@ -1184,4 +1184,18 @@
       padding: 0 4vw 8rem 5vw !important;
       width: 45%;
     }
+    nav {
+      padding: 1.8rem 5rem;
+    }
+    .nav-links {
+      gap: 2.5rem;
+    }
+    .nav-links a {
+      font-size: 0.95rem;
+      letter-spacing: 0.2em;
+    }
+    .nav-logo img {
+      height: 44px;
+      width: 44px;
+    }
   }
