@@ -1170,3 +1170,15 @@
   font-size: 0.78rem !important;
   letter-spacing: 0.18em !important;
 }
+  @media (min-width: 1600px) {
+    .horse-silhouette {
+      width: 60%;
+      max-width: 1100px;
+    }
+    .hero-content img {
+      width: clamp(400px, 30vw, 700px) !important;
+    }
+    .hero-content {
+      padding-left: 6rem;
+    }
+  }
