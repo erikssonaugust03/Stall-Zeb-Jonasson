@@ -1026,6 +1026,11 @@
     .startkommentarer-section-wrapper {
       padding: 4rem 1.5rem !important;
     }
+    .section-cta-btn {
+      display: block !important;
+      margin-top: 1.5rem !important;
+      clear: both;
+    }
     #var-gard {
       padding: 4rem 1.5rem !important;
     }
