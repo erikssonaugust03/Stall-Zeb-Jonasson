@@ -1042,10 +1042,12 @@
       padding: 4rem 1.5rem !important;
     }
     .gard-grid {
-      grid-template-columns: 1fr !important;
+      display: flex !important;
+      flex-direction: column !important;
       padding: 0 !important;
       gap: 2rem !important;
     }
+    .gard-cta-wrapper { padding: 0; }
     .gard-grid > div:last-child {
       display: block !important;
     }
