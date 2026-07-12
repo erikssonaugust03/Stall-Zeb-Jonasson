@@ -150,7 +150,7 @@
   }
 
   /* Decorative horse silhouette via CSS */
-  .gard-mobile-cta { display: none; }
+  .gard-btn-mobile { display: none !important; }
 
   .horse-silhouette {
     position: absolute;
@@ -956,7 +956,7 @@
   /* ── MOBILE ── */
   @media (max-width: 900px) {
     nav { padding: 1.4rem 2rem; }
-    .gard-mobile-cta { display: none; }
+    .gard-btn-mobile { display: none !important; }
 
   .horse-silhouette {
       right: 0;
@@ -995,7 +995,7 @@
       width: clamp(200px, 70vw, 340px) !important;
       height: auto !important;
     }
-    .gard-mobile-cta { display: none; }
+    .gard-btn-mobile { display: none !important; }
 
   .horse-silhouette {
       left: 0 !important;
@@ -1033,6 +1033,9 @@
     .startkommentarer-section-wrapper {
       padding: 4rem 1.5rem !important;
     }
+    .gard-btn-desktop { display: none !important; }
+    .gard-btn-mobile { display: inline-block !important; }
+    #var-gard .gard-grid > div:nth-child(2) img { height: 280px !important; }
     .section-cta-btn {
       display: block !important;
       margin-top: 1.5rem !important;
@@ -1053,8 +1056,7 @@
       padding: 0 !important;
       gap: 2rem !important;
     }
-    .gard-text .hero-cta { display: none !important; }
-    .gard-mobile-cta { display: block; }
+
     .gard-grid > div:last-child {
       display: block !important;
     }
@@ -1218,7 +1220,7 @@
   letter-spacing: 0.18em !important;
 }
   @media (min-width: 1600px) {
-    .gard-mobile-cta { display: none; }
+    .gard-btn-mobile { display: none !important; }
 
   .horse-silhouette {
       width: 55%;
