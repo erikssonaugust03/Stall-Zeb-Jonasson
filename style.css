@@ -970,7 +970,7 @@
     #var-gard, #hastar, #resultat, #om-oss, #kontakt { padding: 6rem 2rem; }
     .gard-grid, .resultat-inner, .om-inner, .kontakt-inner { grid-template-columns: 1fr !important; gap: 2rem !important; padding: 4rem 2rem !important; }
     .gard-grid > div:last-child img { height: 300px !important; position: static !important; }
-    .gard-text .hero-cta { display: inline-block !important; text-align: left !important; }
+
     .hastar-grid { grid-template-columns: 1fr 1fr; }
     .hastar-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
     .gard-visual { height: 360px; }
