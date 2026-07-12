@@ -563,7 +563,7 @@
   /* ── RESULTAT ── */
   #resultat {
     background: var(--black);
-    padding: 10rem 4rem;
+    padding: 6rem 4rem;
   }
 
   .resultat-inner {
@@ -693,7 +693,7 @@
   /* ── OM TRÄNAREN ── */
   #om-oss {
     background: var(--black);
-    padding: 10rem 4rem;
+    padding: 6rem 4rem;
   }
 
   .om-inner {
@@ -777,7 +777,7 @@
   /* ── KONTAKT ── */
   #kontakt {
     background: var(--black);
-    padding: 10rem 4rem;
+    padding: 6rem 4rem;
   }
 
   .kontakt-inner {
