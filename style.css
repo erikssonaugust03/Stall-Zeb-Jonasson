@@ -150,6 +150,8 @@
   }
 
   /* Decorative horse silhouette via CSS */
+  .gard-mobile-cta { display: none; }
+
   .horse-silhouette {
     position: absolute;
     right: 0;
@@ -954,7 +956,9 @@
   /* ── MOBILE ── */
   @media (max-width: 900px) {
     nav { padding: 1.4rem 2rem; }
-    .horse-silhouette {
+    .gard-mobile-cta { display: none; }
+
+  .horse-silhouette {
       right: 0;
       width: 70%;
       height: 70%;
@@ -991,7 +995,9 @@
       width: clamp(200px, 70vw, 340px) !important;
       height: auto !important;
     }
-    .horse-silhouette {
+    .gard-mobile-cta { display: none; }
+
+  .horse-silhouette {
       left: 0 !important;
       right: 0 !important;
       top: 0;
@@ -1047,7 +1053,8 @@
       padding: 0 !important;
       gap: 2rem !important;
     }
-    .gard-cta-wrapper { padding: 0; }
+    .gard-text .hero-cta { display: none !important; }
+    .gard-mobile-cta { display: block; }
     .gard-grid > div:last-child {
       display: block !important;
     }
@@ -1211,7 +1218,9 @@
   letter-spacing: 0.18em !important;
 }
   @media (min-width: 1600px) {
-    .horse-silhouette {
+    .gard-mobile-cta { display: none; }
+
+  .horse-silhouette {
       width: 55%;
     }
     .hero-content img,
