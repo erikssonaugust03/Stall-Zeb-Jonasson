@@ -487,11 +487,11 @@
     </div>
     <div class="info-row">
       <span class="info-label">Uppfödare</span>
-      <span class="info-value" style="color:var(--white-dim);">–</span>
+      <span class="info-value">–</span>
     </div>
     <div class="info-row">
       <span class="info-label">Skötare</span>
-      <span class="info-value" style="color:var(--white-dim);">–</span>
+      <span class="info-value">–</span>
     </div>
     <div class="info-row">
       <span class="info-label">Tränare</span>
@@ -558,7 +558,7 @@ async function loadHast() {
     if (vals[3]) vals[3].textContent = h.mor;
     if (vals[4]) vals[4].textContent = h.agare || '–';
     if (vals[5]) vals[5].textContent = h.uppfodare || '–';
-    if (vals[6]) vals[6].textContent = h.skotare || '–';
+    if (vals[6]) { vals[6].textContent = h.skotare || '–'; if (!h.skotare) vals[6].style.color = 'var(--white-dim)'; else vals[6].style.color = 'var(--white)'; }
     if (vals[7]) vals[7].textContent = 'Zeb Jonasson';
 
     // Update travsport link

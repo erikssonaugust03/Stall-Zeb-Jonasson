@@ -425,7 +425,7 @@ async function loadKommentarer() {
 
     const kommande = starter
       .filter(e => { const d = new Date(e.datum); d.setDate(d.getDate()+1); return today < d; })
-      .sort((a,b) => new Date(b.datum) - new Date(a.datum));
+      .sort((a,b) => new Date(a.datum) - new Date(b.datum));
 
     if (kommande.length === 0) {
       list.innerHTML = '<p style="padding:3rem 0;color:var(--white-dim);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;">Inga kommande starter just nu.</p>';
