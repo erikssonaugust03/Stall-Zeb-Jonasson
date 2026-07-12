@@ -956,7 +956,6 @@
   /* ── MOBILE ── */
   @media (max-width: 900px) {
     nav { padding: 1.4rem 2rem; }
-    .gard-btn-mobile { display: none !important; }
 
   .horse-silhouette {
       right: 0;
@@ -995,7 +994,6 @@
       width: clamp(200px, 70vw, 340px) !important;
       height: auto !important;
     }
-    .gard-btn-mobile { display: none !important; }
 
   .horse-silhouette {
       left: 0 !important;
@@ -1220,7 +1218,6 @@
   letter-spacing: 0.18em !important;
 }
   @media (min-width: 1600px) {
-    .gard-btn-mobile { display: none !important; }
 
   .horse-silhouette {
       width: 55%;
