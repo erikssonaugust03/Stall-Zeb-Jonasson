@@ -312,7 +312,7 @@
   /* ── VÅR GÅRD ── */
   #var-gard {
     background: var(--black);
-    padding: 10rem 4rem;
+    padding: 6rem 4rem;
   }
 
   .gard-grid {
@@ -435,7 +435,7 @@
   /* ── HÄSTAR ── */
   #hastar {
     background: var(--black);
-    padding: 10rem 4rem;
+    padding: 6rem 4rem;
   }
 
   .hastar-header {
