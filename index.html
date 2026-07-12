@@ -77,18 +77,14 @@
 <!-- NYHETER -->
 <section class="nyheter-section-wrapper" style="background:var(--black);padding:5rem 4rem;border-top:1px solid rgba(244,242,238,0.06);">
   <div style="max-width:1200px;margin:0 auto;">
-    <div class="section-header-flex" style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;">
-      <div>
-        <div class="section-label" style="color:var(--white);">Senaste nytt</div>
-        <a href="nyheter.html" style="text-decoration:none;">
-          <h2 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem);color:var(--white);transition:color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--white)'">Nyheter från<br>Stallet</h2>
-        </a>
-      </div>
-      <a href="nyheter.html" class="hero-cta" style="margin-top:2rem;display:inline-block;">Tidigare nyheter</a>
+    <div style="margin-bottom:3rem;">
+      <div class="section-label" style="color:var(--white);">Senaste nytt</div>
+      <h2 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem);color:var(--white);">Nyheter från Stallet</h2>
     </div>
     <div id="nyheterPreview" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(244,242,238,0.05);text-align:left;">
       <p style="color:var(--white-dim);font-size:0.85rem;padding:2rem;">Laddar...</p>
     </div>
+    <div style="margin-top:2rem;"><a href="nyheter.html" class="hero-cta">Tidigare nyheter</a></div>
   </div>
 </section>
 
@@ -100,16 +96,12 @@
 <!-- STARTKOMMENTARER -->
 <section class="startkommentarer-section-wrapper" style="background:var(--black);padding:5rem 4rem;border-top:1px solid rgba(244,242,238,0.06);">
   <div style="max-width:1200px;margin:0 auto;">
-    <div class="section-header-flex" style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;">
-      <div>
-        <div class="section-label">Kommande starter</div>
-        <a href="startkommentarer.html" style="text-decoration:none;">
-          <h2 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem);color:var(--white);transition:color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--white)'">Start-<br>kommentarer</h2>
-        </a>
-      </div>
-      <a href="startkommentarer.html" class="hero-cta" style="margin-top:2rem;display:inline-block;">Se alla starter</a>
+    <div style="margin-bottom:3rem;">
+      <div class="section-label">Kommande starter</div>
+      <h2 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem);color:var(--white);">Startkommentarer</h2>
     </div>
     <div id="startPreview" style="color:var(--white-dim);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;">Laddar...</div>
+    <div style="margin-top:2rem;"><a href="startkommentarer.html" class="hero-cta">Se alla starter</a></div>
   </div>
 </section>
 
@@ -121,12 +113,9 @@
         <div class="section-label">Stallet</div>
         <a href="hastar.html" class="section-title hastar-link">Våra Hästar <span class="hastar-link-arrow">→</span></a>
       </div>
-      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:1.5rem;">
-        <p style="max-width:320px;font-size:0.9rem;font-weight:300;color:var(--white-dim);line-height:1.7;letter-spacing:0.04em;text-align:right;">
-          Varje häst i stallet behandlas som en individ med egna behov, styrkor och mål.
-        </p>
-        <a href="hastar.html" class="hastar-cta">Se alla 15 hästar →</a>
-      </div>
+      <p style="max-width:320px;font-size:0.9rem;font-weight:300;color:var(--white-dim);line-height:1.7;letter-spacing:0.04em;text-align:right;">
+        Varje häst i stallet behandlas som en individ med egna behov, styrkor och mål.
+      </p>
     </div>
 
     <div class="hastar-preview">
@@ -135,6 +124,7 @@
       <div class="hastar-preview-line"><span class="hp-name">Rusa Tooma</span><span class="hp-sep">·</span><span class="hp-meta">5 år · Valack</span></div>
       <div class="hastar-preview-line hastar-preview-more"><a href="hastar.html">+ 12 hästar till i stallet</a></div>
     </div>
+    <div style="margin-top:2rem;"><a href="hastar.html" class="hero-cta">Se alla 15 hästar</a></div>
 
     <div class="hastar-grid" style="display:none">
       <!-- Horse cards -->
@@ -153,7 +143,7 @@
         Vi hyr in oss på Arlanda Travcenter strax utanför Märsta. Där har vi alla faciliteter vi behöver för att kunna träna fram en topphäst!
       </p>
 
-      <a href="anlaggning.html" class="hero-cta" style="margin-top:2rem;display:inline-block;">Läs mer om anläggningen</a>
+      <div style="margin-top:2rem;"><a href="anlaggning.html" class="hero-cta">Läs mer om anläggningen</a></div>
     </div>
 
     <div style="position:sticky;top:120px;">
@@ -187,6 +177,32 @@
   </div>
 </section>
 
+
+<!-- PERSONAL -->
+<section id="personal" style="background:var(--black);padding:5rem 4rem;border-top:1px solid rgba(244,242,238,0.06);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="margin-bottom:4rem;">
+      <div class="section-label">Teamet</div>
+      <a href="personal.html" style="text-decoration:none;">
+        <h2 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem);color:var(--white);">Vår Personal</h2>
+      </a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(244,242,238,0.05);" class="personal-grid">
+      <div style="background:var(--black);padding:3rem 2rem;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:0.8rem;">Tränare</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--white);">Zeb Jonasson</div>
+      </div>
+      <div style="background:var(--black);padding:3rem 2rem;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:0.8rem;">Hästskötare</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--white);">Moa Törngren</div>
+      </div>
+      <div style="background:var(--black);padding:3rem 2rem;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:0.8rem;">Allt i allo</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--white);">Jan Larsson</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="footer-logo">Stall Zeb Jonasson</div>
