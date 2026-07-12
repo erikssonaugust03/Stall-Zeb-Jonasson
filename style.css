@@ -1031,6 +1031,10 @@
       margin-top: 1.5rem !important;
       clear: both;
     }
+    .section-header-flex {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+    }
     #var-gard {
       padding: 4rem 1.5rem !important;
     }
