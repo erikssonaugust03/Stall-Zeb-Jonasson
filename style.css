@@ -963,7 +963,8 @@
     .nav-links { gap: 1.8rem; }
     .hero-content { padding: 0 2rem 6rem; }
     #var-gard, #hastar, #resultat, #om-oss, #kontakt { padding: 6rem 2rem; }
-    .gard-grid, .resultat-inner, .om-inner, .kontakt-inner { grid-template-columns: 1fr; gap: 4rem; }
+    .gard-grid, .resultat-inner, .om-inner, .kontakt-inner { grid-template-columns: 1fr !important; gap: 2rem !important; padding: 4rem 2rem !important; }
+    .gard-grid > div:last-child img { height: 300px !important; position: static !important; }
     .hastar-grid { grid-template-columns: 1fr 1fr; }
     .hastar-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
     .gard-visual { height: 360px; }
