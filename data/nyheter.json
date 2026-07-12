@@ -1,3 +1,11 @@
 {
-  "nyheter": []
+  "nyheter": [
+    {
+      "datum": "2026-07-12",
+      "tid": "22:50",
+      "titel": "Välkommen till Stall Zeb Jonassons hemsida !",
+      "text": "På vår hemsida kommer du att kunna följa vår verksamhet lite närmare! Vi kommer bland annat lägga ut filmer från snabbjobb, publicera startkommentarer när hästarna ska tävla och förhoppningsvis flera segerinlägg ! ",
+      "bild": "/images/logga.jpeg"
+    }
+  ]
 }
