@@ -120,15 +120,15 @@
     {
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts804510/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
       "alder": "2 år",
-      "kon": "Hingst",
+      "kon": "Valack",
       "slug": "pavarotti",
-      "agare": "",
+      "agare": "Skarpskallen AB",
       "uppfodare": "",
       "mor": "Vega Face",
       "namn": "Pavarotti",
-      "skotare": "",
+      "skotare": "Moa Thörngren ",
       "far": "Perfect Spirit",
-      "bild": ""
+      "bild": "/images/img_3015.jpeg"
     },
     {
       "travsport": "https://www.travsport.se/hast/ts787038",
