@@ -956,6 +956,8 @@
   /* ── MOBILE ── */
   @media (max-width: 900px) {
     nav { padding: 1.4rem 2rem; }
+    .gard-btn-desktop { display: none !important; }
+    .gard-btn-mobile { display: inline-block !important; }
 
   .horse-silhouette {
       right: 0;
