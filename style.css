@@ -1026,6 +1026,26 @@
     .startkommentarer-section-wrapper {
       padding: 4rem 1.5rem !important;
     }
+    #var-gard {
+      padding: 4rem 1.5rem !important;
+    }
+    .gard-grid {
+      grid-template-columns: 1fr !important;
+      padding: 0 !important;
+      gap: 2rem !important;
+    }
+    .gard-grid > div:last-child {
+      display: block !important;
+    }
+    .gard-grid > div:last-child img {
+      width: 100% !important;
+      height: 280px !important;
+      object-fit: cover !important;
+      position: static !important;
+    }
+    .gard-body {
+      line-height: 1.6 !important;
+    }
   }
 
   /* HAMBURGER */
