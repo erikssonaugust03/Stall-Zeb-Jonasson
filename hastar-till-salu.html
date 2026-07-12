@@ -212,7 +212,7 @@
       line-height: 1;
       letter-spacing: 0.03em;
     }
-    .page-title em { font-style: italic; color: var(--accent); }
+    .page-title em {  color: var(--accent); }
 
     /* LISTINGS */
     .listings-section {
@@ -276,7 +276,7 @@
       line-height: 1;
       margin-bottom: 0.4rem;
     }
-    .listing-name em { font-style: italic; color: var(--accent); }
+    .listing-name em {  color: var(--accent); }
     .listing-subtitle {
       font-size: 0.78rem;
       letter-spacing: 0.2em;
@@ -312,7 +312,7 @@
       line-height: 1.7;
       color: var(--white-dim);
       margin-bottom: 2rem;
-      font-style: italic;
+      
     }
 
     .listing-bottom {
@@ -588,8 +588,8 @@ function openDetail(i) {
           <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:300;line-height:1.1;margin-bottom:0.5rem;">${h.namn}</h1>
           <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--white-dim);margin-bottom:2rem;">${h.alder_kon}</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem;">
-            <div><div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--white-dim);margin-bottom:0.3rem;">Far</div><div style="font-size:0.9rem;color:var(--accent);font-style:italic;">${h.far}</div></div>
-            <div><div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--white-dim);margin-bottom:0.3rem;">Mor</div><div style="font-size:0.9rem;color:var(--accent);font-style:italic;">${h.mor}</div></div>
+            <div><div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--white-dim);margin-bottom:0.3rem;">Far</div><div style="font-size:0.9rem;color:var(--accent);">${h.far}</div></div>
+            <div><div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--white-dim);margin-bottom:0.3rem;">Mor</div><div style="font-size:0.9rem;color:var(--accent);">${h.mor}</div></div>
             <div><div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--white-dim);margin-bottom:0.3rem;">Antal andelar</div><div style="font-size:0.9rem;color:var(--white);">${h.antal_andelar}</div></div>
             <div><div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--white-dim);margin-bottom:0.3rem;">Typ</div><div style="font-size:0.9rem;color:var(--white);">${h.typ}</div></div>
           </div>
