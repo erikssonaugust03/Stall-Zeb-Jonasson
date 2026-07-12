@@ -1029,7 +1029,9 @@
     .section-cta-btn {
       display: block !important;
       margin-top: 1.5rem !important;
-      clear: both;
+    }
+    div:has(> .section-cta-btn) {
+      justify-content: flex-start !important;
     }
     .section-header-flex {
       flex-direction: column !important;
