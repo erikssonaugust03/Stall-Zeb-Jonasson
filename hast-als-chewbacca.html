@@ -433,7 +433,7 @@
 <div class="horse-hero">
   <div class="horse-hero-text">
     <div class="horse-hero-eyebrow">Stall Zeb Jonasson</div>
-    <h1 class="horse-hero-name">Al's <em>Chewbacca</em></h1>
+    <h1 class="horse-hero-name">Al's Chewbacca</h1>
     <div class="horse-hero-sub">2 år · Hingst</div>
   </div>
   <div class="horse-hero-image">
@@ -453,7 +453,7 @@
 <div class="horse-info">
 
   <div class="info-block">
-    <h2>Om <em>hästen</em></h2>
+    <h2>Om hästen</h2>
 
     <div class="info-row">
       <span class="info-label">Namn</span>
@@ -479,7 +479,7 @@
   </div>
 
   <div class="info-block">
-    <h2>Stall & <em>ägare</em></h2>
+    <h2>Stall & ägare</h2>
 
     <div class="info-row">
       <span class="info-label">Ägare</span>
@@ -547,7 +547,7 @@ async function loadHast() {
     const parts = h.namn.split(' ');
     const last = parts.pop();
     const first = parts.join(' ');
-    document.querySelector('.horse-hero-name').innerHTML = first ? first + ' <em>' + last + '</em>' : '<em>' + last + '</em>';
+    document.querySelector('.horse-hero-name').innerHTML = first ? first + ' ' + last + '' : '' + last + '';
     document.querySelector('.horse-hero-sub').textContent = h.alder + ' · ' + h.kon;
 
     // Update info rows

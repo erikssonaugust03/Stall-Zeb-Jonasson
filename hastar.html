@@ -640,7 +640,7 @@
   <div class="page-header-inner">
     <div>
       <div class="page-eyebrow">Stall Zeb Jonasson</div>
-      <h1 class="page-title">Våra<br><em>Hästar</em></h1>
+      <h1 class="page-title">Våra<br>Hästar</h1>
     <a href="startkommentarer.html" style="display:inline-block;margin-top:1.5rem;font-size:0.75rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;opacity:0.8;transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.8">Startkommentarer →</a>
     </div>
     <div class="horse-count">15</div>
@@ -699,9 +699,8 @@ function renderHastar() {
   const grid = document.getElementById('horsesGrid');
   const filtered = activeFilter === 'alla' ? allHastar : allHastar.filter(h => h.kon.toLowerCase() === activeFilter);
   grid.innerHTML = filtered.map((h, i) => {
-    const num = String(i + 1).padStart(2, '0');
     return `<a class="horse-item" data-kon="${h.kon.toLowerCase()}" href="hast-${h.slug}.html">
-      <div class="horse-item-top"><span class="horse-item-index">${num}</span></div>
+      <div class="horse-item-top"></div>
       <div class="horse-item-name">${h.namn}</div>
       <div class="horse-item-meta">
         <div class="horse-item-row"><span class="horse-item-row-label">Ålder</span><span class="horse-item-row-value">${h.alder}</span></div>
