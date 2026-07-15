@@ -255,10 +255,10 @@ async function loadStartPreview() {
   try {
     const res = await fetch(START_JSON + '?t=' + Date.now());
     const data = await res.json();
-    const today = new Date(); today.setHours(0,0,0,0);
+    const today = new Date();
+    const todayStr = today.getFullYear() + '-' + String(today.getMonth()+1).padStart(2,'0') + '-' + String(today.getDate()).padStart(2,'0');
     const kommande = (data.starter || []).filter(e => {
-      const d = new Date(e.datum); d.setDate(d.getDate()+1);
-      return today < d;
+      return e.datum >= todayStr;
     }).sort((a,b) => new Date(a.datum) - new Date(b.datum)).slice(0, 2);
 
     if (kommande.length === 0) {
