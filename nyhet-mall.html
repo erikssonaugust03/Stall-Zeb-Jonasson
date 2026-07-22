@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ✏️ ÄNDRA: Sidans titel (visas i webbläsarfliken) -->
+  <title>NYHETENS RUBRIK – Stall Zeb Jonasson</title>
+
+  <meta name="description" content="Stall Zeb Jonasson – Professionell travtränare baserad på Arlanda Travcenter.">
+  <meta property="og:title" content="NYHETENS RUBRIK – Stall Zeb Jonasson">
+  <meta property="og:description" content="KORT BESKRIVNING AV NYHETEN">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://stallzebjonasson.se/hero2.jpg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .nyhet-page { max-width: 800px; margin: 0 auto; padding: 10rem 4rem 6rem; }
+    .nyhet-back { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white-dim); text-decoration: none; display: inline-block; margin-bottom: 3rem; transition: color 0.2s; }
+    .nyhet-back:hover { color: var(--white); }
+    .nyhet-datum { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
+    .nyhet-rubrik { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 300; color: var(--white); line-height: 1.2; margin-bottom: 3rem; }
+    .nyhet-bild { width: 100%; max-height: 500px; object-fit: cover; margin-bottom: 3rem; }
+    .nyhet-text { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 300; color: var(--white-dim); line-height: 2; white-space: pre-line; }
+    .nyhet-video { width: 100%; aspect-ratio: 16/9; margin-top: 2rem; }
+    @media (max-width: 600px) { .nyhet-page { padding: 8rem 1.5rem 4rem; } }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo-zeb.png" alt="Stall Zeb Jonasson" style="height:48px;width:auto;"></a>
+  <ul class="nav-links">
+    <li><a href="nyheter.html">Nyheter</a></li>
+    <li><a href="startkommentarer.html">Startkommentarer</a></li>
+    <li class="nav-dropdown">
+      <a href="hastar.html">Hästar <span class="nav-drop-arrow">▾</span></a>
+      <ul class="nav-submenu">
+        <li><a href="hastar.html">Våra Hästar</a></li>
+        <li><a href="hastar-till-salu.html">Hästar till salu</a></li>
+      </ul>
+    </li>
+    <li><a href="anlaggning.html">Anläggning</a></li>
+    <li><a href="om-tranaren.html">Om Tränaren</a></li>
+    <li><a href="personal.html">Personal</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meny">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="nyheter.html">Nyheter</a>
+  <a href="startkommentarer.html">Startkommentarer</a>
+  <div class="mobile-expand">
+    <span class="mobile-expand-main" onclick="toggleMobileExpand()">
+      Hästar <span class="mobile-expand-arrow" id="hastarArrow">▾</span>
+    </span>
+    <div class="mobile-sub" id="hastarSub">
+      <a href="hastar.html">Våra Hästar</a>
+      <a href="hastar-till-salu.html">Hästar till salu</a>
+    </div>
+  </div>
+  <a href="anlaggning.html">Anläggning</a>
+  <a href="om-tranaren.html">Om Tränaren</a>
+  <a href="personal.html">Personal</a>
+  <a href="kontakt.html">Kontakt</a>
+</div>
+
+<div class="nyhet-page">
+
+  <a href="nyheter.html" class="nyhet-back">← Tillbaka till nyheter</a>
+
+  <!-- ✏️ ÄNDRA: Datum i formatet "13 juli 2026" -->
+  <div class="nyhet-datum">13 JULI 2026</div>
+
+  <!-- ✏️ ÄNDRA: Nyhetens rubrik -->
+  <h1 class="nyhet-rubrik">NYHETENS RUBRIK</h1>
+
+  <!-- ✏️ ÄNDRA: Bild - ändra filnamnet till din bild, eller ta bort hela img-raden om ingen bild -->
+  <img class="nyhet-bild" src="BILDNAMN.jpg" alt="NYHETENS RUBRIK">
+
+  <!-- ✏️ ÄNDRA: Nyhetens text - skriv precis som du vill att det ska stå -->
+  <div class="nyhet-text">HÄR SKRIVER DU NYHETENS HELA TEXT.
+
+Du kan ha flera stycken genom att lämna en tom rad mellan dem.
+
+Precis som det ser ut här.</div>
+
+  <!-- ✏️ VALFRITT: YouTube-video - klistra in embed-länk, annars ta bort dessa rader -->
+  <!--
+  <iframe class="nyhet-video" src="https://www.youtube.com/embed/DIN-VIDEO-ID" frameborder="0" allowfullscreen></iframe>
+  -->
+
+</div>
+
+<footer>
+  <div class="footer-logo">Stall Zeb Jonasson</div>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/profile.php?id=61587063060922&locale=sv_SE" target="_blank" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.885v2.27h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/stallzebjonasson/" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+  </div>
+  <div class="footer-copy">© 2026 Stall Zeb Jonasson. Alla rättigheter förbehållna. · <a href="integritetspolicy.html" style="color:var(--white-dim);text-decoration:none;">Integritetspolicy</a></div>
+</footer>
+
+<script>
+function toggleMenu() {
+  var btn = document.getElementById('hamburger');
+  var menu = document.getElementById('mobileMenu');
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+}
+function toggleMobileExpand() {
+  document.getElementById('hastarSub').classList.toggle('open');
+  document.getElementById('hastarArrow').classList.toggle('open');
+}
+document.querySelectorAll('#mobileMenu a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('mobileMenu').classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
