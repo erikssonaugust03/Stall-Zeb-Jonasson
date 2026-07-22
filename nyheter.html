@@ -350,6 +350,9 @@ loadNyheter();
 const IMG_BASE_MODAL = 'https://raw.githubusercontent.com/erikssonaugust03/Stall-Zeb-Jonasson/main';
 
 function openModal(n) {
+  if (n.slug) {
+    history.pushState({}, '', '?nyhet=' + n.slug);
+  }
   const datum = new Date(n.datum).toLocaleDateString('sv-SE', {day:'numeric', month:'long', year:'numeric'});
   document.getElementById('modalDatum').textContent = datum;
   document.getElementById('modalTitle').textContent = n.titel;
@@ -378,6 +381,7 @@ function openModal(n) {
 function closeModal() {
   document.getElementById('nyhetModal').classList.remove('open');
   document.body.style.overflow = '';
+  history.pushState({}, '', 'nyheter.html');
 }
 
 document.getElementById('nyhetModal').addEventListener('click', function(e) {
@@ -387,6 +391,22 @@ document.getElementById('nyhetModal').addEventListener('click', function(e) {
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeModal();
 });
+
+
+// URL-baserad nyhet - öppna rätt nyhet om slug finns i URL
+async function checkUrlForNyhet() {
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('nyhet');
+  if (!slug) return;
+  
+  try {
+    const res = await fetch('https://raw.githubusercontent.com/erikssonaugust03/Stall-Zeb-Jonasson/main/data/nyheter.json?t=' + Date.now());
+    const data = await res.json();
+    const nyhet = (data.nyheter || []).find(n => n.slug === slug);
+    if (nyhet) openModal(nyhet);
+  } catch(e) {}
+}
+checkUrlForNyhet();
 
 function toggleMenu() {
   var btn = document.getElementById('hamburger');
