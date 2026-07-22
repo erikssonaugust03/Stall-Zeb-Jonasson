@@ -202,6 +202,15 @@
   </div>
 </section>
 
+<div class="modal-overlay" id="nyhetModal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-datum" id="modalDatum"></div>
+    <div class="modal-title" id="modalTitle"></div>
+    <img class="modal-img" id="modalImg" src="" alt="" style="display:none;">
+    <div class="modal-text" id="modalText"></div>
+  </div>
+</div>
 <footer>
   <div class="footer-logo">Stall Zeb Jonasson</div>
   <div class="footer-social">
@@ -281,6 +290,38 @@ async function loadStartPreview() {
   } catch(e) { if(document.getElementById('startPreview')) document.getElementById('startPreview').innerHTML = ''; }
 }
 loadStartPreview();
+
+
+const IMG_BASE_MODAL = 'https://raw.githubusercontent.com/erikssonaugust03/Stall-Zeb-Jonasson/main';
+
+function openModal(n) {
+  const datum = new Date(n.datum).toLocaleDateString('sv-SE', {day:'numeric', month:'long', year:'numeric'});
+  document.getElementById('modalDatum').textContent = datum;
+  document.getElementById('modalTitle').textContent = n.titel;
+  document.getElementById('modalText').textContent = n.text;
+  const img = document.getElementById('modalImg');
+  if (n.bild && n.bild.trim()) {
+    img.src = n.bild.startsWith('http') ? n.bild : IMG_BASE_MODAL + n.bild;
+    img.style.display = 'block';
+  } else { img.style.display = 'none'; }
+  document.getElementById('nyhetModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('nyhetModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('nyhetModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
 
 function toggleMobileExpand() {
   document.getElementById('hastarSub').classList.toggle('open');
