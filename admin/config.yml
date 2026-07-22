@@ -95,6 +95,7 @@ collections:
               - { label: "Datum", name: "datum", widget: "date", format: "YYYY-MM-DD" }
               - { label: "Tid (t.ex. 14:30)", name: "tid", widget: "string", required: false, hint: "Ange tid i format HH:MM" }
               - { label: "Titel", name: "titel", widget: "string" }
+              - { label: "Slug (URL-namn, t.ex. snabbjobb-pa-valla)", name: "slug", widget: "string", hint: "Små bokstäver, bindestreck istället för mellanslag och å/ä/ö. Används för delbar länk." }
               - { label: "Text", name: "text", widget: "text" }
               - { label: "Bild", name: "bild", widget: "image", required: false }
               - { label: "YouTube-länk", name: "youtube", widget: "string", required: false, hint: "Klistra in YouTube-länken här, t.ex. https://www.youtube.com/watch?v=..." }
