@@ -432,10 +432,11 @@ async function loadKommentarer() {
     const data = await res.json();
     const starter = data.starter || [];
 
-    const today = new Date(); today.setHours(0,0,0,0);
+    const today = new Date();
+    const todayStr = today.getFullYear() + '-' + String(today.getMonth()+1).padStart(2,'0') + '-' + String(today.getDate()).padStart(2,'0');
 
     const kommande = starter
-      .filter(e => { const d = new Date(e.datum); d.setDate(d.getDate()+1); return today < d; })
+      .filter(e => e.datum >= todayStr)
       .sort((a,b) => new Date(a.datum) - new Date(b.datum));
 
     if (kommande.length === 0) {
