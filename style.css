@@ -1047,6 +1047,14 @@
       flex-direction: column !important;
       align-items: flex-start !important;
     }
+    .salu-kort {
+      grid-template-columns: 1fr !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    .salu-kort > div:first-child { padding: 2rem 1.5rem !important; }
+    .salu-kort > div:last-child { min-height: 280px !important; }
+    #saluSection { padding: 0 1.5rem 4rem !important; }
     #var-gard {
       padding: 4rem 1.5rem !important;
     }
