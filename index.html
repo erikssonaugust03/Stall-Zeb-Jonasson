@@ -68,6 +68,15 @@
   <a href="kontakt.html">Kontakt</a>
 </div>
 
+<!-- STICKY SALU-NOTIS -->
+<div id="saluNotis" style="background:rgba(200,216,232,0.08);border-bottom:1px solid rgba(200,216,232,0.15);padding:0.8rem 4rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:99;backdrop-filter:blur(10px);">
+  <span style="font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);">Just Hell Bent &nbsp;·&nbsp; Nu till salu</span>
+  <div style="display:flex;align-items:center;gap:2rem;">
+    <a href="hastar-till-salu.html" style="font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1">Läs mer →</a>
+    <button onclick="document.getElementById('saluNotis').style.display='none'" style="background:none;border:none;color:var(--white-dim);cursor:pointer;font-size:1rem;opacity:0.5;transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.5">✕</button>
+  </div>
+</div>
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
@@ -143,6 +152,24 @@
   </div>
 </section>
 
+
+
+<!-- JUST HELL BENT FRAMHÄVT KORT -->
+<section style="background:var(--black);padding:0 4rem 5rem;border-top:none;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <a href="hastar-till-salu.html" class="salu-kort" style="text-decoration:none;display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--navy);transition:opacity 0.3s;" onmouseover="this.style.opacity=0.85" onmouseout="this.style.opacity=1">
+      <div style="padding:4rem;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;">Till salu</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3vw,3rem);font-weight:300;color:var(--white);line-height:1.2;margin-bottom:1.5rem;">Just Hell Bent</h3>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:300;color:var(--white-dim);line-height:1.8;margin-bottom:2rem;">En lovande häst med stor potential. Kontakta oss för mer information om förvärv av andelar.</p>
+        <span style="font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);border-bottom:1px solid rgba(244,242,238,0.3);padding-bottom:0.2rem;">Se mer information →</span>
+      </div>
+      <div style="background:var(--navy-mid);min-height:320px;overflow:hidden;">
+        <img id="justHellBentImg" src="" alt="Just Hell Bent" style="width:100%;height:100%;object-fit:cover;opacity:0.8;display:none;">
+      </div>
+    </a>
+  </div>
+</section>
 
 <!-- VÅR GÅRD -->
 <section id="var-gard" style="background:var(--black);padding:6rem 4rem;">
@@ -322,6 +349,23 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeModal();
 });
+
+
+// Load Just Hell Bent image from hastar-till-salu.json
+async function loadJustHellBentImg() {
+  try {
+    const res = await fetch('https://raw.githubusercontent.com/erikssonaugust03/Stall-Zeb-Jonasson/main/data/hastar-till-salu.json?t=' + Date.now());
+    const data = await res.json();
+    const jhb = (data.hastar || []).find(h => h.namn && h.namn.toLowerCase().includes('just hell bent'));
+    if (jhb && jhb.bild) {
+      const img = document.getElementById('justHellBentImg');
+      const imgSrc = jhb.bild.startsWith('http') ? jhb.bild : 'https://raw.githubusercontent.com/erikssonaugust03/Stall-Zeb-Jonasson/main' + jhb.bild;
+      img.src = imgSrc;
+      img.style.display = 'block';
+    }
+  } catch(e) {}
+}
+loadJustHellBentImg();
 
 function toggleMobileExpand() {
   document.getElementById('hastarSub').classList.toggle('open');
