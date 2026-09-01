@@ -152,6 +152,7 @@
   /* Decorative horse silhouette via CSS */
   .gard-btn-mobile { display: none !important; }
   .salu-bild { min-height: 380px; }
+  .salu-text { padding: 4rem 3rem; }
 
   .horse-silhouette {
     position: absolute;
