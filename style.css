@@ -1054,6 +1054,7 @@
       gap: 0 !important;
     }
     .salu-kort > div:first-child { padding: 2rem 1.5rem !important; margin-top: 0 !important; }
+    .salu-text { padding: 2rem 1.5rem !important; }
     .salu-kort > div:last-child { min-height: 280px !important; margin-bottom: 0 !important; }
     #saluSection { padding: 0 1.5rem 4rem !important; }
     #var-gard {
