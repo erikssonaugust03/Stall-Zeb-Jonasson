@@ -153,6 +153,8 @@
   .gard-btn-mobile { display: none !important; }
   .salu-bild { min-height: 380px; }
   .salu-text { padding: 4rem 3rem; }
+  .salu-kort { display: grid; grid-template-columns: 1fr 1fr; direction: rtl; }
+  .salu-kort > * { direction: ltr; }
 
   .horse-silhouette {
     position: absolute;
@@ -1055,9 +1057,8 @@
       flex-direction: column !important;
       gap: 0 !important;
     }
-    .salu-kort > div:first-child { padding: 2rem 1.5rem !important; margin-top: 0 !important; }
+    .salu-kort > div:first-child { min-height: 260px !important; }
     .salu-text { padding: 2rem 1.5rem !important; }
-    .salu-kort > div:last-child { min-height: 280px !important; margin-bottom: 0 !important; }
     #saluSection { padding: 0 1.5rem 4rem !important; }
     #var-gard {
       padding: 4rem 1.5rem !important;
