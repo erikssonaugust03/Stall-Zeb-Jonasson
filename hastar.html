@@ -708,7 +708,7 @@ async function loadHastar() {
 
 function renderHastar() {
   const grid = document.getElementById('horsesGrid');
-  const filtered = activeFilter === 'alla' ? allHastar : allHastar.filter(h => h.kon.toLowerCase() === activeFilter);
+  const filtered = (activeFilter === 'alla' ? allHastar : allHastar.filter(h => h.kon.toLowerCase() === activeFilter)).sort((a, b) => a.namn.localeCompare(b.namn, 'sv'));
   grid.innerHTML = filtered.map((h, i) => {
     return `<a class="horse-item" data-kon="${h.kon.toLowerCase()}" href="hast-${h.slug}.html">
       <div class="horse-item-top"></div>
