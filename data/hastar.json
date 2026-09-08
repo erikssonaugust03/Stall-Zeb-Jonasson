@@ -168,6 +168,18 @@
       "skotare": "Moa Thörngren",
       "far": "Readly Express",
       "bild": "/images/zagreus-hc.jpg"
+    },
+    {
+      "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts805539/pedigree",
+      "alder": "2 år",
+      "kon": "Hingst",
+      "slug": "mazzola-dream",
+      "agare": "Ambition Kapital AB",
+      "uppfodare": "Ambition Kapital AB",
+      "mor": "New Gold Dream",
+      "namn": "Mazzola Dream",
+      "skotare": "Moa Thörngren",
+      "far": "Propulsion"
     }
   ]
 }
