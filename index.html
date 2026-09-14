@@ -261,11 +261,12 @@ async function loadNyheterPreview() {
     preview.innerHTML = nyheter.map(n => {
       const datum = new Date(n.datum).toLocaleDateString('sv-SE', { day: 'numeric', month: 'long', year: 'numeric' });
       const img = (n.bild && n.bild.trim()) ? (n.bild.startsWith('http') ? n.bild : IMG_BASE_IDX + n.bild) : '';
-      return `<a href="nyheter.html" style="background:var(--black);padding:2.5rem 2rem;display:block;text-decoration:none;color:inherit;transition:background 0.3s;" onmouseover="this.style.background='var(--navy)'" onmouseout="this.style.background='var(--black)'">
+      const slug = n.slug ? '?nyhet=' + n.slug : '';
+      return `<a href="nyheter.html${slug}" style="background:var(--black);padding:2.5rem 2rem;display:block;text-decoration:none;color:var(--white);transition:background 0.3s;" onmouseover="this.style.background='var(--navy)'" onmouseout="this.style.background='var(--black)'">
         <div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);margin-bottom:0.8rem;">${datum}</div>
-        ${img ? '<img src="' + img + '" style="width:100%;height:160px;object-fit:cover;margin-bottom:1rem;">' : ''}
+        ${img ? '<img src="' + img + '" style="width:100%;height:200px;object-fit:cover;margin-bottom:1rem;">' : ''}
         <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:var(--white);margin-bottom:0.8rem;">${n.titel}</div>
-        <p style="font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-weight:300;color:var(--white-dim);line-height:1.7;">${n.text.substring(0, 120)}${n.text.length > 120 ? '...' : ''}</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-weight:300;color:rgba(244,242,238,0.6);line-height:1.7;">${n.text.substring(0, 120)}${n.text.length > 120 ? '...' : ''}</p>
       </a>`;
     }).join('');
   } catch(e) { preview.innerHTML = ''; }
