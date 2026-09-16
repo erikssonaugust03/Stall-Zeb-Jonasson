@@ -1,3 +1,7 @@
+[build]
+  command = "node scripts/generate-news.js"
+  publish = "."
+
 [[redirects]]
   from = "/admin"
   to = "/admin/index.html"
