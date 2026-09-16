@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "node scripts/generate-news.js"
+  },
+  "dependencies": {
+    "sharp": "^0.34.3"
+  }
+}
