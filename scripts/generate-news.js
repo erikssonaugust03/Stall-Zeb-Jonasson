@@ -1,7 +1,8 @@
 const fs=require('fs');const path=require('path');const sharp=require('sharp');
 const root=path.resolve(__dirname,'..');
 const data=JSON.parse(fs.readFileSync(path.join(root,'data','nyheter.json'),'utf8'));
-const siteUrl=(process.env.DEPLOY_PRIME_URL||process.env.URL||'https://stallzebjonasson.se').replace(/\/$/,'');
+const isProduction=process.env.CONTEXT==='production';
+const siteUrl=(isProduction?'https://stallzebjonasson.se':(process.env.DEPLOY_PRIME_URL||process.env.URL||'https://stallzebjonasson.se')).replace(/\/$/,'');
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const clean=s=>String(s??'').replace(/\s+/g,' ').trim();
 const youtubeId=u=>{const m=String(u||'').match(/(?:v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/);return m?m[1]:''};
