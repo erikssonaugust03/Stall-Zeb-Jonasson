@@ -82,17 +82,6 @@
       ]
     },
     {
-      "datum": "2026-09-03",
-      "hastar": [
-        {
-          "start": "Lopp 7",
-          "namn": "Calgary Dreams",
-          "kommentar": "Gjorde det bra senast och kunde med liten marginal avlägga sitt maiden. Nu står vi 20 m bakom den hästen vi hade på fotot senast. Kan bli svårt att rå på den igen nu med dessa förutsättningar men jag räknar med en stark insats av min häst. Inga ändringar. "
-        }
-      ],
-      "lopp": "Bollnäs"
-    },
-    {
       "datum": "2026-09-04",
       "lopp": "Romme",
       "hastar": [
@@ -126,6 +115,17 @@
       ]
     },
     {
+      "datum": "2026-09-03",
+      "hastar": [
+        {
+          "start": "Lopp 7",
+          "namn": "Calgary Dreams",
+          "kommentar": "Gjorde det bra senast och kunde med liten marginal avlägga sitt maiden. Nu står vi 20 m bakom den hästen vi hade på fotot senast. Kan bli svårt att rå på den igen nu med dessa förutsättningar men jag räknar med en stark insats av min häst. Inga ändringar. "
+        }
+      ],
+      "lopp": "Bollnäs"
+    },
+    {
       "datum": "2026-09-18",
       "lopp": "Romme",
       "hastar": [
@@ -133,6 +133,22 @@
           "namn": "Biscaya Bro",
           "start": "Lopp 2",
           "kommentar": "Har gjort två fina lopp och har tränat på fint efter det. Möter några mer meriterade här men vi har fått ett bra spår och borde kunna få ett fint lopp därifrån. Inga ändringar. "
+        }
+      ]
+    },
+    {
+      "datum": "2026-09-21",
+      "lopp": "Bollnäs",
+      "hastar": [
+        {
+          "namn": "Just Hell Bent",
+          "start": "Lopp 1",
+          "kommentar": "Var jag supernöjd med i debuten och har tränat fint efter det. Räknar med en liknande insats igen och hoppas att det ska räcka en bit. Inga ändringar. "
+        },
+        {
+          "namn": "Knaborgs Katla",
+          "start": "Lopp 5",
+          "kommentar": "Var väldigt positiv senast och satt fast med gott om krafter kvar. Nu fick vi dåligt läge vilket gör det betydligt svårare den här gången. Jag hoppas och tror att hon ska göra ett bra lopp igen. Inga ändringar. "
         }
       ]
     }
