@@ -1,0 +1,103 @@
+backend:
+  name: git-gateway
+  branch: test-nyhetssidor
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "startkommentarer"
+    label: "Startkommentarer"
+    files:
+      - name: "startkommentarer"
+        label: "Startkommentarer"
+        file: "data/startkommentarer.json"
+        fields:
+          - label: "Starter"
+            name: "starter"
+            widget: "list"
+            fields:
+              - { label: "Datum", name: "datum", widget: "date", format: "YYYY-MM-DD" }
+              - { label: "Lopp (t.ex. V64 · Romme)", name: "lopp", widget: "string" }
+              - label: "Hästar"
+                name: "hastar"
+                widget: "list"
+                fields:
+                  - { label: "Hästnamn", name: "namn", widget: "string" }
+                  - { label: "Lopp (t.ex. V64-2)", name: "start", widget: "string" }
+                  - { label: "Kommentar", name: "kommentar", widget: "text" }
+
+  - name: "hastar_i_stallet"
+    label: "Hästar i stallet"
+    files:
+      - name: "hastar"
+        label: "Hästar i stallet"
+        file: "data/hastar.json"
+        fields:
+          - label: "Hästar"
+            name: "hastar"
+            widget: "list"
+            fields:
+              - { label: "Namn", name: "namn", widget: "string" }
+              - { label: "Slug (url-namn, t.ex. rusa-tooma)", name: "slug", widget: "string", hint: "Små bokstäver, bindestreck istället för mellanslag" }
+              - { label: "Ålder (t.ex. 3 år)", name: "alder", widget: "string" }
+              - { label: "Kön", name: "kon", widget: "select", options: ["Valack", "Sto", "Hingst"] }
+              - { label: "Far", name: "far", widget: "string" }
+              - { label: "Mor", name: "mor", widget: "string" }
+              - { label: "Ägare", name: "agare", widget: "string", required: false }
+              - { label: "Uppfödare", name: "uppfodare", widget: "string", required: false }
+              - { label: "Skötare", name: "skotare", widget: "string", required: false }
+              - { label: "Travsport-länk", name: "travsport", widget: "string", required: false }
+              - { label: "Huvudbild", name: "bild", widget: "image", required: false }
+              - label: "Fler bilder"
+                name: "bilder"
+                widget: "list"
+                required: false
+                field: { label: "Bild", name: "bild", widget: "image" }
+
+  - name: "hastar_till_salu"
+    label: "Hästar till salu"
+    files:
+      - name: "hastar_till_salu"
+        label: "Hästar till salu"
+        file: "data/hastar-till-salu.json"
+        fields:
+          - label: "Hästar"
+            name: "hastar"
+            widget: "list"
+            fields:
+              - { label: "Hästnamn", name: "namn", widget: "string" }
+              - { label: "Ålder & kön (t.ex. 2 år · Hingst)", name: "alder_kon", widget: "string" }
+              - { label: "Far", name: "far", widget: "string" }
+              - { label: "Mor", name: "mor", widget: "string" }
+              - { label: "Antal andelar", name: "antal_andelar", widget: "string" }
+              - { label: "Typ", name: "typ", widget: "select", options: ["Andel", "Hel häst"] }
+              - { label: "Pris (kr)", name: "pris", widget: "string" }
+              - { label: "Beskrivning", name: "beskrivning", widget: "text" }
+              - { label: "Huvudbild", name: "bild", widget: "image", required: false }
+              - label: "Fler bilder"
+                name: "bilder"
+                widget: "list"
+                required: false
+                field: { label: "Bild", name: "bild", widget: "image" }
+
+  - name: "nyheter"
+    label: "Nyheter"
+    files:
+      - name: "nyheter"
+        label: "Nyheter"
+        file: "data/nyheter.json"
+        fields:
+          - label: "Nyheter"
+            name: "nyheter"
+            widget: "list"
+            fields:
+              - { label: "Datum", name: "datum", widget: "date", format: "YYYY-MM-DD" }
+              - { label: "Tid (t.ex. 14:30)", name: "tid", widget: "string", required: false, hint: "Ange tid i format HH:MM" }
+              - { label: "Titel", name: "titel", widget: "string" }
+              - { label: "Slug (URL-namn, t.ex. snabbjobb-pa-valla)", name: "slug", widget: "string", hint: "Små bokstäver, bindestreck istället för mellanslag och å/ä/ö. Används för delbar länk." }
+              - { label: "Text", name: "text", widget: "text" }
+              - { label: "Kategori", name: "kategori", widget: "select", options: ["Resultat", "Stallnytt", "Inför start"], required: false, hint: "Valfritt. Används för filtrering på nyhetssidan." }
+              - { label: "Kopplad häst", name: "hast", widget: "select", options: ["Ajson", "Al's Chewbacca", "Assai Express", "Biscaya Bro", "Calgary Dreams", "Follow the Cash", "Impertinent", "Just Hell Bent", "Knaborgs Katla", "Serrano", "Spicegirl", "You're Welcome W.", "Zagreus H.C.", "Mazzola Dream"], required: false, hint: "Valfritt. Gör att nyheten kan visas på hästens profil." }
+              - { label: "Bild", name: "bild", widget: "image", required: false }
+              - { label: "YouTube-länk", name: "youtube", widget: "string", required: false, hint: "Klistra in YouTube-länken här, t.ex. https://www.youtube.com/watch?v=..." }
