@@ -6,6 +6,12 @@ main{max-width:1280px;margin:auto;padding:90px 4vw}.eyebrow{color:var(--blue);fo
 .sectionbar{display:flex;justify-content:space-between;align-items:end;margin:72px 0 22px}.sectionbar h2{font-size:32px;font-weight:300;margin:0}.filters{display:flex;gap:8px}.filters button{border:1px solid #263442;background:transparent;color:#ccd5dc;padding:9px 15px;border-radius:20px}.filters .active{background:#dcecf7;color:#07101a;border-color:#dcecf7}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#0a0f14;overflow:hidden}.card-img{height:210px;background-size:cover;background-position:center}.card-copy{padding:22px}.card h3{font-size:21px;font-weight:400;line-height:1.2;margin:10px 0}.card p{font-size:14px;margin:0}.card .more{display:block}
 @media(max-width:800px){.nav{display:none}main{padding-top:55px}.lead{grid-template-columns:1fr}.lead-img{min-height:330px}.lead-copy{padding:30px}.grid{grid-template-columns:1fr 1fr}.filters{display:none}}@media(max-width:520px){.grid{grid-template-columns:1fr}.lead h2{font-size:30px}}
+
+/* visual polish */
+.top{padding-bottom:6px}.lead{border-radius:2px}.lead-img{position:relative}.lead-img:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 65%,rgba(13,29,45,.18))}
+.card{transition:transform .22s ease,background .22s ease}.card:hover{transform:translateY(-4px);background:#0d151d}.card-img{transition:transform .35s ease}.card:hover .card-img{transform:scale(1.015)}
+.filters button{cursor:pointer;transition:.2s}.sectionbar{padding-top:4px}.lead-copy p{max-width:440px}.lead .more,.card .more{transition:opacity .2s}.lead:hover .more,.card:hover .more{opacity:.72}
+@media(max-width:800px){.lead-img:after{display:none}.lead-copy{padding:32px}}
 </style></head><body><header><img src="/logo-zeb.png" alt="Stall Zeb Jonasson"><div class="nav"><a href="/startsida-test.html">Startsida</a><a href="/hastar-test-kompakt.html">Våra hästar</a><a href="#">Starter</a><a href="#">Kontakt</a></div></header><main><div class="top"><div class="eyebrow">Från stallet</div><h1>Nyheter</h1><p>Följ vardagen hos Stall Zeb Jonasson – resultat, träning, hästar och det senaste från verksamheten.</p></div><div id="content"></div></main>
 <script>
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
