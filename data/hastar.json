@@ -11,7 +11,8 @@
       "namn": "Ajson",
       "skotare": "Moa Thörngren",
       "far": "S.J.'s Caviar",
-      "bild": "/images/img_4163.jpeg"
+      "bild": "/images/img_4163.jpeg",
+      "bildposition": "center 42%"
     },
     {
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts804075/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
@@ -24,7 +25,8 @@
       "namn": "Al's Chewbacca",
       "skotare": "Moa Thörngren ",
       "far": "Brillantissime",
-      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png"
+      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png",
+      "bildposition": "center 38%"
     },
     {
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts807196/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
@@ -37,7 +39,8 @@
       "namn": "Assai Express",
       "skotare": "Moa Thörngren",
       "far": "Don Fanucci Zet",
-      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png"
+      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png",
+      "bildposition": "center 38%"
     },
     {
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts804082/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
@@ -50,7 +53,8 @@
       "namn": "Biscaya Bro",
       "skotare": "Moa Thörngren",
       "far": "Global Welcome",
-      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png"
+      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png",
+      "bildposition": "center 38%"
     },
     {
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts798484/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
@@ -63,7 +67,8 @@
       "namn": "Calgary Dreams",
       "skotare": "Moa Thörngren ",
       "far": "Calgary Games",
-      "bild": "/images/img_3996.jpeg"
+      "bild": "/images/img_3996.jpeg",
+      "bildposition": "center 38%"
     },
     {
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts800043/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
@@ -76,7 +81,8 @@
       "namn": "Follow the Cash",
       "skotare": "Moa Thörngren",
       "far": "S.J.'s Caviar",
-      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png"
+      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png",
+      "bildposition": "center 38%"
     },
     {
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts798010/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
@@ -89,7 +95,8 @@
       "namn": "Impertinent",
       "skotare": "Moa Thörngren",
       "far": "Who's Who",
-      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png"
+      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png",
+      "bildposition": "center 38%"
     },
     {
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts804524/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
@@ -102,7 +109,8 @@
       "namn": "Just Hell Bent",
       "skotare": "Moa Thörngren",
       "far": "Maharajah",
-      "bild": "/images/just-hell-bent.jpeg"
+      "bild": "/images/just-hell-bent.jpeg",
+      "bildposition": "center 35%"
     },
     {
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts798745/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
@@ -115,7 +123,8 @@
       "namn": "Knaborgs Katla",
       "skotare": "Moa Thörngren",
       "far": "Who's Who",
-      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png"
+      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png",
+      "bildposition": "center 38%"
     },
     {
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts808069/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
@@ -128,7 +137,8 @@
       "namn": "Serrano",
       "skotare": "Moa Thörngren",
       "far": "Don Fanucci Zet",
-      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png"
+      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png",
+      "bildposition": "center 38%"
     },
     {
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts804571/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
@@ -141,7 +151,8 @@
       "namn": "Spicegirl",
       "skotare": "Moa Thörngren",
       "far": "Global Welcome",
-      "bild": "/images/img_5599.jpeg"
+      "bild": "/images/img_5599.jpeg",
+      "bildposition": "center 36%"
     },
     {
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts805648/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
@@ -154,7 +165,8 @@
       "namn": "You're Welcome W.",
       "skotare": "Moa Thörngren",
       "far": "Global Welcome",
-      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png"
+      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png",
+      "bildposition": "center 38%"
     },
     {
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts810273/pedigree",
@@ -167,7 +179,8 @@
       "namn": "Zagreus H.C.",
       "skotare": "Moa Thörngren",
       "far": "Readly Express",
-      "bild": "/images/zagreus-hc.jpg"
+      "bild": "/images/zagreus-hc.jpg",
+      "bildposition": "center 40%"
     },
     {
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts805539/pedigree",
@@ -179,7 +192,8 @@
       "mor": "New Gold Dream",
       "namn": "Mazzola Dream",
       "skotare": "Moa Thörngren",
-      "far": "Propulsion"
+      "far": "Propulsion",
+      "bildposition": "center center"
     }
   ]
 }
