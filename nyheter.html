@@ -15,11 +15,15 @@
 /* Exakt gemensam huvudrubrik */
 .page-title,.nyheter-title,.gard-page-title{font-family:'Cormorant Garamond',serif!important;font-size:clamp(3.5rem,7vw,6rem)!important;font-weight:300!important;line-height:.95!important;letter-spacing:0!important;color:var(--white)!important}
 @media(max-width:800px){.page-title,.nyheter-title,.gard-page-title{font-size:clamp(3rem,13vw,4.25rem)!important;line-height:.95!important}}
+
+/* Canonical page heading — identical on every primary page */
+.site-page-title{font-family:'Cormorant Garamond',serif!important;font-size:clamp(3.5rem,7vw,6rem)!important;font-weight:300!important;line-height:.95!important;letter-spacing:0!important;color:var(--white)!important;margin:0!important}
+@media(max-width:800px){.site-page-title{font-size:clamp(3rem,13vw,4.25rem)!important;line-height:.95!important}}
 </style>
 </head><body>
 <nav><a href="/" class="nav-logo"><img src="/logo-zeb.png" alt="Stall Zeb Jonasson" style="height:48px;width:auto;"></a><ul class="nav-links"><li><a href="/nyheter" class="active">Nyheter</a></li><li><a href="/startkommentarer">Startkommentarer</a></li><li class="nav-dropdown"><a href="/hastar">Hästar <span class="nav-drop-arrow">▾</span></a><ul class="nav-submenu"><li><a href="/hastar">Våra Hästar</a></li><li><a href="/hastar-till-salu">Hästar till salu</a></li></ul></li><li><a href="/anlaggning">Anläggning</a></li><li><a href="/om-tranaren">Om Tränaren</a></li><li><a href="/personal">Personal</a></li><li><a href="/kontakt">Kontakt</a></li></ul><button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meny"><span></span><span></span><span></span></button></nav>
 <div id="mobileMenu" class="nav-mobile-menu"><a href="/nyheter" class="active">Nyheter</a><a href="/startkommentarer">Startkommentarer</a><a href="/hastar">Våra Hästar</a><a href="/hastar-till-salu">Hästar till salu</a><a href="/anlaggning">Anläggning</a><a href="/om-tranaren">Om Tränaren</a><a href="/personal">Personal</a><a href="/kontakt">Kontakt</a></div>
-<header class="nyheter-header"><div class="nyheter-header-inner"><div class="nyheter-eyebrow">Stall Zeb Jonasson</div><h1 class="nyheter-title">Nyheter från<br>Stallet</h1></div></header>
+<header class="nyheter-header"><div class="nyheter-header-inner"><div class="nyheter-eyebrow">Stall Zeb Jonasson</div><h1 class="site-page-title">Nyheter från<br>Stallet</h1></div></header>
 <main class="nyheter-section" id="nyheterList"><p style="color:var(--white-dim)">Laddar nyheter...</p></main>
 <footer><div class="footer-logo">Stall Zeb Jonasson</div><div class="footer-copy">© 2026 Stall Zeb Jonasson. Alla rättigheter förbehållna. · <a href="/integritetspolicy" style="color:var(--white-dim);text-decoration:none">Integritetspolicy</a></div></footer>
 <script>
