@@ -104,6 +104,17 @@
       ]
     },
     {
+      "datum": "2026-09-18",
+      "lopp": "Romme",
+      "hastar": [
+        {
+          "namn": "Biscaya Bro",
+          "start": "Lopp 2",
+          "kommentar": "Har gjort två fina lopp och har tränat på fint efter det. Möter några mer meriterade här men vi har fått ett bra spår och borde kunna få ett fint lopp därifrån. Inga ändringar. "
+        }
+      ]
+    },
+    {
       "datum": "2026-09-12",
       "lopp": "Hagmyren",
       "hastar": [
@@ -124,17 +135,6 @@
         }
       ],
       "lopp": "Bollnäs"
-    },
-    {
-      "datum": "2026-09-18",
-      "lopp": "Romme",
-      "hastar": [
-        {
-          "namn": "Biscaya Bro",
-          "start": "Lopp 2",
-          "kommentar": "Har gjort två fina lopp och har tränat på fint efter det. Möter några mer meriterade här men vi har fått ett bra spår och borde kunna få ett fint lopp därifrån. Inga ändringar. "
-        }
-      ]
     },
     {
       "datum": "2026-09-21",
@@ -182,6 +182,22 @@
           "namn": "Calgary Dreams",
           "start": "Lopp 6",
           "kommentar": "Har varit fin på slutet och utvecklingskurvan pekar åt rätt håll. Inte mött den här typen av hästar tidigare så det här blir såklart lite av ett elddop. Vi fick rätt läge så vi får prova hamna en bit fram på innerspår och se hur långt det räcker. Amerikansk vagn och ryckhuva denna gång. "
+        }
+      ]
+    },
+    {
+      "datum": "2026-10-02",
+      "lopp": "Bollnäs",
+      "hastar": [
+        {
+          "namn": "Just Hell Bent",
+          "start": "Lopp 1",
+          "kommentar": "Var fin i debuten och skulle ha startat för 11 dagar sen men lyckades bita sig lite i läppen och fick inte vara med tråkigt nog. Vi körde ett rejält jobb hemma dagen efter så jag tror inte att hon har tappat något. Inga ändringar. "
+        },
+        {
+          "namn": "Knaborgs Katla",
+          "start": "Lopp 3",
+          "kommentar": "Gjorde det bra i skymundan senast och är inne i en bra fas i sitt tävlande. Jag räknar med en liknande insats igen, men det kan bli svårt att nå ända fram från det här läget. Inga ändringar. "
         }
       ]
     }
