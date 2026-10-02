@@ -82,28 +82,6 @@
       ]
     },
     {
-      "datum": "2026-09-04",
-      "lopp": "Romme",
-      "hastar": [
-        {
-          "namn": "Just Hell Bent",
-          "start": "Lopp 1",
-          "kommentar": "Tycker jag är en fin häst som jag var nöjd med i kvalet. Känns som att hon har gått framåt med det. Här räknar jag med en bra insats direkt. "
-        }
-      ]
-    },
-    {
-      "datum": "2026-09-11",
-      "lopp": "Bollnäs",
-      "hastar": [
-        {
-          "namn": "Calgary Dreams",
-          "start": "Lopp 5",
-          "kommentar": "Har gjort två riktigt fina lopp nu på slutet. Känns fortsatt bra så räknar med en liknande insats den här gången. Kommer ta av bakskorna och lätta henne fram. I övrigt inga ändringar. "
-        }
-      ]
-    },
-    {
       "datum": "2026-09-18",
       "lopp": "Romme",
       "hastar": [
@@ -115,13 +93,13 @@
       ]
     },
     {
-      "datum": "2026-09-12",
-      "lopp": "Hagmyren",
+      "datum": "2026-09-04",
+      "lopp": "Romme",
       "hastar": [
         {
-          "start": "Lopp 3",
-          "namn": "Follow The Cash",
-          "kommentar": "Felade lite olyckligt senast då jag vart tvungen att ta i henne in i första sväng. Tror hon hade varit med i den främre träffen annars. Hon är ganska kvick i voltstart så plan A är att prova att hålla ute dom övriga och sen köra där. Vanlig vagn nu när det är voltstart. I övrigt inga ändringar. "
+          "namn": "Just Hell Bent",
+          "start": "Lopp 1",
+          "kommentar": "Tycker jag är en fin häst som jag var nöjd med i kvalet. Känns som att hon har gått framåt med det. Här räknar jag med en bra insats direkt. "
         }
       ]
     },
@@ -135,6 +113,17 @@
         }
       ],
       "lopp": "Bollnäs"
+    },
+    {
+      "datum": "2026-09-11",
+      "lopp": "Bollnäs",
+      "hastar": [
+        {
+          "namn": "Calgary Dreams",
+          "start": "Lopp 5",
+          "kommentar": "Har gjort två riktigt fina lopp nu på slutet. Känns fortsatt bra så räknar med en liknande insats den här gången. Kommer ta av bakskorna och lätta henne fram. I övrigt inga ändringar. "
+        }
+      ]
     },
     {
       "datum": "2026-09-21",
@@ -160,6 +149,17 @@
           "namn": "Follow The Cash",
           "start": "Lopp 4",
           "kommentar": "Jag var väldigt besviken på hennes uppträdande senast. Provar att ta av alla skor denna gång (bara barfota bak tidigare) och amerikansk sulky igen nu när det är bilstart. Sköter hon sig räknar jag med en anständig insats. "
+        }
+      ]
+    },
+    {
+      "datum": "2026-09-12",
+      "lopp": "Hagmyren",
+      "hastar": [
+        {
+          "start": "Lopp 3",
+          "namn": "Follow The Cash",
+          "kommentar": "Felade lite olyckligt senast då jag vart tvungen att ta i henne in i första sväng. Tror hon hade varit med i den främre träffen annars. Hon är ganska kvick i voltstart så plan A är att prova att hålla ute dom övriga och sen köra där. Vanlig vagn nu när det är voltstart. I övrigt inga ändringar. "
         }
       ]
     },
@@ -198,6 +198,22 @@
           "namn": "Knaborgs Katla",
           "start": "Lopp 3",
           "kommentar": "Gjorde det bra i skymundan senast och är inne i en bra fas i sitt tävlande. Jag räknar med en liknande insats igen, men det kan bli svårt att nå ända fram från det här läget. Inga ändringar. "
+        }
+      ]
+    },
+    {
+      "datum": "2026-10-05",
+      "lopp": "Gävle",
+      "hastar": [
+        {
+          "namn": "Follow The Cash",
+          "start": "Lopp 1",
+          "kommentar": "Har betett sig dåligt dom två senaste gångerna och behöver först och främst sköta sig bättre. Inga ändringar. "
+        },
+        {
+          "namn": "Biscaya Bro",
+          "start": "Lopp 2",
+          "kommentar": "Var jag supernöjd med senast då hon blev fast med gott om krafter kvar. Hon vinner mest troligt det loppet om jag kör i ledningen. Vi söker oss framåt här och hoppas att vi hamnar i ett bra slagläge. Jag räknar med en liknande insats som senast. Inga ändringar. "
         }
       ]
     }
