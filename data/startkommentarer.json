@@ -66,6 +66,44 @@
       ]
     },
     {
+      "datum": "2026-09-18",
+      "lopp": "Romme",
+      "hastar": [
+        {
+          "namn": "Biscaya Bro",
+          "start": "Lopp 2",
+          "kommentar": "Har gjort två fina lopp och har tränat på fint efter det. Möter några mer meriterade här men vi har fått ett bra spår och borde kunna få ett fint lopp därifrån. Inga ändringar. "
+        }
+      ]
+    },
+    {
+      "datum": "2026-09-21",
+      "lopp": "Bollnäs",
+      "hastar": [
+        {
+          "namn": "Just Hell Bent",
+          "start": "Lopp 1",
+          "kommentar": "Var jag supernöjd med i debuten och har tränat fint efter det. Räknar med en liknande insats igen och hoppas att det ska räcka en bit. Inga ändringar. "
+        },
+        {
+          "namn": "Knaborgs Katla",
+          "start": "Lopp 5",
+          "kommentar": "Var väldigt positiv senast och satt fast med gott om krafter kvar. Nu fick vi dåligt läge vilket gör det betydligt svårare den här gången. Jag hoppas och tror att hon ska göra ett bra lopp igen. Inga ändringar. "
+        }
+      ]
+    },
+    {
+      "datum": "2026-09-22",
+      "lopp": "Eskilstuna",
+      "hastar": [
+        {
+          "namn": "Follow The Cash",
+          "start": "Lopp 4",
+          "kommentar": "Jag var väldigt besviken på hennes uppträdande senast. Provar att ta av alla skor denna gång (bara barfota bak tidigare) och amerikansk sulky igen nu när det är bilstart. Sköter hon sig räknar jag med en anständig insats. "
+        }
+      ]
+    },
+    {
       "datum": "2026-09-01",
       "lopp": "Hagmyren",
       "hastar": [
@@ -78,17 +116,6 @@
           "namn": "Knaborgs Katla",
           "start": "Lopp 7",
           "kommentar": "Har tränat bättre än vad hon har tävlat på slutet. Skulle hon leva upp till vad man känner hemma så kan hon vara med där framme i den här typen av lopp, men jag vill se det innan jag tror för mycket på henne. Inga ändringar. "
-        }
-      ]
-    },
-    {
-      "datum": "2026-09-18",
-      "lopp": "Romme",
-      "hastar": [
-        {
-          "namn": "Biscaya Bro",
-          "start": "Lopp 2",
-          "kommentar": "Har gjort två fina lopp och har tränat på fint efter det. Möter några mer meriterade här men vi har fått ett bra spår och borde kunna få ett fint lopp därifrån. Inga ändringar. "
         }
       ]
     },
@@ -122,33 +149,6 @@
           "namn": "Calgary Dreams",
           "start": "Lopp 5",
           "kommentar": "Har gjort två riktigt fina lopp nu på slutet. Känns fortsatt bra så räknar med en liknande insats den här gången. Kommer ta av bakskorna och lätta henne fram. I övrigt inga ändringar. "
-        }
-      ]
-    },
-    {
-      "datum": "2026-09-21",
-      "lopp": "Bollnäs",
-      "hastar": [
-        {
-          "namn": "Just Hell Bent",
-          "start": "Lopp 1",
-          "kommentar": "Var jag supernöjd med i debuten och har tränat fint efter det. Räknar med en liknande insats igen och hoppas att det ska räcka en bit. Inga ändringar. "
-        },
-        {
-          "namn": "Knaborgs Katla",
-          "start": "Lopp 5",
-          "kommentar": "Var väldigt positiv senast och satt fast med gott om krafter kvar. Nu fick vi dåligt läge vilket gör det betydligt svårare den här gången. Jag hoppas och tror att hon ska göra ett bra lopp igen. Inga ändringar. "
-        }
-      ]
-    },
-    {
-      "datum": "2026-09-22",
-      "lopp": "Eskilstuna",
-      "hastar": [
-        {
-          "namn": "Follow The Cash",
-          "start": "Lopp 4",
-          "kommentar": "Jag var väldigt besviken på hennes uppträdande senast. Provar att ta av alla skor denna gång (bara barfota bak tidigare) och amerikansk sulky igen nu när det är bilstart. Sköter hon sig räknar jag med en anständig insats. "
         }
       ]
     },
@@ -241,6 +241,22 @@
           "namn": "Just Hell Bent",
           "start": "Lopp 1",
           "kommentar": "Var fin senast och känns bra efter, så jag räknar med en bra insats igen. Svårt att säga hur bra dom andra är och hur loppet blir kört. Inga ändringar."
+        }
+      ]
+    },
+    {
+      "datum": "2026-10-22",
+      "lopp": "Örebro",
+      "hastar": [
+        {
+          "namn": "Knaborgs Katla",
+          "start": "Lopp 5",
+          "kommentar": "Har gått bra i skymundan på slutet. Tyvärr har hon fått ett tråkigt läge för att kunna komma till här. Jag hoppas och tror att hon gör en liknande insats som tidigare och så får vi se hur långt det räcker. Inga ändringar. "
+        },
+        {
+          "namn": "Biscaya Bro",
+          "start": "Lopp 8",
+          "kommentar": "Har bara gjort bra insatser och inget tyder på att hon ska göra en sämre den här gången heller. Möter några som har imponerat men jag hoppas att vi ska kunna få med oss en fin peng om vi får ett hyggligt lopp. Inga ändringar. "
         }
       ]
     }
