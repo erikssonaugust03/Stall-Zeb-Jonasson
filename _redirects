@@ -1,3 +1,6 @@
+/hast-:slug.html /hastar/:slug 301!
+/hastar/:slug /hastprofil.html 200
+
 /nyheter/valkommen-till-stall-zeb-jonassons-hemsida /nyheter/valkommen-till-stall-zeb-jonassons-hemsida/index.html 200!
 /nyheter/valkommen-till-stall-zeb-jonassons-hemsida/ /nyheter/valkommen-till-stall-zeb-jonassons-hemsida/index.html 200!
 /nyheter/fortkorning-pa-valla /nyheter/fortkorning-pa-valla/index.html 200!
@@ -21,34 +24,3 @@
 /kontakt /kontakt.html 200
 /hastar-till-salu /hastar-till-salu.html 200
 /integritetspolicy /integritetspolicy.html 200
-
-# Rena URL:er för hästprofiler
-/hastar/ajson /hast-ajson.html 200
-/hastar/als-chewbacca /hast-als-chewbacca.html 200
-/hastar/assai-express /hast-assai-express.html 200
-/hastar/biscaya-bro /hast-biscaya-bro.html 200
-/hastar/calgary-dreams /hast-calgary-dreams.html 200
-/hastar/impertinent /hast-impertinent.html 200
-/hastar/just-hell-bent /hast-just-hell-bent.html 200
-/hastar/knaborgs-katla /hast-knaborgs-katla.html 200
-/hastar/serrano /hast-serrano.html 200
-/hastar/spicegirl /hast-spicegirl.html 200
-/hastar/youre-welcome-w /hast-youre-welcome-w.html 200
-/hastar/zagreus-hc /hast-zagreus-hc.html 200
-/hastar/mazzola-dream /hast-mazzola-dream.html 200
-/hastar/onas-tintin /hast-onas-tintin.html 200
-
-/hast-ajson.html /hastar/ajson 301!
-/hast-als-chewbacca.html /hastar/als-chewbacca 301!
-/hast-assai-express.html /hastar/assai-express 301!
-/hast-biscaya-bro.html /hastar/biscaya-bro 301!
-/hast-calgary-dreams.html /hastar/calgary-dreams 301!
-/hast-impertinent.html /hastar/impertinent 301!
-/hast-just-hell-bent.html /hastar/just-hell-bent 301!
-/hast-knaborgs-katla.html /hastar/knaborgs-katla 301!
-/hast-serrano.html /hastar/serrano 301!
-/hast-spicegirl.html /hastar/spicegirl 301!
-/hast-youre-welcome-w.html /hastar/youre-welcome-w 301!
-/hast-zagreus-hc.html /hastar/zagreus-hc 301!
-/hast-mazzola-dream.html /hastar/mazzola-dream 301!
-/hast-onas-tintin.html /hastar/onas-tintin 301!
