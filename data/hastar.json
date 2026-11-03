@@ -167,6 +167,19 @@
       "namn": "Mazzola Dream",
       "skotare": "Moa Thörngren",
       "far": "Propulsion"
+    },
+    {
+      "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts752053/pedigree",
+      "alder": "5 år",
+      "kon": "Hingst",
+      "slug": "onas-tintin",
+      "agare": "Zeb Jonasson",
+      "uppfodare": "Jonsson Tomas, Nossebro",
+      "mor": "Beatinathedevil F.",
+      "namn": "Önas Tintin",
+      "skotare": "Moa Thörngren",
+      "far": "Perfect Spirit",
+      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png"
     }
   ]
 }
