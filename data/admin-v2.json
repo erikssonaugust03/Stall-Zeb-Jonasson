@@ -684,7 +684,7 @@
       "namn": "Zeb Jonasson",
       "roll": "Tränare",
       "bild": "/zeb2.jpg",
-      "presentation": "Tillfälligt kopplingstest – endast arbetsgrenen.",
+      "presentation": "",
       "status": "active"
     },
     {
@@ -709,5 +709,5 @@
     "Födelseår och personalrelationer behöver verifieras manuellt. Källdata använder både Törngren och Thörngren; ingen automatisk personkoppling har gjorts.",
     "Nyheternas hästkopplingar behöver väljas manuellt; inga har gissats."
   ],
-  "revision": 1
+  "revision": 2
 }
