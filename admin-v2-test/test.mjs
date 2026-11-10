@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';import fs from 'node:fs';import {Gateway,BRANCH} from './gateway.mjs';
+const seed=JSON.parse(fs.readFileSync(new URL('./seed.json',import.meta.url)));const calls=[];let wrongBranch=false;
+const mock=async(url,options)=>{const path=new URL(url).pathname.replace('/.netlify/git/github','');const body=options.body?JSON.parse(options.body):null;calls.push({path,method:options.method,body});let result;if(path.startsWith('/git/ref/'))result={ref:'refs/heads/'+(wrongBranch?'main':BRANCH),object:{sha:'head'}};else if(path==='/git/commits/head')result={tree:{sha:'tree'}};else if(path.startsWith('/git/trees/tree'))result={tree:[],truncated:false};else if(path==='/git/blobs')result={sha:'blob'};else if(path==='/git/trees')result={sha:'newtree'};else if(path==='/git/commits')result={sha:'commit'};else if(path==='/git/refs/heads/'+BRANCH)result={};else throw Error(path);return Response.json(result);};
+const gateway=new Gateway({token:async()=>'fake-test-token',fetcher:mock,seed});
+assert.equal((await gateway.state()).data.horses.length,15);
+await gateway.save({revision:0,collection:'staff',record:{...seed.staff[0],roll:'Testroll'}});
+const ref=calls.find(c=>c.method==='PATCH');assert.equal(ref.path,'/git/refs/heads/codex-admin-v2');assert.equal(ref.body.force,false);
+assert.ok(calls.filter(c=>c.path==='/git/trees'&&c.method==='POST').at(-1).body.tree.some(f=>f.path==='data/admin-v2.json'));
+assert.ok(calls.every(c=>!c.path.includes('/main')));
+const before=calls.length;await assert.rejects(()=>gateway.save({revision:999,collection:'staff',record:seed.staff[0]}));assert.ok(calls.slice(before).every(c=>c.method==='GET'));
+await assert.rejects(()=>gateway.commit({sha:'head',tree:'tree'},[{path:'admin/index.html',bytes:new Uint8Array()}],'Bad path'));
+wrongBranch=true;await assert.rejects(()=>gateway.head(),/Fel arbetsgren/);
+console.log('OK: branch lock, six-file atomic commit, stale revision, path restrictions and non-force update.');

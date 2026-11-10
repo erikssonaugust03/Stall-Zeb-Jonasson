@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: codex-admin-v2
 
 media_folder: "images"
 public_folder: "/images"

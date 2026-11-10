@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Admin 2.0 · Redigerbar testdemo</title><link rel="stylesheet" href="./admin.css"><script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script><script type="module" src="./bootstrap.mjs"></script></head><body>
+<header><img src="/logo-zeb.png" alt="Stall Zeb Jonasson"><strong>Admin 2.0 · Demo</strong><button type="button" id="openMedia">Bildbibliotek</button><a href="/" target="_blank" rel="noopener">Visa testhemsidan →</a></header>
+<section id="connection" style="padding:24px"><h1>Test av befintlig adminkoppling</h1><p>Inloggning via hemsidans Netlify Identity. Sparning endast på codex-admin-v2.</p><button id="login" type="button">Logga in med befintligt adminkonto</button><p id="connectionStatus" role="status"></p></section><main hidden><h1>Hela stallet på ett ställe</h1><p>Hästregister, nyheter, starter, försäljning och personal.</p>
+<div class="notice"><strong>Arbetsgren: codex-admin-v2.</strong> Test av Git Gateway: ändringar sparas endast på arbetsgrenen codex-admin-v2. Inget skrivs till main.</div>
+<details><summary>Uppgifter som behöver granskas</summary><ul id="notes"></ul></details>
+<nav id="tabs" aria-label="Innehållstyper"></nav>
+<div class="toolbar"><div><label for="search">Sök i vald innehållstyp</label><input id="search" type="search" placeholder="Sök namn, rubrik eller bana…"></div><div id="horseFilter"><label for="statusFilter">Visa hästar</label><select id="statusFilter"><option value="active">Aktiva hästar</option><option value="archived">Arkiverade hästar</option><option value="all">Alla hästar</option></select></div><button id="create" type="button">Lägg till</button></div>
+<p id="feedback" role="status" aria-live="polite"></p><p id="count"></p><p id="error" role="alert"></p><section id="records" aria-label="Innehåll"></section>
+</main>
+<dialog id="editor" aria-labelledby="editorTitle"><form id="editForm"><div class="dialog-head"><h2 id="editorTitle">Redigera testutkast</h2><button type="button" id="closeEditor" aria-label="Stäng redigeringen">Stäng</button></div><p>Ändringarna visas bara i din egen testkopia.</p><div id="fields"></div><p id="editError" role="alert"></p><div class="actions"><button type="submit" id="save" class="primary">Spara i min testkopia</button><button type="button" id="cancel">Avbryt</button></div></form></dialog>
+</body></html>
