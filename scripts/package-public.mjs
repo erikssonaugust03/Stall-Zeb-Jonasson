@@ -62,11 +62,11 @@ function transformImage(tag){
  return tag;
 }
 for(const [name,original] of htmlFiles){
- const html=original.replace(/<img\b[^>]*>/gi,transformImage).replace('</head>','<script src="/image-manifest.js"></script><script src="/public-images.js"></script></head>');
+ const html=original.replace(/<img\b[^>]*>/gi,transformImage).replace('</head>','<script src="/image-manifest.js"></script><script src="/public-images.js"></script><script src="/navigation.js" defer></script></head>');
  write(name,html);
 }
 for(const [name,value] of Object.entries(publicData))write('data/'+name+'.json',JSON.stringify(value)+'\n');
-for(const file of ['style.css','content-data.js','public-images.js','_redirects','sitemap.xml','robots.txt'])copy(file);
+for(const file of ['style.css','content-data.js','public-images.js','navigation.js','_redirects','sitemap.xml','robots.txt'])copy(file);
 for(const file of ['index.html','admin.css','bootstrap.mjs','environment.mjs','gateway.mjs','projection.mjs','validation.mjs','ui.js','media.js','config.yml'])copy('admin/'+file);
 write('image-manifest.js','window.publicImageManifest='+JSON.stringify(manifest)+';\n');
 write('404.html','<!doctype html><html lang="sv"><meta charset="utf-8"><title>Sidan finns inte</title><h1>Sidan finns inte</h1><a href="/">Till startsidan</a></html>');
