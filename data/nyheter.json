@@ -43,12 +43,16 @@
     {
       "id": "news-andra-raka-calgary",
       "slug": "andra-raka-calgary",
+      "aliases": [],
       "datum": "2026-09-03",
       "tid": "17:00",
       "titel": "Andra raka för Calgary Dreams !",
       "text": "Efter en resa i mestadels rygg på ledaren kunde Calgary Dreams avgöra med säker marginal och ta sin andra raka seger. \nSegern var värd 35.000 kr \nSegertid: 1:16,2\nÄgare: Stall Simple Minds HB (Mats-Ola Carlsson & Tord Erixon) & Zeb Jonasson",
       "bild": "/images/img_7355.jpeg",
-      "horseIds": []
+      "youtube": "",
+      "horseIds": [
+        "horse-calgary-dreams"
+      ]
     },
     {
       "id": "news-arets-forsta-2aring",
