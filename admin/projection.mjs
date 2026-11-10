@@ -18,5 +18,5 @@ export function project(data,year=new Date().getFullYear()){
  return {'admin-v2':data,hastar:{hastar:horses},'hastar-alla':{hastar:all},nyheter:{nyheter:news},startkommentarer:{starter:starts},'hastar-till-salu':{hastar:sales},personal:{personal:staff}};
 }
 export function publicContent(projected){
- return {horses:projected['hastar-alla'].hastar,news:projected.nyheter.nyheter,starts:projected.startkommentarer.starter,staff:projected.personal.personal};
+ return {horses:projected['hastar-alla'].hastar,news:projected.nyheter.nyheter,staff:projected.personal.personal};
 }

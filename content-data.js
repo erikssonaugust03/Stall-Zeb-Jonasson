@@ -23,15 +23,13 @@ fetch('/data/public-content.json').then(r=>{if(!r.ok)throw new Error('content');
     const h=data.horses.find(h=>h.slug===decodeURIComponent(parts[1])||(h.aliases||[]).includes(decodeURIComponent(parts[1])));if(!h)return;
     const section=make('section');section.style.marginTop='48px';
     if(h.status==='archived'){
-      section.append(make('h2','Tidigare stallhäst'),make('p','Den här hästen har lämnat stallet. Profilen och historiken finns kvar.'));
+      section.append(make('h2','Tidigare stallhäst'),make('p','Den här hästen har lämnat stallet. Profilen finns kvar.'));
     }
     if(h.bilder?.length){section.append(make('h2','Bildgalleri'));const gallery=make('div');gallery.style.cssText='display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px';for(const source of h.bilder){const image=make('img');window.publicImages.set(image,source,{sizes:'(max-width: 600px) 100vw, 33vw'});image.alt=h.namn;image.style.cssText='width:100%;height:220px;object-fit:contain;background:#0d1b2e';gallery.append(image);}section.append(gallery);}
     const news=data.news.filter(n=>n.horseIds.includes(h.id)).sort((a,b)=>b.datum.localeCompare(a.datum));
     section.append(make('h2','Nyheter om '+h.namn));
     if(!news.length)section.append(make('p','Inga nyheter har kopplats till hästen ännu.'));
     news.forEach(n=>section.append(link(n.datum+' · '+n.titel,'/nyheter/'+encodeURIComponent(n.slug))));
-    const starts=data.starts.filter(s=>s.hastar.some(e=>e.horseId===h.id)).sort((a,b)=>b.datum.localeCompare(a.datum));
-    if(starts.length){section.append(make('h2','Starter och kommentarer'));for(const s of starts){const entry=s.hastar.find(e=>e.horseId===h.id);section.append(make('h3',s.datum+' · '+s.lopp+' · '+entry.start),make('p',entry.kommentar));}}
     document.querySelector('main')?.append(section);
   }
   if(parts[0]==='nyheter'&&parts[1]){
