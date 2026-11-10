@@ -28,6 +28,24 @@ Nyhets- och personalrelationer kan kompletteras i panelen; gamla nyhetstexter sk
 inte om när hästens uppgifter ändras.
 
 Kontroller: node scripts/test-production.mjs; npm run build.
+Efter bygge: npm run test:public kontrollerar filtrering, försäljningspuff och bildfiler.
+
+Netlify publicerar enbart dist/, som byggs från en uttrycklig lista över publika filer.
+data/admin-v2.json, äldre mallar, testmappar och byggskript kopieras inte till webbplatsen.
+Publika relationer använder data/public-content.json. Bara aktiva personalposter och
+annonser med status Till salu eller Reserverad ingår; tidigare stallhästars publika
+profiler och historik behålls. Nyheter publiceras fortfarande när de sparas.
+Tidigare starter och kommentarer visas endast på Startkommentarer, inte på
+hästprofilerna. Uppgifterna i admin och startkommentarsfilen är bevarade.
+Kända publika fält väljs uttryckligen, så att nya interna fält inte följer med automatiskt.
+Repositoryt är offentligt: denna filtrering skyddar webbpubliceringen men gör inte
+GitHub-filer eller tidigare Git-/Netlify-versioner privata. Lägg inte hemligheter i Git.
+
+Startsidan får sin försäljningspuff från publicerade annonser vid varje bygge.
+Till salu prioriteras framför Reserverad. Utan någon sådan annons döljs puffen.
+Bilder som används publikt får WebP-varianter i upp till 480, 960 och 1600 pixlars
+bredd utan beskärning. Logotyper och originalfiler behålls. Nya uppladdningar behandlas
+automatiskt i nästa bygge. Filnamnen bygger på bildinnehållet för säker cachelagring.
 Återställning vid problem: återställ Netlify-projektets tidigare publicerade deploy
 eller skapa en återställningscommit av releaseändringen. Före första releasen låg
 main på 6cf18c544bb3161243cc58d5aa6618976c2d2069 och Netlifys publicerade deploy var

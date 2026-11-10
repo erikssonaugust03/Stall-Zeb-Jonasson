@@ -565,7 +565,7 @@ function renderCards() {
     const img = h.bild ? (h.bild.startsWith('http') ? h.bild : IMG_BASE + h.bild) : '';
     return `<div class="listing-card" onclick="openDetail(${i})" style="cursor:pointer;">
       <div class="listing-image">
-        ${img ? `<div style="position:relative;width:100%;height:100%;"><img src="${contentEsc(img)}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(15px);transform:scale(1.1);opacity:0.5;"><img src="${contentEsc(img)}" style="position:relative;width:100%;height:100%;object-fit:contain;"></div>` : '<div style="width:100%;height:100%;background:var(--navy);"></div>'}
+        ${img ? `<div style="position:relative;width:100%;height:100%;"><img ${window.publicImages.html(img,{sizes:'(max-width: 800px) 100vw, 70vw',eager:true})} style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(15px);transform:scale(1.1);opacity:0.5;"><img ${window.publicImages.html(img,{sizes:'(max-width: 800px) 100vw, 70vw',eager:true})} style="position:relative;width:100%;height:100%;object-fit:contain;"></div>` : '<div style="width:100%;height:100%;background:var(--navy);"></div>'}
         <div class="listing-badge">${badgeText}</div>
       </div>
       <div class="listing-content">
@@ -603,15 +603,15 @@ function openDetail(i) {
         <div>
           <div id="mainImage" style="width:100%;aspect-ratio:4/3;overflow:hidden;position:relative;margin-bottom:1rem;">
             ${images.length ? `
-              <img src="${contentEsc(images[0])}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(20px);transform:scale(1.1);opacity:0.5;">
-              <img src="${contentEsc(images[0])}" style="position:relative;width:100%;height:100%;object-fit:contain;">
+              <img ${window.publicImages.html(images[0],{sizes:'(max-width: 800px) 100vw, 70vw',eager:true})} style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(20px);transform:scale(1.1);opacity:0.5;">
+              <img ${window.publicImages.html(images[0],{sizes:'(max-width: 800px) 100vw, 70vw',eager:true})} style="position:relative;width:100%;height:100%;object-fit:contain;">
             ` : '<div style="width:100%;height:100%;background:var(--navy);"></div>'}
           </div>
           ${images.length > 1 ? `
           <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
             ${images.map((img, idx) => `
             <div onclick="setImage(${idx})" style="width:80px;height:60px;overflow:hidden;cursor:pointer;border:2px solid ${idx===0?'var(--accent)':'rgba(244,242,238,0.15)'};transition:border-color 0.2s;" id="thumb-${idx}">
-              <img src="${contentEsc(img)}" style="width:100%;height:100%;object-fit:contain;">
+              <img ${window.publicImages.html(img,{sizes:'(max-width: 800px) 100vw, 70vw',eager:true})} style="width:100%;height:100%;object-fit:contain;">
             </div>`).join('')}
           </div>` : ''}
         </div>
@@ -644,8 +644,8 @@ function setImage(idx) {
   const images = [h.bild, ...(h.bilder || [])].filter(Boolean).map(img => img.startsWith('http') ? img : IMG_BASE + img);
   currentImgIndex = idx;
   document.getElementById('mainImage').innerHTML = `
-      <img src="${contentEsc(images[idx])}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(20px);transform:scale(1.1);opacity:0.5;">
-      <img src="${contentEsc(images[idx])}" style="position:relative;width:100%;height:100%;object-fit:contain;">
+      <img ${window.publicImages.html(images[idx],{sizes:'(max-width: 800px) 100vw, 70vw',eager:true})} style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(20px);transform:scale(1.1);opacity:0.5;">
+      <img ${window.publicImages.html(images[idx],{sizes:'(max-width: 800px) 100vw, 70vw',eager:true})} style="position:relative;width:100%;height:100%;object-fit:contain;">
     `;
   document.querySelectorAll('[id^="thumb-"]').forEach((t, i) => {
     t.style.borderColor = i === idx ? 'var(--accent)' : 'rgba(244,242,238,0.15)';
