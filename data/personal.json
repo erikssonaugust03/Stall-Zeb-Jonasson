@@ -1,0 +1,28 @@
+{
+  "personal": [
+    {
+      "id": "staff-zeb-jonasson",
+      "namn": "Zeb Jonasson",
+      "roll": "Tränare",
+      "bild": "/zeb2.jpg",
+      "presentation": "Tillfälligt kopplingstest – endast arbetsgrenen.",
+      "status": "active"
+    },
+    {
+      "id": "staff-moa-torngren",
+      "namn": "Moa Törngren",
+      "roll": "Hästskötare",
+      "bild": "/moa.png",
+      "presentation": "",
+      "status": "active"
+    },
+    {
+      "id": "staff-jan-larsson",
+      "namn": "Jan Larsson",
+      "roll": "Allt i allo",
+      "bild": "/images/jan-larsson.jpeg",
+      "presentation": "",
+      "status": "active"
+    }
+  ]
+}

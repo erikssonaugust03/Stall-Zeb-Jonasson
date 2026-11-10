@@ -1,0 +1,713 @@
+{
+  "schemaVersion": 2,
+  "mode": "sandbox-local-drafts",
+  "horses": [
+    {
+      "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts785165/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
+      "alder": "5 år",
+      "kon": "Valack",
+      "slug": "ajson",
+      "agare": "Stall Borsalino",
+      "uppfodare": "Cover Konsult AB",
+      "mor": "Ajabaja",
+      "namn": "Ajson",
+      "skotare": "Moa Thörngren",
+      "far": "S.J.'s Caviar",
+      "bild": "/images/img_4163.jpeg",
+      "id": "horse-ajson",
+      "status": "active",
+      "birthYear": null,
+      "staffIds": []
+    },
+    {
+      "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts804075/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
+      "alder": "2 år",
+      "kon": "Valack",
+      "slug": "als-chewbacca",
+      "agare": "Zeb Jonasson",
+      "uppfodare": "Lasual Stable KB",
+      "mor": "Up In The Trees",
+      "namn": "Al's Chewbacca",
+      "skotare": "Moa Thörngren ",
+      "far": "Brillantissime",
+      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png",
+      "id": "horse-als-chewbacca",
+      "status": "active",
+      "birthYear": null,
+      "staffIds": []
+    },
+    {
+      "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts807196/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
+      "alder": "2 år",
+      "kon": "Hingst",
+      "slug": "assai-express",
+      "agare": "Django Invest AB",
+      "uppfodare": "Django Invest AB",
+      "mor": "Yes I Can",
+      "namn": "Assai Express",
+      "skotare": "Moa Thörngren",
+      "far": "Don Fanucci Zet",
+      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png",
+      "id": "horse-assai-express",
+      "status": "active",
+      "birthYear": null,
+      "staffIds": []
+    },
+    {
+      "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts804082/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
+      "alder": "2 år",
+      "kon": "Sto",
+      "slug": "biscaya-bro",
+      "agare": "Olof Brodin (Chartering) AB ",
+      "uppfodare": "Olof Brodin (Chartering) AB ",
+      "mor": "Etoile",
+      "namn": "Biscaya Bro",
+      "skotare": "Moa Thörngren",
+      "far": "Global Welcome",
+      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png",
+      "id": "horse-biscaya-bro",
+      "status": "active",
+      "birthYear": null,
+      "staffIds": []
+    },
+    {
+      "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts798484/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
+      "alder": "3 år",
+      "kon": "Sto",
+      "slug": "calgary-dreams",
+      "agare": "Stall Simple Minds HB & Zeb Jonasson",
+      "uppfodare": "Ambition Kapital AB",
+      "mor": "New Gold Dream",
+      "namn": "Calgary Dreams",
+      "skotare": "Moa Thörngren ",
+      "far": "Calgary Games",
+      "bild": "/images/img_3996.jpeg",
+      "id": "horse-calgary-dreams",
+      "status": "active",
+      "birthYear": null,
+      "staffIds": []
+    },
+    {
+      "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts798010/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
+      "alder": "3 år",
+      "kon": "Sto",
+      "slug": "impertinent",
+      "agare": "Ofcourse KB",
+      "uppfodare": "Menhammar Stuteri AB ",
+      "mor": "Southwind Fairy",
+      "namn": "Impertinent",
+      "skotare": "Moa Thörngren",
+      "far": "Who's Who",
+      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png",
+      "id": "horse-impertinent",
+      "status": "active",
+      "birthYear": null,
+      "staffIds": []
+    },
+    {
+      "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts804524/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
+      "alder": "2 år",
+      "kon": "Sto",
+      "slug": "just-hell-bent",
+      "agare": "Zeb Jonasson",
+      "uppfodare": "Menhammar Stuteri AB",
+      "mor": "Determined",
+      "namn": "Just Hell Bent",
+      "skotare": "Moa Thörngren",
+      "far": "Maharajah",
+      "bild": "/images/just-hell-bent.jpeg",
+      "id": "horse-just-hell-bent",
+      "status": "active",
+      "birthYear": null,
+      "staffIds": []
+    },
+    {
+      "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts798745/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
+      "alder": "3 år",
+      "kon": "Sto",
+      "slug": "knaborgs-katla",
+      "agare": "Stall Knaborg",
+      "uppfodare": "Mannelid Knaborg Anne & Knaborg B-G",
+      "mor": "Knaborgs Disa",
+      "namn": "Knaborgs Katla",
+      "skotare": "Moa Thörngren",
+      "far": "Who's Who",
+      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png",
+      "id": "horse-knaborgs-katla",
+      "status": "active",
+      "birthYear": null,
+      "staffIds": []
+    },
+    {
+      "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts808069/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
+      "alder": "2 år",
+      "kon": "Hingst",
+      "slug": "serrano",
+      "agare": "Django Invest AB ",
+      "uppfodare": "Müller Caroline",
+      "mor": "Lyssum",
+      "namn": "Serrano",
+      "skotare": "Moa Thörngren",
+      "far": "Don Fanucci Zet",
+      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png",
+      "id": "horse-serrano",
+      "status": "active",
+      "birthYear": null,
+      "staffIds": []
+    },
+    {
+      "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts804571/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
+      "alder": "2 år",
+      "kon": "Sto",
+      "slug": "spicegirl",
+      "agare": "Team SHF - Easy",
+      "uppfodare": "Granath Trotting & Invest AB ",
+      "mor": "Dessert",
+      "namn": "Spicegirl",
+      "skotare": "Moa Thörngren",
+      "far": "Global Welcome",
+      "bild": "/images/img_5599.jpeg",
+      "id": "horse-spicegirl",
+      "status": "active",
+      "birthYear": null,
+      "staffIds": []
+    },
+    {
+      "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts805648/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
+      "alder": "2 år",
+      "kon": "Sto",
+      "slug": "youre-welcome-w",
+      "agare": "Thörngren Moa & B Westerbergs Skrot AB ",
+      "uppfodare": "Vesterberg Bengt & Thörngren Moa",
+      "mor": "Nollkoll",
+      "namn": "You're Welcome W.",
+      "skotare": "Moa Thörngren",
+      "far": "Global Welcome",
+      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png",
+      "id": "horse-youre-welcome-w",
+      "status": "active",
+      "birthYear": null,
+      "staffIds": []
+    },
+    {
+      "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts810273/pedigree",
+      "alder": "1",
+      "kon": "Hingst",
+      "slug": "zagreus-hc",
+      "agare": "Ofcourse KB",
+      "uppfodare": "Björkhaga Stuteri AB",
+      "mor": "Xenia G.T.",
+      "namn": "Zagreus H.C.",
+      "skotare": "Moa Thörngren",
+      "far": "Readly Express",
+      "bild": "/images/zagreus-hc.jpg",
+      "id": "horse-zagreus-hc",
+      "status": "active",
+      "birthYear": null,
+      "staffIds": []
+    },
+    {
+      "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts805539/pedigree",
+      "alder": "2 år",
+      "kon": "Hingst",
+      "slug": "mazzola-dream",
+      "agare": "Ambition Kapital AB",
+      "uppfodare": "Ambition Kapital AB",
+      "mor": "New Gold Dream",
+      "namn": "Mazzola Dream",
+      "skotare": "Moa Thörngren",
+      "far": "Propulsion",
+      "id": "horse-mazzola-dream",
+      "status": "active",
+      "birthYear": null,
+      "staffIds": []
+    },
+    {
+      "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts785796/pedigree",
+      "alder": "5 år",
+      "kon": "Hingst",
+      "slug": "onas-tintin",
+      "agare": "Zeb Jonasson",
+      "uppfodare": "Jonsson Tomas, Nossebro",
+      "mor": "Beatinathedevil F.",
+      "namn": "Önas Tintin",
+      "skotare": "Moa Thörngren",
+      "far": "Perfect Spirit",
+      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png",
+      "id": "horse-onas-tintin",
+      "status": "active",
+      "birthYear": null,
+      "staffIds": []
+    },
+    {
+      "id": "horse-follow-the-cash",
+      "slug": "follow-the-cash",
+      "namn": "Follow The Cash",
+      "status": "archived",
+      "birthYear": null,
+      "staffIds": [],
+      "far": "S.J.'s Caviar",
+      "mor": "All Cash",
+      "alder": "",
+      "kon": "Sto",
+      "legacySnapshot": {
+        "source": "hast-follow-the-cash.html",
+        "values": [
+          "Follow the Cash",
+          "3 år · Sto",
+          "S.J.'s Caviar",
+          "All Cash",
+          "Jonasson Zeb & A Svanholm Fast. AB",
+          "–",
+          "–",
+          "Zeb Jonasson"
+        ]
+      }
+    }
+  ],
+  "news": [
+    {
+      "datum": "2026-07-12",
+      "tid": "22:50",
+      "titel": "Välkommen till Stall Zeb Jonassons hemsida !",
+      "text": "På vår hemsida kommer du att kunna följa vår verksamhet lite närmare! Vi kommer bland annat lägga ut filmer från snabbjobb, publicera startkommentarer när hästarna ska tävla och förhoppningsvis flera segerinlägg ! ",
+      "bild": "/images/logga.jpeg",
+      "slug": "valkommen-till-stall-zeb-jonassons-hemsida",
+      "id": "news-valkommen-till-stall-zeb-jonassons-hemsida",
+      "horseIds": []
+    },
+    {
+      "datum": "2026-07-22",
+      "tid": "09:00",
+      "titel": "Fortkörning Solvalla 23/7",
+      "text": "Imorgon åker vi in med 4st till Solvalla ! Bland annat 2 åriga Just Hell Bent som närmar sig kval och det dessutom finns några andelar kvar i.\nKaffe och fikabröd finns ovanför inskrivningen",
+      "bild": "/images/000ff234-4c58-4012-b1d1-7c65085ea72f.png",
+      "slug": "fortkorning-pa-valla",
+      "id": "news-fortkorning-pa-valla",
+      "horseIds": []
+    },
+    {
+      "datum": "2026-08-14",
+      "tid": "20:30",
+      "titel": "Calgary Dreams avlade maiden !",
+      "slug": "calgary-avlade-maiden",
+      "text": "Calgary Dreams fick äntligen avlägga maiden ikväll på Bollnäs ! Efter ett lopp i andra utvändigt kunde hon runda fram till utvändigt ledaren sju hundra meter från mål och därefter med liten marginal plocka ner ledaren som stretade emot bra till slut. Segern var värd 35000kr\nSegertid: 1:17,2\nÄgare: Stall Simple Minds ( Mats-ola Carlsson & Tord Erixon) och Zeb Jonasson ",
+      "bild": "/images/img_4206.jpeg",
+      "id": "news-calgary-avlade-maiden",
+      "horseIds": []
+    },
+    {
+      "datum": "2026-08-16",
+      "tid": "15:37",
+      "titel": "Andra maiden segern denna veckan! ",
+      "slug": "andra-maiden",
+      "text": "Follow The Cash ville inte vara sämre än sin hagkompis Calgary Dreams och avlade sitt maiden idag på Lindesberg! Efter ett bra slutvarv kunde hon med säker marginal plocka ner den ledande hästen.\nSegern var värd 25000kr\nSegertid: 1:16,2 \nÄgare: Ofcourse KB ",
+      "bild": "/images/img_7278.jpeg",
+      "id": "news-andra-maiden",
+      "horseIds": []
+    },
+    {
+      "datum": "2026-09-03",
+      "tid": "17:00",
+      "titel": "Andra raka för Calgary Dreams !",
+      "slug": "andra-raka-calgary",
+      "text": "Efter en resa i mestadels rygg på ledaren kunde Calgary Dreams avgöra med säker marginal och ta sin andra raka seger. \nSegern var värd 35.000 kr \nSegertid: 1:16,2\nÄgare: Stall Simple Minds HB (Mats-Ola Carlsson & Tord Erixon) & Zeb Jonasson",
+      "bild": "/images/img_7355.jpeg",
+      "id": "news-andra-raka-calgary",
+      "horseIds": []
+    },
+    {
+      "datum": "2026-10-02",
+      "tid": "20:00",
+      "titel": "Årets första 2-årings vinnare ! ",
+      "slug": "arets-forsta-2aring",
+      "text": "Efter att ha tagit hand om ledningen kunde Just Hell Bent successivt öka tempot och efter en snabb sista femhundring hålla undan till seger med liten men säker marginal. \nJust Hell Bent var stallets första 2-årings vinnare för i år. \nSegern var värd 35.000 kr \nSegertid: 1:15,7\nÄgare: Zeb Jonasson, Magnus Svanholm, Kåre Svanholm, Malin Welander & Peter Lindqvist",
+      "bild": "/images/img_7456.jpeg",
+      "id": "news-arets-forsta-2aring",
+      "horseIds": []
+    }
+  ],
+  "starts": [
+    {
+      "datum": "2026-08-14",
+      "lopp": "Bollnäs",
+      "hastar": [
+        {
+          "namn": "Calgary Dreams",
+          "start": "Lopp 1",
+          "kommentar": "Fungerade fint och stod för starka sista 700m i en snabb avslutning senast. \nLite klurigare spår denna gång men känns som att hon mognat och jag har god tro på att hon kliver iväg fint. Tycker att hon ska vara med där framme denna gång om hon fungerar lika fint som två senaste. Inga ändringar",
+          "horseId": "horse-calgary-dreams"
+        }
+      ],
+      "id": "race-001"
+    },
+    {
+      "datum": "2026-08-16",
+      "lopp": "Lindesberg",
+      "hastar": [
+        {
+          "namn": "Biscaya Bro",
+          "start": "Lopp 1",
+          "kommentar": "Förnuftig häst som gjort allt rätt såhär långt. Tränat fint efter kvalloppet. Svårt att bedöma motståndet men tror att hon gör ett bra lopp.",
+          "horseId": "horse-biscaya-bro"
+        },
+        {
+          "namn": "Follow The Cash",
+          "start": "Lopp 7",
+          "kommentar": "Var jag besviken på senast då hon sprang på halvfart. Kom in med låg puls efter loppet så kan betydligt bättre än så. Vi provar med ett helstängt huvudlag nu och hoppas att hon fokuserar bättre. Nurmos häst blir normalt sett svår att slå men där bakom tycker jag att hon ska vara tidig om hon tävlar på sin rätta nivå. Inga andra ändringar ",
+          "horseId": "horse-follow-the-cash"
+        }
+      ],
+      "id": "race-002"
+    },
+    {
+      "datum": "2026-08-17",
+      "lopp": "Hagmyren",
+      "hastar": [
+        {
+          "namn": "Knaborgs Katla",
+          "start": "Lopp 3",
+          "kommentar": "Fungerade bättre i travet utan skor senast. Var inte vässad inför därav lite seg i benen så loppet borde ha gjort henne gott. Provar med ett helstängt huvudlag denna gång. Inga andra ändringar",
+          "horseId": "horse-knaborgs-katla"
+        }
+      ],
+      "id": "race-003"
+    },
+    {
+      "datum": "2026-08-26",
+      "lopp": "Solvalla",
+      "hastar": [
+        {
+          "namn": "Biscaya Bro",
+          "start": "Lopp 1",
+          "kommentar": "Gjorde ett fin lopp i debuten. Svårt att veta hur bra dom andra är i detta loppet men jag tycker att våran var så fin i debuten att hon skall kunna vara med där framme. Inga ändringar ",
+          "horseId": "horse-biscaya-bro"
+        },
+        {
+          "namn": "Impertinent ",
+          "start": "Lopp 5",
+          "kommentar": "Fungerade inte i travet senast och är åtgärdad efter det. Hade krafter kvar när hon galopperade. Hon är hygglig ut från start så borde få ett fint lopp på innerspår här. Vi provar barfota runt om idag. I övrigt inga ändringar. ",
+          "horseId": "horse-impertinent"
+        }
+      ],
+      "id": "race-004"
+    },
+    {
+      "datum": "2026-08-31",
+      "lopp": "Rättvik ",
+      "hastar": [
+        {
+          "namn": "Follow The Cash",
+          "start": "Lopp 5",
+          "kommentar": "Var väldigt positiv med helstängt huvudlag senast. Provar gärna henne utan rygg idag. Tycker hon ska räknas om hon agerar som senast. Amerikansk vagn idag i övrigt inga ändringar ",
+          "horseId": "horse-follow-the-cash"
+        }
+      ],
+      "id": "race-005"
+    },
+    {
+      "datum": "2026-09-18",
+      "lopp": "Romme",
+      "hastar": [
+        {
+          "namn": "Biscaya Bro",
+          "start": "Lopp 2",
+          "kommentar": "Har gjort två fina lopp och har tränat på fint efter det. Möter några mer meriterade här men vi har fått ett bra spår och borde kunna få ett fint lopp därifrån. Inga ändringar. ",
+          "horseId": "horse-biscaya-bro"
+        }
+      ],
+      "id": "race-006"
+    },
+    {
+      "datum": "2026-09-21",
+      "lopp": "Bollnäs",
+      "hastar": [
+        {
+          "namn": "Just Hell Bent",
+          "start": "Lopp 1",
+          "kommentar": "Var jag supernöjd med i debuten och har tränat fint efter det. Räknar med en liknande insats igen och hoppas att det ska räcka en bit. Inga ändringar. ",
+          "horseId": "horse-just-hell-bent"
+        },
+        {
+          "namn": "Knaborgs Katla",
+          "start": "Lopp 5",
+          "kommentar": "Var väldigt positiv senast och satt fast med gott om krafter kvar. Nu fick vi dåligt läge vilket gör det betydligt svårare den här gången. Jag hoppas och tror att hon ska göra ett bra lopp igen. Inga ändringar. ",
+          "horseId": "horse-knaborgs-katla"
+        }
+      ],
+      "id": "race-007"
+    },
+    {
+      "datum": "2026-09-22",
+      "lopp": "Eskilstuna",
+      "hastar": [
+        {
+          "namn": "Follow The Cash",
+          "start": "Lopp 4",
+          "kommentar": "Jag var väldigt besviken på hennes uppträdande senast. Provar att ta av alla skor denna gång (bara barfota bak tidigare) och amerikansk sulky igen nu när det är bilstart. Sköter hon sig räknar jag med en anständig insats. ",
+          "horseId": "horse-follow-the-cash"
+        }
+      ],
+      "id": "race-008"
+    },
+    {
+      "datum": "2026-09-01",
+      "lopp": "Hagmyren",
+      "hastar": [
+        {
+          "namn": "Ajson",
+          "start": "Lopp 3",
+          "kommentar": "Har gjort det bra i sommar mot tufft motstånd. Trivs med distansen. Räknar med en liknande insats som tidigare. Tycker han ska räknas, inga ändringar. ",
+          "horseId": "horse-ajson"
+        },
+        {
+          "namn": "Knaborgs Katla",
+          "start": "Lopp 7",
+          "kommentar": "Har tränat bättre än vad hon har tävlat på slutet. Skulle hon leva upp till vad man känner hemma så kan hon vara med där framme i den här typen av lopp, men jag vill se det innan jag tror för mycket på henne. Inga ändringar. ",
+          "horseId": "horse-knaborgs-katla"
+        }
+      ],
+      "id": "race-009"
+    },
+    {
+      "datum": "2026-09-04",
+      "lopp": "Romme",
+      "hastar": [
+        {
+          "namn": "Just Hell Bent",
+          "start": "Lopp 1",
+          "kommentar": "Tycker jag är en fin häst som jag var nöjd med i kvalet. Känns som att hon har gått framåt med det. Här räknar jag med en bra insats direkt. ",
+          "horseId": "horse-just-hell-bent"
+        }
+      ],
+      "id": "race-010"
+    },
+    {
+      "datum": "2026-09-03",
+      "hastar": [
+        {
+          "start": "Lopp 7",
+          "namn": "Calgary Dreams",
+          "kommentar": "Gjorde det bra senast och kunde med liten marginal avlägga sitt maiden. Nu står vi 20 m bakom den hästen vi hade på fotot senast. Kan bli svårt att rå på den igen nu med dessa förutsättningar men jag räknar med en stark insats av min häst. Inga ändringar. ",
+          "horseId": "horse-calgary-dreams"
+        }
+      ],
+      "lopp": "Bollnäs",
+      "id": "race-011"
+    },
+    {
+      "datum": "2026-09-11",
+      "lopp": "Bollnäs",
+      "hastar": [
+        {
+          "namn": "Calgary Dreams",
+          "start": "Lopp 5",
+          "kommentar": "Har gjort två riktigt fina lopp nu på slutet. Känns fortsatt bra så räknar med en liknande insats den här gången. Kommer ta av bakskorna och lätta henne fram. I övrigt inga ändringar. ",
+          "horseId": "horse-calgary-dreams"
+        }
+      ],
+      "id": "race-012"
+    },
+    {
+      "datum": "2026-09-12",
+      "lopp": "Hagmyren",
+      "hastar": [
+        {
+          "start": "Lopp 3",
+          "namn": "Follow The Cash",
+          "kommentar": "Felade lite olyckligt senast då jag vart tvungen att ta i henne in i första sväng. Tror hon hade varit med i den främre träffen annars. Hon är ganska kvick i voltstart så plan A är att prova att hålla ute dom övriga och sen köra där. Vanlig vagn nu när det är voltstart. I övrigt inga ändringar. ",
+          "horseId": "horse-follow-the-cash"
+        }
+      ],
+      "id": "race-013"
+    },
+    {
+      "datum": "2026-10-10",
+      "lopp": "Solvalla",
+      "hastar": [
+        {
+          "namn": "Calgary Dreams",
+          "start": "Lopp 3",
+          "kommentar": "Tappade rytmen då det var en bit i sista sväng som var väldigt lös på innern, vilket var lite surt då hon inte var helt tom i det läget. Liknande förutsättningar nu gör att jag räknar med en liknande insats också. Inga ändringar. ",
+          "horseId": "horse-calgary-dreams"
+        },
+        {
+          "namn": "Ajson",
+          "start": "Lopp 9",
+          "kommentar": "Gjorde ett bra lopp i skymundan senast. Jag hade 10,5 sista varvet på honom. Tre varv passar bättre och jag räknar med en bra insats så får vi se hur långt det räcker, det är några tuffa med. Inga ändringar.",
+          "horseId": "horse-ajson"
+        }
+      ],
+      "id": "race-014"
+    },
+    {
+      "datum": "2026-09-23",
+      "lopp": "Solvalla",
+      "hastar": [
+        {
+          "namn": "Ajson",
+          "start": "Lopp 8",
+          "kommentar": "Var kanske inte som bäst senast utan att vara dålig heller. Kan ha svårt att hänga med helt på medeldistans och dessutom ett dåligt spår, så vi hoppas att han gör ett bra lopp bara och har studsat fram sen senast. Inga ändringar. ",
+          "horseId": "horse-ajson"
+        }
+      ],
+      "id": "race-015"
+    },
+    {
+      "datum": "2026-09-27",
+      "lopp": "Solvalla",
+      "hastar": [
+        {
+          "namn": "Calgary Dreams",
+          "start": "Lopp 6",
+          "kommentar": "Har varit fin på slutet och utvecklingskurvan pekar åt rätt håll. Inte mött den här typen av hästar tidigare så det här blir såklart lite av ett elddop. Vi fick rätt läge så vi får prova hamna en bit fram på innerspår och se hur långt det räcker. Amerikansk vagn och ryckhuva denna gång. ",
+          "horseId": "horse-calgary-dreams"
+        }
+      ],
+      "id": "race-016"
+    },
+    {
+      "datum": "2026-10-02",
+      "lopp": "Bollnäs",
+      "hastar": [
+        {
+          "namn": "Just Hell Bent",
+          "start": "Lopp 1",
+          "kommentar": "Var fin i debuten och skulle ha startat för 11 dagar sen men lyckades bita sig lite i läppen och fick inte vara med tråkigt nog. Vi körde ett rejält jobb hemma dagen efter så jag tror inte att hon har tappat något. Inga ändringar. ",
+          "horseId": "horse-just-hell-bent"
+        },
+        {
+          "namn": "Knaborgs Katla",
+          "start": "Lopp 3",
+          "kommentar": "Gjorde det bra i skymundan senast och är inne i en bra fas i sitt tävlande. Jag räknar med en liknande insats igen, men det kan bli svårt att nå ända fram från det här läget. Inga ändringar. ",
+          "horseId": "horse-knaborgs-katla"
+        }
+      ],
+      "id": "race-017"
+    },
+    {
+      "datum": "2026-10-05",
+      "lopp": "Gävle",
+      "hastar": [
+        {
+          "namn": "Follow The Cash",
+          "start": "Lopp 1",
+          "kommentar": "Har betett sig dåligt dom två senaste gångerna och behöver först och främst sköta sig bättre. Inga ändringar. ",
+          "horseId": "horse-follow-the-cash"
+        },
+        {
+          "namn": "Biscaya Bro",
+          "start": "Lopp 2",
+          "kommentar": "Var jag supernöjd med senast då hon blev fast med gott om krafter kvar. Hon vinner mest troligt det loppet om jag kör i ledningen. Vi söker oss framåt här och hoppas att vi hamnar i ett bra slagläge. Jag räknar med en liknande insats som senast. Inga ändringar. ",
+          "horseId": "horse-biscaya-bro"
+        }
+      ],
+      "id": "race-018"
+    },
+    {
+      "datum": "2026-10-12",
+      "lopp": "Romme",
+      "hastar": [
+        {
+          "namn": "Just Hell Bent",
+          "start": "Lopp 1",
+          "kommentar": "Var fin senast och känns bra efter, så jag räknar med en bra insats igen. Svårt att säga hur bra dom andra är och hur loppet blir kört. Inga ändringar.",
+          "horseId": "horse-just-hell-bent"
+        }
+      ],
+      "id": "race-019"
+    },
+    {
+      "datum": "2026-10-22",
+      "lopp": "Örebro",
+      "hastar": [
+        {
+          "namn": "Knaborgs Katla",
+          "start": "Lopp 5",
+          "kommentar": "Har gått bra i skymundan på slutet. Tyvärr har hon fått ett tråkigt läge för att kunna komma till här. Jag hoppas och tror att hon gör en liknande insats som tidigare och så får vi se hur långt det räcker. Inga ändringar. ",
+          "horseId": "horse-knaborgs-katla"
+        },
+        {
+          "namn": "Biscaya Bro",
+          "start": "Lopp 8",
+          "kommentar": "Har bara gjort bra insatser och inget tyder på att hon ska göra en sämre den här gången heller. Möter några som har imponerat men jag hoppas att vi ska kunna få med oss en fin peng om vi får ett hyggligt lopp. Inga ändringar. ",
+          "horseId": "horse-biscaya-bro"
+        }
+      ],
+      "id": "race-020"
+    },
+    {
+      "datum": "2026-10-28",
+      "lopp": "Solvalla",
+      "hastar": [
+        {
+          "namn": "Impertinent ",
+          "start": "Lopp 2",
+          "kommentar": "Har inte fungerat på slutet utan att vi har hittat några större fel på henne. Har gått två banjobb nu och allt verkar normalt, men jag vill se att det funkar i lopp också. Därav ligger jag lågt och vi siktar bara in oss på ett felfritt lopp här. Vi backar till skor r.o och vanlig vagn. ",
+          "horseId": "horse-impertinent"
+        }
+      ],
+      "id": "race-021"
+    }
+  ],
+  "sales": [
+    {
+      "id": "sale-001",
+      "horseId": "horse-just-hell-bent",
+      "status": "draft",
+      "typ": "Andel",
+      "pris": "20000",
+      "antal_andelar": "10",
+      "beskrivning": "Just Hell Bent är en fin tvåårs märr som har skött sin uppträning på bästa vis och siktas mot tvåårings start om inget oförutsett händer. Hon är redo att kvala i början av September.",
+      "bilder": [
+        "/images/just-hell-bent-huvud.jpeg"
+      ],
+      "legacySnapshot": {
+        "antal_andelar": "10",
+        "typ": "Andel",
+        "bilder": [
+          "/images/just-hell-bent-huvud.jpeg"
+        ],
+        "pris": "20000",
+        "mor": "Determined ",
+        "alder_kon": "2år Sto",
+        "namn": "Just Hell Bent",
+        "far": "Maharajah",
+        "beskrivning": "Just Hell Bent är en fin tvåårs märr som har skött sin uppträning på bästa vis och siktas mot tvåårings start om inget oförutsett händer. Hon är redo att kvala i början av September.",
+        "bild": "/images/just-hell-bent.jpeg"
+      }
+    }
+  ],
+  "staff": [
+    {
+      "id": "staff-zeb-jonasson",
+      "namn": "Zeb Jonasson",
+      "roll": "Tränare",
+      "bild": "/zeb2.jpg",
+      "presentation": "Tillfälligt kopplingstest – endast arbetsgrenen.",
+      "status": "active"
+    },
+    {
+      "id": "staff-moa-torngren",
+      "namn": "Moa Törngren",
+      "roll": "Hästskötare",
+      "bild": "/moa.png",
+      "presentation": "",
+      "status": "active"
+    },
+    {
+      "id": "staff-jan-larsson",
+      "namn": "Jan Larsson",
+      "roll": "Allt i allo",
+      "bild": "/images/jan-larsson.jpeg",
+      "presentation": "",
+      "status": "active"
+    }
+  ],
+  "reviewNotes": [
+    "Follow The Cash har lämnat stallet enligt ditt besked och är arkiverad. Historiken är bevarad.",
+    "Födelseår och personalrelationer behöver verifieras manuellt. Källdata använder både Törngren och Thörngren; ingen automatisk personkoppling har gjorts.",
+    "Nyheternas hästkopplingar behöver väljas manuellt; inga har gissats."
+  ],
+  "revision": 1
+}

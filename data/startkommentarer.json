@@ -7,9 +7,11 @@
         {
           "namn": "Calgary Dreams",
           "start": "Lopp 1",
-          "kommentar": "Fungerade fint och stod för starka sista 700m i en snabb avslutning senast. \nLite klurigare spår denna gång men känns som att hon mognat och jag har god tro på att hon kliver iväg fint. Tycker att hon ska vara med där framme denna gång om hon fungerar lika fint som två senaste. Inga ändringar"
+          "kommentar": "Fungerade fint och stod för starka sista 700m i en snabb avslutning senast. \nLite klurigare spår denna gång men känns som att hon mognat och jag har god tro på att hon kliver iväg fint. Tycker att hon ska vara med där framme denna gång om hon fungerar lika fint som två senaste. Inga ändringar",
+          "horseId": "horse-calgary-dreams"
         }
-      ]
+      ],
+      "id": "race-001"
     },
     {
       "datum": "2026-08-16",
@@ -18,14 +20,17 @@
         {
           "namn": "Biscaya Bro",
           "start": "Lopp 1",
-          "kommentar": "Förnuftig häst som gjort allt rätt såhär långt. Tränat fint efter kvalloppet. Svårt att bedöma motståndet men tror att hon gör ett bra lopp."
+          "kommentar": "Förnuftig häst som gjort allt rätt såhär långt. Tränat fint efter kvalloppet. Svårt att bedöma motståndet men tror att hon gör ett bra lopp.",
+          "horseId": "horse-biscaya-bro"
         },
         {
           "namn": "Follow The Cash",
           "start": "Lopp 7",
-          "kommentar": "Var jag besviken på senast då hon sprang på halvfart. Kom in med låg puls efter loppet så kan betydligt bättre än så. Vi provar med ett helstängt huvudlag nu och hoppas att hon fokuserar bättre. Nurmos häst blir normalt sett svår att slå men där bakom tycker jag att hon ska vara tidig om hon tävlar på sin rätta nivå. Inga andra ändringar "
+          "kommentar": "Var jag besviken på senast då hon sprang på halvfart. Kom in med låg puls efter loppet så kan betydligt bättre än så. Vi provar med ett helstängt huvudlag nu och hoppas att hon fokuserar bättre. Nurmos häst blir normalt sett svår att slå men där bakom tycker jag att hon ska vara tidig om hon tävlar på sin rätta nivå. Inga andra ändringar ",
+          "horseId": "horse-follow-the-cash"
         }
-      ]
+      ],
+      "id": "race-002"
     },
     {
       "datum": "2026-08-17",
@@ -34,9 +39,11 @@
         {
           "namn": "Knaborgs Katla",
           "start": "Lopp 3",
-          "kommentar": "Fungerade bättre i travet utan skor senast. Var inte vässad inför därav lite seg i benen så loppet borde ha gjort henne gott. Provar med ett helstängt huvudlag denna gång. Inga andra ändringar"
+          "kommentar": "Fungerade bättre i travet utan skor senast. Var inte vässad inför därav lite seg i benen så loppet borde ha gjort henne gott. Provar med ett helstängt huvudlag denna gång. Inga andra ändringar",
+          "horseId": "horse-knaborgs-katla"
         }
-      ]
+      ],
+      "id": "race-003"
     },
     {
       "datum": "2026-08-26",
@@ -45,14 +52,17 @@
         {
           "namn": "Biscaya Bro",
           "start": "Lopp 1",
-          "kommentar": "Gjorde ett fin lopp i debuten. Svårt att veta hur bra dom andra är i detta loppet men jag tycker att våran var så fin i debuten att hon skall kunna vara med där framme. Inga ändringar "
+          "kommentar": "Gjorde ett fin lopp i debuten. Svårt att veta hur bra dom andra är i detta loppet men jag tycker att våran var så fin i debuten att hon skall kunna vara med där framme. Inga ändringar ",
+          "horseId": "horse-biscaya-bro"
         },
         {
           "namn": "Impertinent ",
           "start": "Lopp 5",
-          "kommentar": "Fungerade inte i travet senast och är åtgärdad efter det. Hade krafter kvar när hon galopperade. Hon är hygglig ut från start så borde få ett fint lopp på innerspår här. Vi provar barfota runt om idag. I övrigt inga ändringar. "
+          "kommentar": "Fungerade inte i travet senast och är åtgärdad efter det. Hade krafter kvar när hon galopperade. Hon är hygglig ut från start så borde få ett fint lopp på innerspår här. Vi provar barfota runt om idag. I övrigt inga ändringar. ",
+          "horseId": "horse-impertinent"
         }
-      ]
+      ],
+      "id": "race-004"
     },
     {
       "datum": "2026-08-31",
@@ -61,9 +71,11 @@
         {
           "namn": "Follow The Cash",
           "start": "Lopp 5",
-          "kommentar": "Var väldigt positiv med helstängt huvudlag senast. Provar gärna henne utan rygg idag. Tycker hon ska räknas om hon agerar som senast. Amerikansk vagn idag i övrigt inga ändringar "
+          "kommentar": "Var väldigt positiv med helstängt huvudlag senast. Provar gärna henne utan rygg idag. Tycker hon ska räknas om hon agerar som senast. Amerikansk vagn idag i övrigt inga ändringar ",
+          "horseId": "horse-follow-the-cash"
         }
-      ]
+      ],
+      "id": "race-005"
     },
     {
       "datum": "2026-09-18",
@@ -72,9 +84,11 @@
         {
           "namn": "Biscaya Bro",
           "start": "Lopp 2",
-          "kommentar": "Har gjort två fina lopp och har tränat på fint efter det. Möter några mer meriterade här men vi har fått ett bra spår och borde kunna få ett fint lopp därifrån. Inga ändringar. "
+          "kommentar": "Har gjort två fina lopp och har tränat på fint efter det. Möter några mer meriterade här men vi har fått ett bra spår och borde kunna få ett fint lopp därifrån. Inga ändringar. ",
+          "horseId": "horse-biscaya-bro"
         }
-      ]
+      ],
+      "id": "race-006"
     },
     {
       "datum": "2026-09-21",
@@ -83,14 +97,17 @@
         {
           "namn": "Just Hell Bent",
           "start": "Lopp 1",
-          "kommentar": "Var jag supernöjd med i debuten och har tränat fint efter det. Räknar med en liknande insats igen och hoppas att det ska räcka en bit. Inga ändringar. "
+          "kommentar": "Var jag supernöjd med i debuten och har tränat fint efter det. Räknar med en liknande insats igen och hoppas att det ska räcka en bit. Inga ändringar. ",
+          "horseId": "horse-just-hell-bent"
         },
         {
           "namn": "Knaborgs Katla",
           "start": "Lopp 5",
-          "kommentar": "Var väldigt positiv senast och satt fast med gott om krafter kvar. Nu fick vi dåligt läge vilket gör det betydligt svårare den här gången. Jag hoppas och tror att hon ska göra ett bra lopp igen. Inga ändringar. "
+          "kommentar": "Var väldigt positiv senast och satt fast med gott om krafter kvar. Nu fick vi dåligt läge vilket gör det betydligt svårare den här gången. Jag hoppas och tror att hon ska göra ett bra lopp igen. Inga ändringar. ",
+          "horseId": "horse-knaborgs-katla"
         }
-      ]
+      ],
+      "id": "race-007"
     },
     {
       "datum": "2026-09-22",
@@ -99,9 +116,11 @@
         {
           "namn": "Follow The Cash",
           "start": "Lopp 4",
-          "kommentar": "Jag var väldigt besviken på hennes uppträdande senast. Provar att ta av alla skor denna gång (bara barfota bak tidigare) och amerikansk sulky igen nu när det är bilstart. Sköter hon sig räknar jag med en anständig insats. "
+          "kommentar": "Jag var väldigt besviken på hennes uppträdande senast. Provar att ta av alla skor denna gång (bara barfota bak tidigare) och amerikansk sulky igen nu när det är bilstart. Sköter hon sig räknar jag med en anständig insats. ",
+          "horseId": "horse-follow-the-cash"
         }
-      ]
+      ],
+      "id": "race-008"
     },
     {
       "datum": "2026-09-01",
@@ -110,14 +129,17 @@
         {
           "namn": "Ajson",
           "start": "Lopp 3",
-          "kommentar": "Har gjort det bra i sommar mot tufft motstånd. Trivs med distansen. Räknar med en liknande insats som tidigare. Tycker han ska räknas, inga ändringar. "
+          "kommentar": "Har gjort det bra i sommar mot tufft motstånd. Trivs med distansen. Räknar med en liknande insats som tidigare. Tycker han ska räknas, inga ändringar. ",
+          "horseId": "horse-ajson"
         },
         {
           "namn": "Knaborgs Katla",
           "start": "Lopp 7",
-          "kommentar": "Har tränat bättre än vad hon har tävlat på slutet. Skulle hon leva upp till vad man känner hemma så kan hon vara med där framme i den här typen av lopp, men jag vill se det innan jag tror för mycket på henne. Inga ändringar. "
+          "kommentar": "Har tränat bättre än vad hon har tävlat på slutet. Skulle hon leva upp till vad man känner hemma så kan hon vara med där framme i den här typen av lopp, men jag vill se det innan jag tror för mycket på henne. Inga ändringar. ",
+          "horseId": "horse-knaborgs-katla"
         }
-      ]
+      ],
+      "id": "race-009"
     },
     {
       "datum": "2026-09-04",
@@ -126,9 +148,11 @@
         {
           "namn": "Just Hell Bent",
           "start": "Lopp 1",
-          "kommentar": "Tycker jag är en fin häst som jag var nöjd med i kvalet. Känns som att hon har gått framåt med det. Här räknar jag med en bra insats direkt. "
+          "kommentar": "Tycker jag är en fin häst som jag var nöjd med i kvalet. Känns som att hon har gått framåt med det. Här räknar jag med en bra insats direkt. ",
+          "horseId": "horse-just-hell-bent"
         }
-      ]
+      ],
+      "id": "race-010"
     },
     {
       "datum": "2026-09-03",
@@ -136,10 +160,12 @@
         {
           "start": "Lopp 7",
           "namn": "Calgary Dreams",
-          "kommentar": "Gjorde det bra senast och kunde med liten marginal avlägga sitt maiden. Nu står vi 20 m bakom den hästen vi hade på fotot senast. Kan bli svårt att rå på den igen nu med dessa förutsättningar men jag räknar med en stark insats av min häst. Inga ändringar. "
+          "kommentar": "Gjorde det bra senast och kunde med liten marginal avlägga sitt maiden. Nu står vi 20 m bakom den hästen vi hade på fotot senast. Kan bli svårt att rå på den igen nu med dessa förutsättningar men jag räknar med en stark insats av min häst. Inga ändringar. ",
+          "horseId": "horse-calgary-dreams"
         }
       ],
-      "lopp": "Bollnäs"
+      "lopp": "Bollnäs",
+      "id": "race-011"
     },
     {
       "datum": "2026-09-11",
@@ -148,9 +174,11 @@
         {
           "namn": "Calgary Dreams",
           "start": "Lopp 5",
-          "kommentar": "Har gjort två riktigt fina lopp nu på slutet. Känns fortsatt bra så räknar med en liknande insats den här gången. Kommer ta av bakskorna och lätta henne fram. I övrigt inga ändringar. "
+          "kommentar": "Har gjort två riktigt fina lopp nu på slutet. Känns fortsatt bra så räknar med en liknande insats den här gången. Kommer ta av bakskorna och lätta henne fram. I övrigt inga ändringar. ",
+          "horseId": "horse-calgary-dreams"
         }
-      ]
+      ],
+      "id": "race-012"
     },
     {
       "datum": "2026-09-12",
@@ -159,9 +187,11 @@
         {
           "start": "Lopp 3",
           "namn": "Follow The Cash",
-          "kommentar": "Felade lite olyckligt senast då jag vart tvungen att ta i henne in i första sväng. Tror hon hade varit med i den främre träffen annars. Hon är ganska kvick i voltstart så plan A är att prova att hålla ute dom övriga och sen köra där. Vanlig vagn nu när det är voltstart. I övrigt inga ändringar. "
+          "kommentar": "Felade lite olyckligt senast då jag vart tvungen att ta i henne in i första sväng. Tror hon hade varit med i den främre träffen annars. Hon är ganska kvick i voltstart så plan A är att prova att hålla ute dom övriga och sen köra där. Vanlig vagn nu när det är voltstart. I övrigt inga ändringar. ",
+          "horseId": "horse-follow-the-cash"
         }
-      ]
+      ],
+      "id": "race-013"
     },
     {
       "datum": "2026-10-10",
@@ -170,14 +200,17 @@
         {
           "namn": "Calgary Dreams",
           "start": "Lopp 3",
-          "kommentar": "Tappade rytmen då det var en bit i sista sväng som var väldigt lös på innern, vilket var lite surt då hon inte var helt tom i det läget. Liknande förutsättningar nu gör att jag räknar med en liknande insats också. Inga ändringar. "
+          "kommentar": "Tappade rytmen då det var en bit i sista sväng som var väldigt lös på innern, vilket var lite surt då hon inte var helt tom i det läget. Liknande förutsättningar nu gör att jag räknar med en liknande insats också. Inga ändringar. ",
+          "horseId": "horse-calgary-dreams"
         },
         {
           "namn": "Ajson",
           "start": "Lopp 9",
-          "kommentar": "Gjorde ett bra lopp i skymundan senast. Jag hade 10,5 sista varvet på honom. Tre varv passar bättre och jag räknar med en bra insats så får vi se hur långt det räcker, det är några tuffa med. Inga ändringar."
+          "kommentar": "Gjorde ett bra lopp i skymundan senast. Jag hade 10,5 sista varvet på honom. Tre varv passar bättre och jag räknar med en bra insats så får vi se hur långt det räcker, det är några tuffa med. Inga ändringar.",
+          "horseId": "horse-ajson"
         }
-      ]
+      ],
+      "id": "race-014"
     },
     {
       "datum": "2026-09-23",
@@ -186,9 +219,11 @@
         {
           "namn": "Ajson",
           "start": "Lopp 8",
-          "kommentar": "Var kanske inte som bäst senast utan att vara dålig heller. Kan ha svårt att hänga med helt på medeldistans och dessutom ett dåligt spår, så vi hoppas att han gör ett bra lopp bara och har studsat fram sen senast. Inga ändringar. "
+          "kommentar": "Var kanske inte som bäst senast utan att vara dålig heller. Kan ha svårt att hänga med helt på medeldistans och dessutom ett dåligt spår, så vi hoppas att han gör ett bra lopp bara och har studsat fram sen senast. Inga ändringar. ",
+          "horseId": "horse-ajson"
         }
-      ]
+      ],
+      "id": "race-015"
     },
     {
       "datum": "2026-09-27",
@@ -197,9 +232,11 @@
         {
           "namn": "Calgary Dreams",
           "start": "Lopp 6",
-          "kommentar": "Har varit fin på slutet och utvecklingskurvan pekar åt rätt håll. Inte mött den här typen av hästar tidigare så det här blir såklart lite av ett elddop. Vi fick rätt läge så vi får prova hamna en bit fram på innerspår och se hur långt det räcker. Amerikansk vagn och ryckhuva denna gång. "
+          "kommentar": "Har varit fin på slutet och utvecklingskurvan pekar åt rätt håll. Inte mött den här typen av hästar tidigare så det här blir såklart lite av ett elddop. Vi fick rätt läge så vi får prova hamna en bit fram på innerspår och se hur långt det räcker. Amerikansk vagn och ryckhuva denna gång. ",
+          "horseId": "horse-calgary-dreams"
         }
-      ]
+      ],
+      "id": "race-016"
     },
     {
       "datum": "2026-10-02",
@@ -208,14 +245,17 @@
         {
           "namn": "Just Hell Bent",
           "start": "Lopp 1",
-          "kommentar": "Var fin i debuten och skulle ha startat för 11 dagar sen men lyckades bita sig lite i läppen och fick inte vara med tråkigt nog. Vi körde ett rejält jobb hemma dagen efter så jag tror inte att hon har tappat något. Inga ändringar. "
+          "kommentar": "Var fin i debuten och skulle ha startat för 11 dagar sen men lyckades bita sig lite i läppen och fick inte vara med tråkigt nog. Vi körde ett rejält jobb hemma dagen efter så jag tror inte att hon har tappat något. Inga ändringar. ",
+          "horseId": "horse-just-hell-bent"
         },
         {
           "namn": "Knaborgs Katla",
           "start": "Lopp 3",
-          "kommentar": "Gjorde det bra i skymundan senast och är inne i en bra fas i sitt tävlande. Jag räknar med en liknande insats igen, men det kan bli svårt att nå ända fram från det här läget. Inga ändringar. "
+          "kommentar": "Gjorde det bra i skymundan senast och är inne i en bra fas i sitt tävlande. Jag räknar med en liknande insats igen, men det kan bli svårt att nå ända fram från det här läget. Inga ändringar. ",
+          "horseId": "horse-knaborgs-katla"
         }
-      ]
+      ],
+      "id": "race-017"
     },
     {
       "datum": "2026-10-05",
@@ -224,14 +264,17 @@
         {
           "namn": "Follow The Cash",
           "start": "Lopp 1",
-          "kommentar": "Har betett sig dåligt dom två senaste gångerna och behöver först och främst sköta sig bättre. Inga ändringar. "
+          "kommentar": "Har betett sig dåligt dom två senaste gångerna och behöver först och främst sköta sig bättre. Inga ändringar. ",
+          "horseId": "horse-follow-the-cash"
         },
         {
           "namn": "Biscaya Bro",
           "start": "Lopp 2",
-          "kommentar": "Var jag supernöjd med senast då hon blev fast med gott om krafter kvar. Hon vinner mest troligt det loppet om jag kör i ledningen. Vi söker oss framåt här och hoppas att vi hamnar i ett bra slagläge. Jag räknar med en liknande insats som senast. Inga ändringar. "
+          "kommentar": "Var jag supernöjd med senast då hon blev fast med gott om krafter kvar. Hon vinner mest troligt det loppet om jag kör i ledningen. Vi söker oss framåt här och hoppas att vi hamnar i ett bra slagläge. Jag räknar med en liknande insats som senast. Inga ändringar. ",
+          "horseId": "horse-biscaya-bro"
         }
-      ]
+      ],
+      "id": "race-018"
     },
     {
       "datum": "2026-10-12",
@@ -240,9 +283,11 @@
         {
           "namn": "Just Hell Bent",
           "start": "Lopp 1",
-          "kommentar": "Var fin senast och känns bra efter, så jag räknar med en bra insats igen. Svårt att säga hur bra dom andra är och hur loppet blir kört. Inga ändringar."
+          "kommentar": "Var fin senast och känns bra efter, så jag räknar med en bra insats igen. Svårt att säga hur bra dom andra är och hur loppet blir kört. Inga ändringar.",
+          "horseId": "horse-just-hell-bent"
         }
-      ]
+      ],
+      "id": "race-019"
     },
     {
       "datum": "2026-10-22",
@@ -251,14 +296,17 @@
         {
           "namn": "Knaborgs Katla",
           "start": "Lopp 5",
-          "kommentar": "Har gått bra i skymundan på slutet. Tyvärr har hon fått ett tråkigt läge för att kunna komma till här. Jag hoppas och tror att hon gör en liknande insats som tidigare och så får vi se hur långt det räcker. Inga ändringar. "
+          "kommentar": "Har gått bra i skymundan på slutet. Tyvärr har hon fått ett tråkigt läge för att kunna komma till här. Jag hoppas och tror att hon gör en liknande insats som tidigare och så får vi se hur långt det räcker. Inga ändringar. ",
+          "horseId": "horse-knaborgs-katla"
         },
         {
           "namn": "Biscaya Bro",
           "start": "Lopp 8",
-          "kommentar": "Har bara gjort bra insatser och inget tyder på att hon ska göra en sämre den här gången heller. Möter några som har imponerat men jag hoppas att vi ska kunna få med oss en fin peng om vi får ett hyggligt lopp. Inga ändringar. "
+          "kommentar": "Har bara gjort bra insatser och inget tyder på att hon ska göra en sämre den här gången heller. Möter några som har imponerat men jag hoppas att vi ska kunna få med oss en fin peng om vi får ett hyggligt lopp. Inga ändringar. ",
+          "horseId": "horse-biscaya-bro"
         }
-      ]
+      ],
+      "id": "race-020"
     },
     {
       "datum": "2026-10-28",
@@ -267,9 +315,11 @@
         {
           "namn": "Impertinent ",
           "start": "Lopp 2",
-          "kommentar": "Har inte fungerat på slutet utan att vi har hittat några större fel på henne. Har gått två banjobb nu och allt verkar normalt, men jag vill se att det funkar i lopp också. Därav ligger jag lågt och vi siktar bara in oss på ett felfritt lopp här. Vi backar till skor r.o och vanlig vagn. "
+          "kommentar": "Har inte fungerat på slutet utan att vi har hittat några större fel på henne. Har gått två banjobb nu och allt verkar normalt, men jag vill se att det funkar i lopp också. Därav ligger jag lågt och vi siktar bara in oss på ett felfritt lopp här. Vi backar till skor r.o och vanlig vagn. ",
+          "horseId": "horse-impertinent"
         }
-      ]
+      ],
+      "id": "race-021"
     }
   ]
 }
