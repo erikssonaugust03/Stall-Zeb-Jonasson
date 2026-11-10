@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {validate} from '../admin/validation.mjs';
+import {project} from '../admin/projection.mjs';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const data=JSON.parse(fs.readFileSync(path.join(root,'data/admin-v2.json'),'utf8'));
+validate(data);
+for(const [name,value] of Object.entries(project(data)))fs.writeFileSync(path.join(root,'data',name+'.json'),JSON.stringify(value,null,2)+'\n');
+console.log('Validated and generated shared content:',data.horses.length,'horses,',data.news.length,'news,',data.staff.length,'staff.');

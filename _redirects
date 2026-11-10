@@ -1,6 +1,3 @@
-/hast-:slug.html /hastar/:slug 301!
-/hastar/:slug /hastprofil.html 200
-
 /nyheter/valkommen-till-stall-zeb-jonassons-hemsida /nyheter/valkommen-till-stall-zeb-jonassons-hemsida/index.html 200!
 /nyheter/valkommen-till-stall-zeb-jonassons-hemsida/ /nyheter/valkommen-till-stall-zeb-jonassons-hemsida/index.html 200!
 /nyheter/fortkorning-pa-valla /nyheter/fortkorning-pa-valla/index.html 200!
@@ -11,6 +8,14 @@
 /nyheter/andra-maiden/ /nyheter/andra-maiden/index.html 200!
 /nyheter/andra-raka-calgary /nyheter/andra-raka-calgary/index.html 200!
 /nyheter/andra-raka-calgary/ /nyheter/andra-raka-calgary/index.html 200!
+/nyheter/arets-forsta-2aring /nyheter/arets-forsta-2aring/index.html 200!
+/nyheter/arets-forsta-2aring/ /nyheter/arets-forsta-2aring/index.html 200!
+# ADMIN_NEWS_ALIASES_START
+
+# ADMIN_NEWS_ALIASES_END
+/hast-:slug.html /hastar/:slug 301!
+/hastar/:slug /hastprofil.html 200
+
 /nyheter/Calgary-avlade-maiden /nyheter/calgary-avlade-maiden/ 301!
 /nyheter/Calgary-avlade-maiden/ /nyheter/calgary-avlade-maiden/ 301!
 /nyheter/Andra-maiden /nyheter/andra-maiden/ 301!

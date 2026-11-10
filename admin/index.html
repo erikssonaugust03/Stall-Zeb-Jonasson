@@ -1,23 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin – Stall Zeb Jonasson</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</head>
-<body>
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
-</body>
-</html>
+<!doctype html>
+<html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Admin – Stall Zeb Jonasson</title><link rel="stylesheet" href="/admin/admin.css"><script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script><script type="module" src="/admin/bootstrap.mjs"></script></head><body>
+<header><img src="/logo-zeb.png" alt="Stall Zeb Jonasson"><strong>Admin 2.0</strong><button type="button" id="logout" hidden>Logga ut</button><button type="button" id="openMedia" disabled>Bildbibliotek</button><a href="/" target="_blank" rel="noopener">Visa hemsidan →</a></header>
+<section id="connection" style="padding:24px"><h1>Logga in i admin</h1><p>Använd ditt befintliga konto för hemsidan.</p><button id="login" type="button">Logga in med befintligt adminkonto</button><p id="connectionStatus" role="status"></p></section><main hidden><h1>Hela stallet på ett ställe</h1><p>Hästregister, nyheter, starter, försäljning och personal.</p>
+<div class="notice" id="environmentNotice"></div>
+<details><summary>Uppgifter som behöver granskas</summary><ul id="notes"></ul></details>
+<nav id="tabs" aria-label="Innehållstyper"></nav>
+<div class="toolbar"><div><label for="search">Sök i vald innehållstyp</label><input id="search" type="search" placeholder="Sök namn, rubrik eller bana…"></div><div id="horseFilter"><label for="statusFilter">Visa hästar</label><select id="statusFilter"><option value="active">Aktiva hästar</option><option value="archived">Arkiverade hästar</option><option value="all">Alla hästar</option></select></div><button id="create" type="button" disabled>Lägg till</button></div>
+<p id="feedback" role="status" aria-live="polite"></p><p id="count"></p><p id="error" role="alert"></p><section id="records" aria-label="Innehåll"></section>
+</main>
+<dialog id="editor" aria-labelledby="editorTitle"><form id="editForm"><div class="dialog-head"><h2 id="editorTitle">Redigera innehåll</h2><button type="button" id="closeEditor" aria-label="Stäng redigeringen">Stäng</button></div><p>Kontrollera uppgifterna innan du sparar.</p><div id="fields"></div><p id="editError" role="alert"></p><div class="actions"><button type="submit" id="save" class="primary">Spara</button><button type="button" id="cancel">Avbryt</button></div></form></dialog>
+</body></html>
