@@ -1,63 +1,63 @@
 {
   "nyheter": [
     {
+      "id": "news-valkommen-till-stall-zeb-jonassons-hemsida",
+      "slug": "valkommen-till-stall-zeb-jonassons-hemsida",
       "datum": "2026-07-12",
       "tid": "22:50",
       "titel": "Välkommen till Stall Zeb Jonassons hemsida !",
       "text": "På vår hemsida kommer du att kunna följa vår verksamhet lite närmare! Vi kommer bland annat lägga ut filmer från snabbjobb, publicera startkommentarer när hästarna ska tävla och förhoppningsvis flera segerinlägg ! ",
       "bild": "/images/logga.jpeg",
-      "slug": "valkommen-till-stall-zeb-jonassons-hemsida",
-      "id": "news-valkommen-till-stall-zeb-jonassons-hemsida",
       "horseIds": []
     },
     {
+      "id": "news-fortkorning-pa-valla",
+      "slug": "fortkorning-pa-valla",
       "datum": "2026-07-22",
       "tid": "09:00",
       "titel": "Fortkörning Solvalla 23/7",
       "text": "Imorgon åker vi in med 4st till Solvalla ! Bland annat 2 åriga Just Hell Bent som närmar sig kval och det dessutom finns några andelar kvar i.\nKaffe och fikabröd finns ovanför inskrivningen",
       "bild": "/images/000ff234-4c58-4012-b1d1-7c65085ea72f.png",
-      "slug": "fortkorning-pa-valla",
-      "id": "news-fortkorning-pa-valla",
       "horseIds": []
     },
     {
+      "id": "news-calgary-avlade-maiden",
+      "slug": "calgary-avlade-maiden",
       "datum": "2026-08-14",
       "tid": "20:30",
       "titel": "Calgary Dreams avlade maiden !",
-      "slug": "calgary-avlade-maiden",
       "text": "Calgary Dreams fick äntligen avlägga maiden ikväll på Bollnäs ! Efter ett lopp i andra utvändigt kunde hon runda fram till utvändigt ledaren sju hundra meter från mål och därefter med liten marginal plocka ner ledaren som stretade emot bra till slut. Segern var värd 35000kr\nSegertid: 1:17,2\nÄgare: Stall Simple Minds ( Mats-ola Carlsson & Tord Erixon) och Zeb Jonasson ",
       "bild": "/images/img_4206.jpeg",
-      "id": "news-calgary-avlade-maiden",
       "horseIds": []
     },
     {
+      "id": "news-andra-maiden",
+      "slug": "andra-maiden",
       "datum": "2026-08-16",
       "tid": "15:37",
       "titel": "Andra maiden segern denna veckan! ",
-      "slug": "andra-maiden",
       "text": "Follow The Cash ville inte vara sämre än sin hagkompis Calgary Dreams och avlade sitt maiden idag på Lindesberg! Efter ett bra slutvarv kunde hon med säker marginal plocka ner den ledande hästen.\nSegern var värd 25000kr\nSegertid: 1:16,2 \nÄgare: Ofcourse KB ",
       "bild": "/images/img_7278.jpeg",
-      "id": "news-andra-maiden",
       "horseIds": []
     },
     {
+      "id": "news-andra-raka-calgary",
+      "slug": "andra-raka-calgary",
       "datum": "2026-09-03",
       "tid": "17:00",
       "titel": "Andra raka för Calgary Dreams !",
-      "slug": "andra-raka-calgary",
       "text": "Efter en resa i mestadels rygg på ledaren kunde Calgary Dreams avgöra med säker marginal och ta sin andra raka seger. \nSegern var värd 35.000 kr \nSegertid: 1:16,2\nÄgare: Stall Simple Minds HB (Mats-Ola Carlsson & Tord Erixon) & Zeb Jonasson",
       "bild": "/images/img_7355.jpeg",
-      "id": "news-andra-raka-calgary",
       "horseIds": []
     },
     {
+      "id": "news-arets-forsta-2aring",
+      "slug": "arets-forsta-2aring",
       "datum": "2026-10-02",
       "tid": "20:00",
       "titel": "Årets första 2-årings vinnare ! ",
-      "slug": "arets-forsta-2aring",
       "text": "Efter att ha tagit hand om ledningen kunde Just Hell Bent successivt öka tempot och efter en snabb sista femhundring hålla undan till seger med liten men säker marginal. \nJust Hell Bent var stallets första 2-årings vinnare för i år. \nSegern var värd 35.000 kr \nSegertid: 1:15,7\nÄgare: Zeb Jonasson, Magnus Svanholm, Kåre Svanholm, Malin Welander & Peter Lindqvist",
       "bild": "/images/img_7456.jpeg",
-      "id": "news-arets-forsta-2aring",
       "horseIds": []
     }
   ]
