@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "mode": "sandbox-local-drafts",
+  "mode": "github-cms",
   "horses": [
     {
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts785165/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
@@ -654,7 +654,7 @@
     {
       "id": "sale-001",
       "horseId": "horse-just-hell-bent",
-      "status": "draft",
+      "status": "available",
       "typ": "Andel",
       "pris": "20000",
       "antal_andelar": "10",
@@ -709,5 +709,5 @@
     "Födelseår och personalrelationer behöver verifieras manuellt. Källdata använder både Törngren och Thörngren; ingen automatisk personkoppling har gjorts.",
     "Nyheternas hästkopplingar behöver väljas manuellt; inga har gissats."
   ],
-  "revision": 2
+  "revision": 3
 }

@@ -1,7 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build": "node scripts/generate-news.js"
+    "build": "node scripts/prepare-content.mjs && node scripts/generate-news.js",
+    "test": "node scripts/test-production.mjs"
   },
   "dependencies": {
     "sharp": "^0.34.3"
