@@ -8,28 +8,15 @@
       "pris": "20000",
       "antal_andelar": "10",
       "beskrivning": "Just Hell Bent är en fin tvåårs märr som har skött sin uppträning på bästa vis och siktas mot tvåårings start om inget oförutsett händer. Hon är redo att kvala i början av September.",
-      "bilder": [
-        "/images/just-hell-bent-huvud.jpeg"
-      ],
-      "legacySnapshot": {
-        "antal_andelar": "10",
-        "typ": "Andel",
-        "bilder": [
-          "/images/just-hell-bent-huvud.jpeg"
-        ],
-        "pris": "20000",
-        "mor": "Determined ",
-        "alder_kon": "2år Sto",
-        "namn": "Just Hell Bent",
-        "far": "Maharajah",
-        "beskrivning": "Just Hell Bent är en fin tvåårs märr som har skött sin uppträning på bästa vis och siktas mot tvåårings start om inget oförutsett händer. Hon är redo att kvala i början av September.",
-        "bild": "/images/just-hell-bent.jpeg"
-      },
       "namn": "Just Hell Bent",
+      "slug": "just-hell-bent",
       "far": "Maharajah",
       "mor": "Determined",
       "bild": "/images/just-hell-bent.jpeg",
-      "alder_kon": "2 år · Sto"
+      "alder_kon": "2 år · Sto",
+      "bilder": [
+        "/images/just-hell-bent-huvud.jpeg"
+      ]
     }
   ]
 }
