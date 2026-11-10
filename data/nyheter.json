@@ -23,12 +23,16 @@
     {
       "id": "news-calgary-avlade-maiden",
       "slug": "calgary-avlade-maiden",
+      "aliases": [],
       "datum": "2026-08-14",
       "tid": "20:30",
       "titel": "Calgary Dreams avlade maiden !",
-      "text": "Calgary Dreams fick äntligen avlägga maiden ikväll på Bollnäs ! Efter ett lopp i andra utvändigt kunde hon runda fram till utvändigt ledaren sju hundra meter från mål och därefter med liten marginal plocka ner ledaren som stretade emot bra till slut. Segern var värd 35000kr\nSegertid: 1:17,2\nÄgare: Stall Simple Minds ( Mats-ola Carlsson & Tord Erixon) och Zeb Jonasson ",
+      "text": "Calgary Dreams fick äntligen avlägga maiden ikväll på Bollnäs ! Efter ett lopp i andra utvändigt kunde hon runda fram till utvändigt ledaren sju hundra meter från mål och därefter med liten marginal plocka ner ledaren som stretade emot bra till slut. Segern var värd 35000kr\nSegertid: 1:17,2\nÄgare: Stall Simple Minds ( Mats-ola Carlsson & Tord Erixon) och Zeb Jonasson",
       "bild": "/images/img_4206.jpeg",
-      "horseIds": []
+      "youtube": "",
+      "horseIds": [
+        "horse-calgary-dreams"
+      ]
     },
     {
       "id": "news-andra-maiden",
