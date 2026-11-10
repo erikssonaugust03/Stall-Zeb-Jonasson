@@ -25,6 +25,8 @@ const before=calls.length;await assert.rejects(()=>gateway.commit({sha:'head',tr
 check('reject entire write set before any request',()=>assert.equal(calls.length,before));
 missing=true;await assert.rejects(()=>gateway.state(),/saknas/);missing=false;count++;
 wrong=true;await assert.rejects(()=>gateway.head(),/Fel arbetsgren/);count++;
+const imageGateway=new Gateway({token:async()=>'fixture',fetcher:async(url)=>Response.json(url.includes('/contents/')?{encoding:'none',content:'',sha:'large-image'}:{encoding:'base64',content:Buffer.from([137,80,78,71]).toString('base64')})});
+assert.equal((await imageGateway.image('/images/large.png')).size,4);count++;
 for(const file of ['admin/ui.js','admin/media.js','content-data.js'])new Function(fs.readFileSync(new URL('../'+file,import.meta.url),'utf8'));
 for(const name of ['startkommentarer.html','hastar-till-salu.html','hastprofil.html']){const html=fs.readFileSync(new URL('../'+name,import.meta.url),'utf8');for(const script of html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g))new Function(script[1]);assert.ok(!html.includes('raw.githubusercontent.com/erikssonaugust03/Stall-Zeb-Jonasson/main'));}count++;
 console.log(count+' production checks passed');
