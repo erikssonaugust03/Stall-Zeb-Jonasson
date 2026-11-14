@@ -12,7 +12,7 @@ export function project(data,year=new Date().getFullYear()){
   return h;
  });
  const horses=all.filter(h=>h.status==='active');
- const sales=data.sales.flatMap(s=>{const h=horses.find(h=>h.id===s.horseId);return !h||!['available','reserved'].includes(s.status)?[]:[{...pick(s,['id','horseId','status','typ','pris','antal_andelar','beskrivning']),namn:h.namn,slug:h.slug,far:h.far,mor:h.mor,bild:h.bild,alder_kon:[h.alder,h.kon].filter(Boolean).join(' · '),bilder:s.bilder?.length?s.bilder:h.bilder||[]}];});
+ const sales=data.sales.flatMap(s=>{const h=horses.find(h=>h.id===s.horseId);return !h||!['available','reserved'].includes(s.status)?[]:[{...pick(s,['id','horseId','status','typ','pris','antal_andelar','beskrivning','featured']),namn:h.namn,slug:h.slug,far:h.far,mor:h.mor,bild:h.bild,alder_kon:[h.alder,h.kon].filter(Boolean).join(' · '),bilder:s.bilder?.length?s.bilder:h.bilder||[]}];});
  const news=data.news.filter(published).map(n=>pick(n,['id','slug','aliases','datum','tid','titel','text','bild','youtube','horseIds']));
  const starts=data.starts.filter(published).map(s=>({...pick(s,['id','datum','lopp']),hastar:s.hastar.map(e=>({...pick(e,['horseId','start','kommentar']),namn:all.find(h=>h.id===e.horseId)?.namn||e.namn}))}));
  return {'admin-v2':data,hastar:{hastar:horses},'hastar-alla':{hastar:all},nyheter:{nyheter:news},startkommentarer:{starter:starts},'hastar-till-salu':{hastar:sales},personal:{personal:staff}};

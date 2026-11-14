@@ -23,7 +23,7 @@ function card(item) {
     title=item.datum+' · '+item.lopp;
     body=item.hastar.map(h=>row(h.start,horseName(h.horseId) || h.namn)+row('Kommentar',h.kommentar)).join(''); url='/startkommentarer';
   } else if (active === 'sales') {
-    title=horseName(item.horseId); body=row('Status',statuses[item.status])+row('Typ',item.typ)+row('Pris',item.pris+' kr')+row('Andelar',item.antal_andelar)+row('Text',item.beskrivning); url='/hastar-till-salu';
+    title=horseName(item.horseId); body=row('Status',statuses[item.status])+row('Typ',item.typ)+row('Pris',item.pris+' kr')+row('Andelar',item.antal_andelar)+(item.featured?row('Startsida','Utvald'):'')+row('Text',item.beskrivning); url='/hastar-till-salu';
   } else {
     title=item.namn; body=row('Roll',item.roll)+row('Status',statuses[item.status])+row('Presentation',item.presentation); url='/personal';
   }
@@ -76,7 +76,7 @@ function edit(record){
   } else if(active==='starts'){
     fields=input('datum','Datum',record.datum,'date',true)+input('lopp','Bana / evenemang',record.lopp,'text',true)+'<fieldset><legend>Startande hästar</legend><div id="entries">'+(record.hastar.length?record.hastar:[{}]).map(entryFields).join('')+'</div><button type="button" id="addEntry">Lägg till startande häst</button></fieldset>';
   } else if(active==='sales'){
-    fields=select('horseId','Häst',record.horseId,horseOptions())+select('status','Försäljningsstatus',record.status,[['draft','Utkast'],['available','Till salu'],['reserved','Reserverad'],['sold','Såld'],['archived','Arkiverad']])+select('typ','Typ',record.typ,[['Andel','Andel'],['Hel häst','Hel häst']])+input('pris','Pris i kr',record.pris)+input('antal_andelar','Antal andelar',record.antal_andelar)+area('beskrivning','Beskrivning',record.beskrivning)+area('bilder','Extra annonsbilder',(record.bilder||[]).join('\n'))+'<small>Namn, huvudbild och härstamning hämtas från hästregistret. Sålda och arkiverade annonser döljs på hemsidan.</small>';
+    fields=select('horseId','Häst',record.horseId,horseOptions())+select('status','Försäljningsstatus',record.status,[['draft','Utkast'],['available','Till salu'],['reserved','Reserverad'],['sold','Såld'],['archived','Arkiverad']])+select('typ','Typ',record.typ,[['Andel','Andel'],['Hel häst','Hel häst']])+select('featured','Placering på startsidan',record.featured?'yes':'no',[['no','Automatisk placering'],['yes','Visa först på startsidan']])+input('pris','Pris i kr',record.pris)+input('antal_andelar','Antal andelar',record.antal_andelar)+area('beskrivning','Beskrivning',record.beskrivning)+area('bilder','Extra annonsbilder',(record.bilder||[]).join('\n'))+'<small>Namn, huvudbild och härstamning hämtas från hästregistret. Sålda och arkiverade annonser döljs på hemsidan.</small>';
   } else {
     fields=input('namn','Namn',record.namn,'text',true)+input('roll','Roll',record.roll,'text',true)+input('bild','Bild',record.bild||'')+area('presentation','Presentation',record.presentation||'')+select('status','Status',record.status,statusOptions);
   }
@@ -96,6 +96,7 @@ $('editForm').addEventListener('submit',async e=>{
   fields.forEach(n=>record[n]=String(form.get(n)||'').trim());
   if(editingCollection==='horses'){record.birthYear=form.get('birthYear')?Number(form.get('birthYear')):null;record.staffIds=form.getAll('staffIds');}
   if(editingCollection==='news')record.horseIds=form.getAll('horseIds');
+  if(editingCollection==='sales')record.featured=form.get('featured')==='yes';
   if(['horses','sales'].includes(editingCollection))record.bilder=String(form.get('bilder')||'').split('\n').map(s=>s.trim()).filter(Boolean);
   if(editingCollection==='starts')record.hastar=[...document.querySelectorAll('.entry')].map(el=>({horseId:el.querySelector('[name=entryHorse]').value||null,namn:el.querySelector('[name=entryName]').value.trim(),start:el.querySelector('[name=entryRace]').value.trim(),kommentar:el.querySelector('[name=entryComment]').value.trim()}));
   saving=true; $('save').disabled=true; $('save').textContent='Sparar…'; $('editError').textContent='';

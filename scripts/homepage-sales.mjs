@@ -1,6 +1,8 @@
 const esc=value=>String(value||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function salesPromotion(listings){
- const listing=listings.find(s=>s.status==='available')||listings.find(s=>s.status==='reserved');
+ const listing=listings.find(s=>s.featured&&(s.status==='available'||s.status==='reserved'))
+  ||listings.find(s=>s.status==='available')
+  ||listings.find(s=>s.status==='reserved');
  if(!listing)return '';
  const title=listing.status==='reserved'?listing.namn+' är reserverad':listing.typ==='Andel'?'Andelar finns i '+listing.namn:listing.namn+' är till salu';
  const text=listing.status==='reserved'?'Läs mer om hästen och kontakta stallet för aktuell information.':'Var med på resan – läs mer om hästen och möjligheten att bli '+(listing.typ==='Andel'?'delägare.':'hästägare.');
