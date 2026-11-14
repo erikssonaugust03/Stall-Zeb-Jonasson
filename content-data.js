@@ -21,6 +21,19 @@ fetch('/data/public-content.json').then(r=>{if(!r.ok)throw new Error('content');
   }
   if(parts[0]==='hastar'&&parts[1]){
     const h=data.horses.find(h=>h.slug===decodeURIComponent(parts[1])||(h.aliases||[]).includes(decodeURIComponent(parts[1])));if(!h)return;
+    const presentation=h.presentation?.trim();
+    const sale=data.sales?.find(item=>item.horseId===h.id);
+    if(presentation||sale){
+      const intro=make('section',undefined,'horse-intro');
+      if(presentation)intro.append(make('h2','Stallet om '+h.namn),make('p',presentation));
+      if(sale){
+        const status=sale.status==='reserved'?'Reserverad':'Aktuell försäljningsannons';
+        const saleNote=make('div',undefined,'horse-sale-note');
+        saleNote.append(make('span',status),link('Se annonsen →','/hastar-till-salu#'+encodeURIComponent(sale.slug||sale.id)));
+        intro.append(saleNote);
+      }
+      document.querySelector('.info')?.before(intro);
+    }
     const section=make('section');section.style.marginTop='48px';
     if(h.status==='archived'){
       section.append(make('h2','Tidigare stallhäst'),make('p','Den här hästen har lämnat stallet. Profilen finns kvar.'));
