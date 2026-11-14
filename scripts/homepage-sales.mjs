@@ -12,9 +12,9 @@ export function salesPromotion(listings){
  <div class="owner-banner">
  <div class="owner-photo">${listing.bild?`<img src="${esc(listing.bild)}" alt="${esc(listing.namn)}">`:''}</div>
  <div class="owner-copy">
- <div class="eyebrow">Bli hästägare · ${status}</div>
+ <div class="eyebrow">${status}</div>
  <h2 id="sale-preview-title">${esc(title)}</h2>
- <p>${esc(text)}</p><p class="owner-facts">${esc(price)}${listing.alder_kon?' · '+esc(listing.alder_kon):''}${listing.typ==='Andel'&&listing.antal_andelar?' · '+esc(listing.antal_andelar)+' andelar i annonsen':''}</p>
+ <p>${esc(text)}</p><p class="owner-facts">${esc(price)}${listing.alder_kon?' · '+esc(listing.alder_kon):''}</p>
  <div class="owner-actions"><a class="owner-cta" href="/hastar-till-salu#${encodeURIComponent(listing.slug||listing.id)}">Se annonsen →</a><a href="/hastar-till-salu">Alla annonser</a></div>
  </div></div></section>`;
 }
