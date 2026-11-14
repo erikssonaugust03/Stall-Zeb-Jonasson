@@ -149,7 +149,7 @@
       "alder": "2 år",
       "kon": "Hingst",
       "slug": "serrano",
-      "agare": "Django Invest AB ",
+      "agare": "Django Invest AB",
       "uppfodare": "Müller Caroline",
       "mor": "Lyssum",
       "namn": "Serrano",
@@ -159,7 +159,10 @@
       "id": "horse-serrano",
       "status": "active",
       "birthYear": null,
-      "staffIds": []
+      "staffIds": [],
+      "presentation": "Tillfälligt test B2",
+      "bilder": [],
+      "aliases": []
     },
     {
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts804571/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
@@ -715,5 +718,5 @@
     "Födelseår och personalrelationer behöver verifieras manuellt. Källdata använder både Törngren och Thörngren; ingen automatisk personkoppling har gjorts.",
     "Nyheternas hästkopplingar behöver väljas manuellt; inga har gissats."
   ],
-  "revision": 7
+  "revision": 8
 }
