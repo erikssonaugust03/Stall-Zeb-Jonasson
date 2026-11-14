@@ -5,7 +5,7 @@ export function project(data,year=new Date().getFullYear()){
  const staff=data.staff.filter(p=>p.status==='active').map(p=>pick(p,['id','namn','roll','bild','presentation','status']));
  const staffIds=new Set(staff.map(p=>p.id));
  const all=data.horses.map(source=>{
-  const h=pick(source,['id','namn','slug','aliases','status','kon','far','mor','agare','uppfodare','travsport','bild','bilder']);
+  const h=pick(source,['id','namn','slug','aliases','status','kon','far','mor','agare','uppfodare','travsport','bild','bilder','presentation']);
   h.alder=source.birthYear?String(year-source.birthYear)+' år':source.alder;
   h.staffIds=source.staffIds.filter(id=>staffIds.has(id));
   h.skotare=source.staffIds.length?h.staffIds.map(id=>staff.find(p=>p.id===id).namn).join(', '):source.skotare;
@@ -18,5 +18,5 @@ export function project(data,year=new Date().getFullYear()){
  return {'admin-v2':data,hastar:{hastar:horses},'hastar-alla':{hastar:all},nyheter:{nyheter:news},startkommentarer:{starter:starts},'hastar-till-salu':{hastar:sales},personal:{personal:staff}};
 }
 export function publicContent(projected){
- return {horses:projected['hastar-alla'].hastar,news:projected.nyheter.nyheter,staff:projected.personal.personal};
+ return {horses:projected['hastar-alla'].hastar,news:projected.nyheter.nyheter,staff:projected.personal.personal,sales:projected['hastar-till-salu'].hastar.map(({horseId,slug,id,status})=>({horseId,slug,id,status}))};
 }

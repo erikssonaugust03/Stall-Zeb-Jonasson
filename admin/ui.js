@@ -70,7 +70,7 @@ function edit(record){
       +['far','mor','agare','uppfodare'].map((n,i)=>input(n,['Far','Mor','Ägare','Uppfödare'][i],record[n]||'')).join('')
       +input('travsport','Svensk Travsport-länk',record.travsport||'','url')+input('bild','Huvudbild',record.bild||'')+'</div>'
       +area('bilder','Bildgalleri',(record.bilder||[]).join('\n'))
-      +choices('staffIds','Koppla personal',record.staffIds,data.staff.map(p=>[p.id,p.namn]));
+      +area('presentation','Presentation på hästprofilen',record.presentation||'')+choices('staffIds','Koppla personal',record.staffIds,data.staff.map(p=>[p.id,p.namn]));
   } else if(active==='news'){
     fields=input('titel','Rubrik',record.titel,'text',true)+input('slug','URL-namn',record.slug,'text',true)+'<div class="grid">'+input('datum','Datum',record.datum,'date',true)+input('tid','Tid',record.tid||'','time')+'</div>'+area('text','Nyhetstext',record.text)+input('bild','Bild',record.bild||'')+input('youtube','YouTube-länk',record.youtube||'','url')+choices('horseIds','Relaterade hästar',record.horseIds,data.horses.map(h=>[h.id,h.namn+(h.status==='archived'?' (arkiverad)':'')]));
   } else if(active==='starts'){
@@ -92,7 +92,7 @@ $('editForm').addEventListener('submit',async e=>{
   e.preventDefault(); if(saving)return;
   if(window.adminLive&&!confirm('Spara och publicera ändringen på stallzebjonasson.se?'))return;
   const form=new FormData(e.target), record=structuredClone(editing);
-  const fields={horses:['namn','slug','status','kon','alder','far','mor','agare','uppfodare','travsport','bild'],news:['titel','slug','datum','tid','text','bild','youtube'],starts:['datum','lopp'],sales:['horseId','status','typ','pris','antal_andelar','beskrivning'],staff:['namn','roll','bild','presentation','status']}[editingCollection];
+  const fields={horses:['namn','slug','status','kon','alder','far','mor','agare','uppfodare','travsport','bild','presentation'],news:['titel','slug','datum','tid','text','bild','youtube'],starts:['datum','lopp'],sales:['horseId','status','typ','pris','antal_andelar','beskrivning'],staff:['namn','roll','bild','presentation','status']}[editingCollection];
   fields.forEach(n=>record[n]=String(form.get(n)||'').trim());
   if(editingCollection==='horses'){record.birthYear=form.get('birthYear')?Number(form.get('birthYear')):null;record.staffIds=form.getAll('staffIds');}
   if(editingCollection==='news')record.horseIds=form.getAll('horseIds');
