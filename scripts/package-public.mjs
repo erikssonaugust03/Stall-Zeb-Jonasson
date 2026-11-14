@@ -13,7 +13,10 @@ const dataFiles=['hastar','hastar-alla','nyheter','startkommentarer','hastar-til
 const publicData=Object.fromEntries(dataFiles.map(name=>[name,json('data/'+name+'.json')]));
 const pages=['index.html','hastar.html','hastprofil.html','hastar-till-salu.html','nyheter.html','startkommentarer.html','personal.html','anlaggning.html','om-tranaren.html','kontakt.html','integritetspolicy.html'];
 const htmlFiles=new Map(pages.map(name=>[name,read(name)]));
-htmlFiles.set('index.html',htmlFiles.get('index.html').replace('<!-- SALE_PROMOTION -->',salesPromotion(publicData['hastar-till-salu'].hastar)));
+const saleSection=salesPromotion(publicData['hastar-till-salu'].hastar);
+htmlFiles.set('index.html',htmlFiles.get('index.html')
+ .replace('<!-- SALE_PROMOTION -->',saleSection)
+ .replace('<!-- SALE_HERO_LINK -->',saleSection?'<a class="hero-sale-link" href="#sale-preview-title">Se aktuella hästar till salu ↓</a>':''));
 for(const news of publicData.nyheter.nyheter){const name='nyheter/'+news.slug+'/index.html';htmlFiles.set(name,read(name));}
 // Build from an allowlist into a clean directory. Never copy the repository root.
 fs.rmSync(output,{recursive:true,force:true});fs.mkdirSync(output,{recursive:true});

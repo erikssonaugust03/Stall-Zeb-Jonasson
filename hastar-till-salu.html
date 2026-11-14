@@ -456,6 +456,12 @@ body > nav .nav-links a:hover,body > nav .nav-links a.active{color:var(--white)!
 .sale-thumb{background:#0d141d;padding:0}
 .sale-thumb:focus-visible,.listing-cta:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
 @media(max-width:760px){.sale-detail{padding:6rem 1.5rem 3rem}.sale-detail-grid{grid-template-columns:minmax(0,1fr)}}
+.sale-guide{max-width:1100px;margin:0 auto;padding:0 2rem 5rem}
+.sale-guide h2{font:300 clamp(2rem,4vw,3rem) 'Cormorant Garamond',serif;margin:0 0 1rem}
+.sale-guide details{padding:1rem 0;border-top:1px solid rgba(200,216,232,.2)}
+.sale-guide summary{cursor:pointer;color:var(--accent);font-size:1.15rem}
+.sale-guide p{margin:.65rem 0 0;color:var(--white-dim);max-width:65ch}
+#sale-preview-title{scroll-margin-top:110px}
 </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-030SMR6MPN"></script>
@@ -526,6 +532,11 @@ body > nav .nav-links a:hover,body > nav .nav-links a.active{color:var(--white)!
   <div class="listings-section" id="listingsContainer">
     <p style="padding:3rem 0;color:var(--white-dim);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;">Laddar...</p>
   </div>
+<section class="sale-guide" aria-label="Frågor om hästar och andelar">
+    <h2>Frågor om hästar och andelar</h2>
+    <details><summary>Vad innebär det att köpa en andel?</summary><p>Du blir delägare i hästen. Fråga stallet vad som ingår och vilka löpande kostnader och villkor som gäller för den aktuella andelen.</p></details>
+    <details><summary>Hur anmäler jag intresse?</summary><p>Öppna annonsen och välj Anmäl intresse. Berätta vad du vill veta om hästen, andelen eller villkoren.</p></details>
+  </section>
 </div>
 <div id="detailView" style="display:none;background:var(--black);min-height:100vh;"></div>
 
@@ -646,7 +657,7 @@ function openDetail(i) {
           <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;line-height:1.8;color:var(--white-dim);margin-bottom:2.5rem;">"${contentEsc(h.beskrivning)}"</p>
           <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
             <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;">${contentEsc(salePrice(h))}</div>
-            <a href="/kontakt" class="listing-cta">Kontakta stallet →</a>
+            <a href="/kontakt?intresse=${encodeURIComponent(h.namn)}#kontaktformular" class="listing-cta">Anmäl intresse →</a>
           </div>
           ${h.slug ? `<div class="sale-detail-links"><a href="/hastar/${encodeURIComponent(h.slug)}">Se hästprofilen →</a></div>` : ''}
         </div>
