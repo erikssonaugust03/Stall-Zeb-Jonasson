@@ -4,6 +4,7 @@
       "id": "horse-ajson",
       "namn": "Ajson",
       "slug": "ajson",
+      "aliases": [],
       "status": "active",
       "kon": "Valack",
       "far": "S.J.'s Caviar",
@@ -12,6 +13,8 @@
       "uppfodare": "Cover Konsult AB",
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts785165/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
       "bild": "/images/img_4163.jpeg",
+      "bilder": [],
+      "presentation": "Tillfälligt test av sparning A",
       "alder": "5 år",
       "staffIds": [],
       "skotare": "Moa Thörngren"

@@ -17,7 +17,10 @@
       "id": "horse-ajson",
       "status": "active",
       "birthYear": null,
-      "staffIds": []
+      "staffIds": [],
+      "presentation": "Tillfälligt test av sparning A",
+      "bilder": [],
+      "aliases": []
     },
     {
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts804075/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
@@ -712,5 +715,5 @@
     "Födelseår och personalrelationer behöver verifieras manuellt. Källdata använder både Törngren och Thörngren; ingen automatisk personkoppling har gjorts.",
     "Nyheternas hästkopplingar behöver väljas manuellt; inga har gissats."
   ],
-  "revision": 5
+  "revision": 6
 }
