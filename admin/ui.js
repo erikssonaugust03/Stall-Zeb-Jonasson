@@ -101,7 +101,7 @@ $('editForm').addEventListener('submit',async e=>{
   if(editingCollection==='starts')record.hastar=[...document.querySelectorAll('.entry')].map(el=>({horseId:el.querySelector('[name=entryHorse]').value||null,namn:el.querySelector('[name=entryName]').value.trim(),start:el.querySelector('[name=entryRace]').value.trim(),kommentar:el.querySelector('[name=entryComment]').value.trim()}));
   saving=true; $('save').disabled=true; $('save').textContent='Sparar…'; $('editError').textContent='';
   try{
-    const response=await fetch('/api/drafts',{method:'POST',headers:{'Content-Type':'application/json','X-Sandbox-Token':token},body:JSON.stringify({revision:data.revision,collection:editingCollection,record})});
+    const response=await fetch('/api/drafts',{method:'POST',headers:{'Content-Type':'application/json','X-Sandbox-Token':token},body:JSON.stringify({revision:data.revision,baseRecord:data[editingCollection].find(item=>item.id===editing.id)??null,collection:editingCollection,record})});
     const result=await response.json(); if(!response.ok)throw Error(result.error||'Kunde inte spara.');
     data=result.data; dirty=false; $('editor').close(); $('feedback').textContent=window.adminLive?'Sparat i GitHub. Hemsidan uppdateras när Netlifys bygge är klart.':'Sparat på codex-admin-v2. Förhandsvisningen uppdateras efter nästa bygge.'; render();
   }catch(error){$('editError').textContent=error.message;}

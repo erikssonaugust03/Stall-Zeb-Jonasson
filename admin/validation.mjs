@@ -17,7 +17,25 @@ function validate(data){
   if(key==='staff'){text(item.namn,'namn',true);text(item.roll,'roll',true);if(!['active','archived'].includes(item.status))fail('Ogiltig personalstatus.');}
  }
 }
-function update(current,request){if(request.revision!==current.revision)fail('Ett annat fönster har sparat. Ladda om admin innan du försöker igen.',409);if(!collections.includes(request.collection)||!request.record||typeof request.record!=='object')fail('Ogiltig ändring.');const data=copy(current),key=request.collection,record=copy(request.record);const i=data[key].findIndex(x=>x.id===record.id);if(i<0)data[key].push(record);else{const old=data[key][i];if(['horses','news'].includes(key)){record.aliases=[...(old.aliases||[])];if(old.slug!==record.slug)record.aliases=[...record.aliases.filter(s=>s!==record.slug),old.slug];}if(old.legacySnapshot)record.legacySnapshot=old.legacySnapshot;data[key][i]=record;}if(key==='sales'&&record.featured===true&&['available','reserved'].includes(record.status)&&data.horses.some(horse=>horse.id===record.horseId&&horse.status==='active')){
+function sameRecord(a,b){
+ if(a===b)return true;
+ if(!a||!b||typeof a!=='object'||typeof b!=='object'||Array.isArray(a)!==Array.isArray(b))return false;
+ const keys=Object.keys(a);
+ return keys.length===Object.keys(b).length&&keys.every(key=>Object.hasOwn(b,key)&&sameRecord(a[key],b[key]));
+}
+function update(current,request){
+ const {collection:key,record:incoming}=request;
+ if(!collections.includes(key)||!incoming||typeof incoming!=='object')fail('Ogiltig ändring.');
+ const data=copy(current),record=copy(incoming);
+ const i=data[key].findIndex(item=>item.id===record.id);
+ if(Object.hasOwn(request,'baseRecord')){
+  if(!sameRecord(request.baseRecord,data[key][i]??null)){
+   fail('Den här posten har ändrats sedan du öppnade den. Dina ändringar finns kvar i formuläret. Kopiera dem innan du öppnar den senaste versionen.',409);
+  }
+ }else if(request.revision!==current.revision){
+  fail('Innehållet har ändrats. Kopiera dina ändringar innan du laddar om admin.',409);
+ }
+ if(i<0)data[key].push(record);else{const old=data[key][i];if(['horses','news'].includes(key)){record.aliases=[...(old.aliases||[])];if(old.slug!==record.slug)record.aliases=[...record.aliases.filter(s=>s!==record.slug),old.slug];}if(old.legacySnapshot)record.legacySnapshot=old.legacySnapshot;data[key][i]=record;}if(key==='sales'&&record.featured===true&&['available','reserved'].includes(record.status)&&data.horses.some(horse=>horse.id===record.horseId&&horse.status==='active')){
   for(const sale of data.sales)if(sale.id!==record.id&&sale.featured)sale.featured=false;
  }
  data.revision++;validate(data);return data;}
