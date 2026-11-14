@@ -25,3 +25,7 @@ nav.site-navigation{box-sizing:border-box;position:fixed;inset:0 0 auto;z-index:
  .site-mobile li>a,.site-mobile summary{display:block;padding:.85rem 2rem}
  .site-mobile .site-horse-menu div a{padding-left:3.25rem}
 }
+.site-profile-footer{padding:2rem 1.5rem;border-top:1px solid rgba(244,242,238,.12)}
+.site-social{display:flex;justify-content:center;align-items:center;gap:1rem;padding:1rem}
+.site-social a{display:inline-flex;color:#c8d8e8;padding:.35rem}
+.site-social svg{width:20px;height:20px;fill:currentColor}

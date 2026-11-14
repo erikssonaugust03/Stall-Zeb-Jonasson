@@ -93,8 +93,24 @@ function transformImage(tag){
  if(key==='/hero2.jpg')tag=tag.replace(/>$/,' fetchpriority="high">');
  return tag;
 }
+const socialLinks = ['Facebook','Instagram'].map(label => {
+ const anchor = [...read('index.html').matchAll(/<a\b[^>]*>[\s\S]*?<\/a>/gi)]
+  .find(([html]) => html.slice(0,html.indexOf('>')).includes('aria-label="'+label+'"'));
+ if(!anchor)throw new Error('Missing social link: '+label);
+ return { label, markup: anchor[0].replace(/target="_blank"/,'target="_blank" rel="noopener noreferrer"') };
+});
+function ensureSocialLinks(html) {
+ const footer=/<footer\b[^>]*>[\s\S]*?<\/footer>/i;
+ const addLinks=markup=>{
+  const missing=socialLinks.filter(({label})=>!new RegExp('href=["\']https://(?:www\\.)?'+label.toLowerCase()+'\\.com/','i').test(markup));
+  if(!missing.length)return markup;
+  return markup.replace(/<\/footer>/i,'<div class="site-social" aria-label="Sociala medier">'+missing.map(link=>link.markup).join('')+'</div></footer>');
+ };
+ if(footer.test(html))return html.replace(footer,addLinks);
+ return html.replace(/<\/body>/i,addLinks('<footer class="site-profile-footer"></footer>')+'</body>');
+}
 for(const [name,original] of htmlFiles){
- const html=replaceNavigation(original,name).replace(/<img\b[^>]*>/gi,transformImage).replace('</head>','<script src="/image-manifest.js"></script><script src="/public-images.js"></script><link rel="stylesheet" href="/navigation.css"><script src="/navigation.js" defer></script></head>');
+ const html=ensureSocialLinks(replaceNavigation(original,name)).replace(/<img\b[^>]*>/gi,transformImage).replace('</head>','<script src="/image-manifest.js"></script><script src="/public-images.js"></script><link rel="stylesheet" href="/navigation.css"><script src="/navigation.js" defer></script></head>');
  write(name,html);
 }
 for(const [name,value] of Object.entries(publicData))write('data/'+name+'.json',JSON.stringify(value)+'\n');
@@ -102,7 +118,7 @@ for(const file of ['style.css','content-data.js','public-images.js','navigation.
 for(const file of ['index.html','admin.css','bootstrap.mjs','environment.mjs','gateway.mjs','projection.mjs','validation.mjs','ui.js','media.js','config.yml'])copy('admin/'+file);
 write('_redirects',horseRoutes.join('\n')+'\n'+read('_redirects'));
 write('image-manifest.js','window.publicImageManifest='+JSON.stringify(manifest)+';\n');
-write('404.html','<!doctype html><html lang="sv"><meta charset="utf-8"><title>Sidan finns inte</title><h1>Sidan finns inte</h1><a href="/">Till startsidan</a></html>');
+write('404.html',ensureSocialLinks('<!doctype html><html lang="sv"><meta charset="utf-8"><title>Sidan finns inte</title><link rel="stylesheet" href="/navigation.css"><body><h1>Sidan finns inte</h1><a href="/">Till startsidan</a></body></html>'));
 write('_headers','/media/*\n  Cache-Control: public, max-age=31536000, immutable\n/data/*\n  Cache-Control: public, max-age=0, must-revalidate\n');
 console.log(`Packaged ${htmlFiles.size} public pages, ${dataFiles.length} public data files and ${Object.keys(manifest).length} responsive images.`);
 console.log(`Image fallbacks: ${(originalBytes/1048576).toFixed(1)} MB → ${(optimizedBytes/1048576).toFixed(1)} MB. Admin source data excluded.`);
