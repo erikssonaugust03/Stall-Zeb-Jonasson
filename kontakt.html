@@ -473,7 +473,7 @@ body > nav .nav-links a:hover,body > nav .nav-links a.active{color:var(--white)!
   <div class="contact-form-wrap">
     <h3 class="form-title">Skicka ett meddelande</h3>
 
-    <form action="https://formspree.io/f/xpqjeagl" method="POST">
+    <form id="kontaktformular" style="scroll-margin-top:110px" action="https://formspree.io/f/xpqjeagl" method="POST">
     <div class="form-group">
       <label>Namn</label>
       <input type="text" name="namn" placeholder="Ditt namn" required>
@@ -512,6 +512,12 @@ body > nav .nav-links a:hover,body > nav .nav-links a.active{color:var(--white)!
 </footer>
 
 <script>
+const interestHorse = new URLSearchParams(location.search).get('intresse')?.trim();
+const messageField = document.querySelector('#kontaktformular textarea');
+if (interestHorse && interestHorse.length <= 120 && !messageField.value) {
+  messageField.value = 'Hej! Jag är intresserad av ' + interestHorse + ' och vill gärna veta mer.\n\n';
+}
+
 function toggleMenu() {
   var btn = document.getElementById('hamburger');
   var menu = document.getElementById('mobileMenu');

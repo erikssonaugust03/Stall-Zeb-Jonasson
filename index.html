@@ -11,6 +11,19 @@ body > nav .nav-links a:hover,body > nav .nav-links a.active{color:var(--white)!
 @media(max-width:1000px){body > nav{padding:1.2rem 1.5rem!important}body > nav .nav-links{display:none!important}body > nav .nav-logo img{height:36px!important}}
 
 .test-footer{padding:3rem 4rem!important;text-align:center!important}.test-footer .footer-logo{margin-bottom:1rem}.test-footer .footer-social{display:flex;justify-content:center;gap:1rem;margin:1rem 0}.test-footer .footer-social a{display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center}.test-footer .footer-social svg{width:20px;height:20px;fill:currentColor}.test-footer .footer-copy{font-size:.75rem;color:var(--white-dim)}
+
+.owner-strip{padding:3rem 4rem 0}
+.owner-banner{display:grid;grid-template-columns:minmax(0,40%) minmax(0,1fr);background:#0a0d10;border:1px solid rgba(244,242,238,.08);overflow:hidden}
+.owner-photo{height:100%;min-height:260px;background:var(--navy);position:relative}
+.owner-photo img{position:absolute;inset:0;height:100%;width:100%;object-fit:cover;object-position:center 45%}
+.owner-copy{padding:1.6rem clamp(1.5rem,3vw,2.5rem)}
+.owner-copy h2{font-size:clamp(1.85rem,3vw,2.8rem);line-height:1.12;margin:.45rem 0 .6rem}
+.owner-copy .owner-facts{margin-top:.85rem;color:var(--accent)}
+.owner-actions{display:flex;flex-wrap:wrap;align-items:center;gap:.65rem 1.4rem;margin-top:1rem}
+.owner-actions a{color:var(--white-dim);font-size:.8rem;text-underline-offset:4px}
+.owner-actions .owner-cta{margin:0;padding:.45rem 0;color:var(--white);font-size:.72rem;text-decoration:none}
+.owner-actions a:hover,.owner-actions a:focus-visible{color:var(--accent)}
+@media(max-width:760px){.owner-strip{padding:2rem 1.5rem 0}.owner-banner{grid-template-columns:minmax(0,1fr)}.owner-photo{height:auto;min-height:0;aspect-ratio:16/10}.owner-copy{padding:1.25rem 1.4rem}}
 </style></head><body class="test-home"><!-- NAV -->
 <nav>
   <a href="/" class="nav-logo"><img src="logo-zeb.png" alt="Stall Zeb Jonasson" style="height:48px;width:auto;"></a>
