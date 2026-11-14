@@ -100,6 +100,7 @@
       "id": "horse-just-hell-bent",
       "namn": "Just Hell Bent",
       "slug": "just-hell-bent",
+      "aliases": [],
       "status": "active",
       "kon": "Sto",
       "far": "Maharajah",
@@ -108,6 +109,8 @@
       "uppfodare": "Menhammar Stuteri AB",
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts804524/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
       "bild": "/images/just-hell-bent.jpeg",
+      "bilder": [],
+      "presentation": "Just Hell Bent är ett sto efter Maharajah och Determined. Hon har skött uppträningen fint och tog stallets första tvååringsseger för året.",
       "alder": "2 år",
       "staffIds": [],
       "skotare": "Moa Thörngren"

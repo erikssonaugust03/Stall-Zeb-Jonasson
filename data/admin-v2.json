@@ -119,7 +119,10 @@
       "id": "horse-just-hell-bent",
       "status": "active",
       "birthYear": null,
-      "staffIds": []
+      "staffIds": [],
+      "presentation": "Just Hell Bent är ett sto efter Maharajah och Determined. Hon har skött uppträningen fint och tog stallets första tvååringsseger för året.",
+      "bilder": [],
+      "aliases": []
     },
     {
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts798745/pedigree?origin=all&vintage=all&limit=all&grandpa=all&gender=all",
@@ -709,5 +712,5 @@
     "Födelseår och personalrelationer behöver verifieras manuellt. Källdata använder både Törngren och Thörngren; ingen automatisk personkoppling har gjorts.",
     "Nyheternas hästkopplingar behöver väljas manuellt; inga har gissats."
   ],
-  "revision": 4
+  "revision": 5
 }
