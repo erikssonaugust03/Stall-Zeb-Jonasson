@@ -55,6 +55,34 @@ for(const name of assets){
  manifest['/'+name]={fallback:fallback.url,srcset:variants.map(v=>v.url+' '+v.width+'w').join(', ')};
  originalBytes+=bytes.length;optimizedBytes+=fallback.bytes;
 }
+const siteOrigin=process.env.CONTEXT==='production'
+ ? 'https://stallzebjonasson.se'
+ : new URL(process.env.DEPLOY_PRIME_URL||'https://codex-admin-v2--stallzebjonasson.netlify.app').origin;
+const escapeMeta=value=>String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+const horseRoutes=[];
+for(const horse of publicData['hastar-alla'].hastar){
+ const route='/hastar/'+horse.slug;
+ const url=siteOrigin+route;
+ const title=horse.namn+' – Stall Zeb Jonasson';
+ const description=[horse.alder,horse.kon,horse.far&&'efter '+horse.far].filter(Boolean).join(' · ')||'Hästprofil hos Stall Zeb Jonasson';
+ let source;
+ try{source=decodeURIComponent(horse.bild||'').replace(/^\//,'');}catch{source='';}
+ if(!assets.has(source))source='hero2.jpg';
+ const bytes=fs.readFileSync(path.join(root,source));
+ const version=crypto.createHash('sha256').update(bytes).digest('hex').slice(0,16);
+ const imageFile='media/horse-share-'+version+'.jpg';
+ if(!fs.existsSync(path.join(output,imageFile))){
+  write(imageFile,await sharp(bytes).rotate().resize(1200,630,{fit:'contain',background:'#0d141d'}).flatten({background:'#0d141d'}).jpeg({quality:88}).toBuffer());
+ }
+ const image=siteOrigin+'/'+imageFile;
+ const properties={'og:type':'website','og:site_name':'Stall Zeb Jonasson','og:title':title,'og:description':description,'og:url':url,'og:image':image,'og:image:width':'1200','og:image:height':'630','og:image:alt':source==='hero2.jpg'?'Stall Zeb Jonasson':horse.namn};
+ const metadata=Object.entries(properties).map(([key,value])=>'<meta property="'+key+'" content="'+escapeMeta(value)+'">').join('')
+  +'<meta name="description" content="'+escapeMeta(description)+'"><link rel="canonical" href="'+escapeMeta(url)+'"><meta name="twitter:card" content="summary_large_image">';
+ const file=route.slice(1)+'/index.html';
+ htmlFiles.set(file,htmlFiles.get('hastprofil.html').replace(/<title>[^<]*<\/title>/,()=>'<title>'+escapeMeta(title)+'</title>'+metadata));
+ horseRoutes.push(route+' /'+file+' 200!',route+'/ /'+file+' 200!');
+ for(const alias of horse.aliases||[])horseRoutes.push('/hastar/'+alias+' '+route+' 301!','/hastar/'+alias+'/ '+route+' 301!');
+}
 function transformImage(tag){
  const match=tag.match(/\bsrc=["']([^"']+)["']/i);if(!match||match[1].includes('${'))return tag;
  const key='/'+match[1].replace(/^\//,'');const image=manifest[key];
@@ -69,8 +97,9 @@ for(const [name,original] of htmlFiles){
  write(name,html);
 }
 for(const [name,value] of Object.entries(publicData))write('data/'+name+'.json',JSON.stringify(value)+'\n');
-for(const file of ['style.css','content-data.js','public-images.js','navigation.js','_redirects','sitemap.xml','robots.txt'])copy(file);
+for(const file of ['style.css','content-data.js','public-images.js','navigation.js','sitemap.xml','robots.txt'])copy(file);
 for(const file of ['index.html','admin.css','bootstrap.mjs','environment.mjs','gateway.mjs','projection.mjs','validation.mjs','ui.js','media.js','config.yml'])copy('admin/'+file);
+write('_redirects',horseRoutes.join('\n')+'\n'+read('_redirects'));
 write('image-manifest.js','window.publicImageManifest='+JSON.stringify(manifest)+';\n');
 write('404.html','<!doctype html><html lang="sv"><meta charset="utf-8"><title>Sidan finns inte</title><h1>Sidan finns inte</h1><a href="/">Till startsidan</a></html>');
 write('_headers','/media/*\n  Cache-Control: public, max-age=31536000, immutable\n/data/*\n  Cache-Control: public, max-age=0, must-revalidate\n');
