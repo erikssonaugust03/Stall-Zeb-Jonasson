@@ -3,6 +3,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
+import {replaceNavigation} from './shared-navigation.mjs';
 import {salesPromotion} from './homepage-sales.mjs';
 const require=createRequire(import.meta.url),sharp=require('sharp');
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
@@ -93,11 +94,11 @@ function transformImage(tag){
  return tag;
 }
 for(const [name,original] of htmlFiles){
- const html=original.replace(/<img\b[^>]*>/gi,transformImage).replace('</head>','<script src="/image-manifest.js"></script><script src="/public-images.js"></script><script src="/navigation.js" defer></script></head>');
+ const html=replaceNavigation(original,name).replace(/<img\b[^>]*>/gi,transformImage).replace('</head>','<script src="/image-manifest.js"></script><script src="/public-images.js"></script><link rel="stylesheet" href="/navigation.css"><script src="/navigation.js" defer></script></head>');
  write(name,html);
 }
 for(const [name,value] of Object.entries(publicData))write('data/'+name+'.json',JSON.stringify(value)+'\n');
-for(const file of ['style.css','content-data.js','public-images.js','navigation.js','sitemap.xml','robots.txt'])copy(file);
+for(const file of ['style.css','content-data.js','public-images.js','navigation.js','navigation.css','sitemap.xml','robots.txt'])copy(file);
 for(const file of ['index.html','admin.css','bootstrap.mjs','environment.mjs','gateway.mjs','projection.mjs','validation.mjs','ui.js','media.js','config.yml'])copy('admin/'+file);
 write('_redirects',horseRoutes.join('\n')+'\n'+read('_redirects'));
 write('image-manifest.js','window.publicImageManifest='+JSON.stringify(manifest)+';\n');
