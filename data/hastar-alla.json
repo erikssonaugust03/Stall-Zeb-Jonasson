@@ -246,10 +246,8 @@
       "agare": "Zeb Jonasson",
       "uppfodare": "Stefan T.Z. Melander HB, Enköping",
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts811735/pedigree",
-      "bild": "",
-      "bilder": [
-        "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png"
-      ],
+      "bild": "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png",
+      "bilder": [],
       "presentation": "",
       "alder": "1 år",
       "staffIds": [
