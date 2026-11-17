@@ -277,12 +277,15 @@
       "mor": "Iceland Radio",
       "kon": "Hingst",
       "alder": "",
-      "bilder": [],
+      "bilder": [
+        "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png"
+      ],
       "agare": "Zeb Jonasson",
       "uppfodare": "Stefan T.Z. Melander HB, Enköping",
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts811735/pedigree",
       "bild": "",
-      "presentation": ""
+      "presentation": "",
+      "aliases": []
     }
   ],
   "news": [
@@ -741,5 +744,5 @@
     "Födelseår och personalrelationer behöver verifieras manuellt. Källdata använder både Törngren och Thörngren; ingen automatisk personkoppling har gjorts.",
     "Nyheternas hästkopplingar behöver väljas manuellt; inga har gissats."
   ],
-  "revision": 11
+  "revision": 12
 }

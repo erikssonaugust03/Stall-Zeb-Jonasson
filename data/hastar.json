@@ -227,6 +227,7 @@
       "id": "horse-b6112381-80a3-439a-b916-7e1c19f02608",
       "namn": "High Frequenzy",
       "slug": "high-frequenzy",
+      "aliases": [],
       "status": "active",
       "kon": "Hingst",
       "far": "Nuncio",
@@ -235,7 +236,9 @@
       "uppfodare": "Stefan T.Z. Melander HB, Enköping",
       "travsport": "https://sportapp.travsport.se/sportinfo/horse/ts811735/pedigree",
       "bild": "",
-      "bilder": [],
+      "bilder": [
+        "/images/6b819985-a68e-4764-947f-a8af45c46ec3.png"
+      ],
       "presentation": "",
       "alder": "1 år",
       "staffIds": [
